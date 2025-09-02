@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
 # ---------- Config ----------
-NUM_YEARS = 1  # how many most-recent 10-K filings to pull
+NUM_YEARS = 5  # how many most-recent 10-K filings to pull
 SEC_HEADERS = {
     # Per SEC guidance, identify yourself. Replace with your contact info.
     "User-Agent": "Research script (your_email@example.com)"
@@ -47,7 +47,10 @@ def is_cache_valid(path, days=7):
 
 def extract_year_from_filing_date(filed_at):
     try:
-        return filed_at.split('-')[0]
+        filing_year = int(filed_at.split('-')[0])
+        # 10-K filings are typically filed in the year after the fiscal year they report
+        # So subtract 1 to get the fiscal year
+        return str(filing_year - 1)
     except Exception:
         return "unknown_year"
 
@@ -62,15 +65,16 @@ def ensure_dir(path):
 def filing_paths(filing, year=None):
     year = year or extract_year_from_filing_date(filing.get("filedAt", ""))
     company = get_company_folder_name(filing.get("companyName", "unknown_company"))
-    base_dir = os.path.join("10k", company)
-    ensure_dir(base_dir)
-    base = os.path.join(base_dir, f"{year}_10k")
+    company_dir = os.path.join("10k", company)
+    year_dir = os.path.join(company_dir, year)
+    ensure_dir(year_dir)
+    base = os.path.join(year_dir, f"{year}_10k")
     return {
         "xbrl_json": base + ".json",
         "primary_html": base + "_primary.html",
         "primary_txt": base + "_primary.txt",
         "meta": base + "_meta.json",
-        "dir": base_dir,
+        "dir": year_dir,
         "base": base
     }
 
