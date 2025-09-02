@@ -1,0 +1,4025 @@
+[
+  {
+    "databaseSample": {
+      "schema": {
+        "relationshipTypes": [
+          {
+            "count": 43646,
+            "type": "HAS_DIMENSION"
+          },
+          {
+            "count": 38028,
+            "type": "OF_CONCEPT"
+          },
+          {
+            "count": 38028,
+            "type": "HAS_FACT"
+          },
+          {
+            "count": 38028,
+            "type": "FOR_PERIOD"
+          },
+          {
+            "count": 29649,
+            "type": "MEASURED_IN"
+          },
+          {
+            "count": 1905,
+            "type": "HAS_SENTENCE"
+          },
+          {
+            "count": 44,
+            "type": "ON_EXCHANGE"
+          },
+          {
+            "count": 43,
+            "type": "LISTED_SECURITY"
+          },
+          {
+            "count": 5,
+            "type": "FILED"
+          },
+          {
+            "count": 5,
+            "type": "HAS_SECTION"
+          }
+        ],
+        "nodeTypes": [
+          {
+            "count": 38028,
+            "label": "Fact"
+          },
+          {
+            "count": 2596,
+            "label": "Concept"
+          },
+          {
+            "count": 1905,
+            "label": "Sentence"
+          },
+          {
+            "count": 372,
+            "label": "Dimension"
+          },
+          {
+            "count": 133,
+            "label": "Period"
+          },
+          {
+            "count": 45,
+            "label": "Unit"
+          },
+          {
+            "count": 43,
+            "label": "Security"
+          },
+          {
+            "count": 5,
+            "label": "Filing"
+          },
+          {
+            "count": 5,
+            "label": "Section"
+          },
+          {
+            "count": 2,
+            "label": "Exchange"
+          },
+          {
+            "count": 1,
+            "label": "Organization"
+          },
+          {
+            "count": 0,
+            "label": "Context"
+          },
+          {
+            "count": 0,
+            "label": "Topic"
+          }
+        ]
+      },
+      "samples": {
+        "nodes": [
+          {
+            "label": "Organization",
+            "samples": [
+              {
+                "identity": 0,
+                "labels": [
+                  "Organization"
+                ],
+                "properties": {
+                  "cik": "51143",
+                  "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+              }
+            ]
+          },
+          {
+            "label": "Filing",
+            "samples": [
+              {
+                "identity": 1,
+                "labels": [
+                  "Filing"
+                ],
+                "properties": {
+                  "formType": "10-K",
+                  "filedAt": "2021-02-23T17:08:23-05:00",
+                  "accession": "0001558370-21-001489",
+                  "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                  "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+              },
+              {
+                "identity": 9214,
+                "labels": [
+                  "Filing"
+                ],
+                "properties": {
+                  "formType": "10-K",
+                  "filedAt": "2022-02-22T16:07:29-05:00",
+                  "accession": "0001558370-22-001584",
+                  "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021",
+                  "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-22-001584\", \"filedAt\": \"2022-02-22T16:07:29-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837022001584/0001558370-22-001584.txt#/ibm-20211231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021/2021_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021/2021_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021/2021_10k_primary.txt\"}}"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:9214"
+              },
+              {
+                "identity": 17133,
+                "labels": [
+                  "Filing"
+                ],
+                "properties": {
+                  "formType": "10-K",
+                  "filedAt": "2023-02-28T16:26:11-05:00",
+                  "accession": "0001558370-23-002376",
+                  "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022",
+                  "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-23-002376\", \"filedAt\": \"2023-02-28T16:26:11-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837023002376/0001558370-23-002376.txt#/ibm-20221231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022/2022_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022/2022_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022/2022_10k_primary.txt\"}}"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:17133"
+              },
+              {
+                "identity": 25190,
+                "labels": [
+                  "Filing"
+                ],
+                "properties": {
+                  "formType": "10-K",
+                  "filedAt": "2024-02-26T06:41:57-05:00",
+                  "accession": "0000051143-24-000012",
+                  "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023",
+                  "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0000051143-24-000012\", \"filedAt\": \"2024-02-26T06:41:57-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000005114324000012/0000051143-24-000012.txt#/ibm-20231231.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023/2023_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023/2023_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023/2023_10k_primary.txt\"}}"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25190"
+              },
+              {
+                "identity": 34530,
+                "labels": [
+                  "Filing"
+                ],
+                "properties": {
+                  "formType": "10-K",
+                  "filedAt": "2025-02-25T16:12:45-05:00",
+                  "accession": "0000051143-25-000015",
+                  "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024",
+                  "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0000051143-25-000015\", \"filedAt\": \"2025-02-25T16:12:45-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000005114325000015/0000051143-25-000015.txt#/ibm-20241231.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024/2024_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024/2024_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024/2024_10k_primary.txt\"}}"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34530"
+              }
+            ]
+          },
+          {
+            "label": "Fact",
+            "samples": [
+              {
+                "identity": 26,
+                "labels": [
+                  "Fact"
+                ],
+                "properties": {
+                  "id": "5ff6180a3cf2cec40425c3227406e3fc",
+                  "value": "893594090",
+                  "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                  "valueType": "string",
+                  "decimals": "INF"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:26"
+              },
+              {
+                "identity": 27,
+                "labels": [
+                  "Fact"
+                ],
+                "properties": {
+                  "id": "994adef576358a837e3626cb24cf33f7",
+                  "value": "107500000000",
+                  "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                  "valueType": "string",
+                  "decimals": "-8"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:27"
+              },
+              {
+                "identity": 28,
+                "labels": [
+                  "Fact"
+                ],
+                "properties": {
+                  "id": "de9b9d9143eac85fd1354460836d2a38",
+                  "value": "Capital stock, par value $.20 per share",
+                  "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                  "valueType": "string"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:28"
+              },
+              {
+                "identity": 29,
+                "labels": [
+                  "Fact"
+                ],
+                "properties": {
+                  "id": "ab852c1ecc4b6cbdc409cf8c3c12d78e",
+                  "value": "us-gaap:CommonStockMember",
+                  "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                  "valueType": "string"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:29"
+              },
+              {
+                "identity": 30,
+                "labels": [
+                  "Fact"
+                ],
+                "properties": {
+                  "id": "dcc0371fcb93b78a8c43585f10b51218",
+                  "value": "exch:XCHI",
+                  "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                  "valueType": "string"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:30"
+              }
+            ]
+          },
+          {
+            "label": "Concept",
+            "samples": [
+              {
+                "identity": 114,
+                "labels": [
+                  "Concept"
+                ],
+                "properties": {
+                  "name": "CoverPage.EntityCommonStockSharesOutstanding"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:114"
+              },
+              {
+                "identity": 115,
+                "labels": [
+                  "Concept"
+                ],
+                "properties": {
+                  "name": "CoverPage.EntityPublicFloat"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:115"
+              },
+              {
+                "identity": 116,
+                "labels": [
+                  "Concept"
+                ],
+                "properties": {
+                  "name": "CoverPage.Security12bTitle"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:116"
+              },
+              {
+                "identity": 117,
+                "labels": [
+                  "Concept"
+                ],
+                "properties": {
+                  "name": "Security12bTitle.segment"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:117"
+              },
+              {
+                "identity": 118,
+                "labels": [
+                  "Concept"
+                ],
+                "properties": {
+                  "name": "CoverPage.TradingSymbol"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:118"
+              }
+            ]
+          },
+          {
+            "label": "Unit",
+            "samples": [
+              {
+                "identity": 148,
+                "labels": [
+                  "Unit"
+                ],
+                "properties": {
+                  "measure": "Unit_Standard_shares_kYEzuwpNAUa1Gl54KgO43w"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:148"
+              },
+              {
+                "identity": 149,
+                "labels": [
+                  "Unit"
+                ],
+                "properties": {
+                  "measure": "Unit_Standard_USD__sUl59HTYU6qiqlZcAUX_w"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+              },
+              {
+                "identity": 655,
+                "labels": [
+                  "Unit"
+                ],
+                "properties": {
+                  "measure": "Unit_Divide_USD_shares_E286jeMrdUOWiMIlH539Ow"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:655"
+              },
+              {
+                "identity": 1573,
+                "labels": [
+                  "Unit"
+                ],
+                "properties": {
+                  "measure": "Unit_Standard_segment_MTnZIkFJNkyglH8Jnipagg"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1573"
+              },
+              {
+                "identity": 1720,
+                "labels": [
+                  "Unit"
+                ],
+                "properties": {
+                  "measure": "Unit_Standard_item_j8Y4LLToGkGAGkumouNodw"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1720"
+              }
+            ]
+          },
+          {
+            "label": "Period",
+            "samples": [
+              {
+                "identity": 120,
+                "labels": [
+                  "Period"
+                ],
+                "properties": {
+                  "id": "bd6bb2dd9951811c543a5d4d97592d6c",
+                  "instant": "2021-02-10"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:120"
+              },
+              {
+                "identity": 121,
+                "labels": [
+                  "Period"
+                ],
+                "properties": {
+                  "id": "5e144951aa56c1ddee28f5927e25468c",
+                  "instant": "2020-06-30"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:121"
+              },
+              {
+                "identity": 122,
+                "labels": [
+                  "Period"
+                ],
+                "properties": {
+                  "start": "2020-01-01",
+                  "end": "2020-12-31",
+                  "id": "52636434b0704925d8ab6ff31c13f56c"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:122"
+              },
+              {
+                "identity": 123,
+                "labels": [
+                  "Period"
+                ],
+                "properties": {
+                  "id": "7d010443693eec253a121e2aa2ba177c"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:123"
+              },
+              {
+                "identity": 243,
+                "labels": [
+                  "Period"
+                ],
+                "properties": {
+                  "start": "2019-01-01",
+                  "end": "2019-12-31",
+                  "id": "f4d04de6dccc28139ac1a6df66f63312"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:243"
+              }
+            ]
+          },
+          {
+            "label": "Dimension",
+            "samples": [
+              {
+                "identity": 124,
+                "labels": [
+                  "Dimension"
+                ],
+                "properties": {
+                  "member": "us-gaap:CommonStockMember",
+                  "axis": "us-gaap:StatementClassOfStockAxis"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:124"
+              },
+              {
+                "identity": 125,
+                "labels": [
+                  "Dimension"
+                ],
+                "properties": {
+                  "member": "exch:XCHI",
+                  "axis": "dei:EntityListingsExchangeAxis"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:125"
+              },
+              {
+                "identity": 126,
+                "labels": [
+                  "Dimension"
+                ],
+                "properties": {
+                  "member": "exch:XNYS",
+                  "axis": "dei:EntityListingsExchangeAxis"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:126"
+              },
+              {
+                "identity": 127,
+                "labels": [
+                  "Dimension"
+                ],
+                "properties": {
+                  "member": "ibm:Notes0.500PercentDue2021Member",
+                  "axis": "us-gaap:StatementClassOfStockAxis"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:127"
+              },
+              {
+                "identity": 128,
+                "labels": [
+                  "Dimension"
+                ],
+                "properties": {
+                  "member": "ibm:Notes2.625PercentDue2022Member",
+                  "axis": "us-gaap:StatementClassOfStockAxis"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:128"
+              }
+            ]
+          },
+          {
+            "label": "Security",
+            "samples": [
+              {
+                "identity": 2,
+                "labels": [
+                  "Security"
+                ],
+                "properties": {
+                  "symbol": "IBM",
+                  "exchange": "NYSE",
+                  "title": "Capital stock, par value $.20 per share"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:2"
+              },
+              {
+                "identity": 3,
+                "labels": [
+                  "Security"
+                ],
+                "properties": {
+                  "symbol": "IBM 21B",
+                  "exchange": "NYSE",
+                  "title": "0.500% Notes due 2021"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:3"
+              },
+              {
+                "identity": 4,
+                "labels": [
+                  "Security"
+                ],
+                "properties": {
+                  "symbol": "IBM 22A",
+                  "exchange": "NYSE",
+                  "title": "2.625% Notes due 2022"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:4"
+              },
+              {
+                "identity": 5,
+                "labels": [
+                  "Security"
+                ],
+                "properties": {
+                  "symbol": "IBM 23A",
+                  "exchange": "NYSE",
+                  "title": "1.250% Notes due 2023"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:5"
+              },
+              {
+                "identity": 6,
+                "labels": [
+                  "Security"
+                ],
+                "properties": {
+                  "symbol": "IBM 23B",
+                  "exchange": "NYSE",
+                  "title": "0.375% Notes due 2023"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6"
+              }
+            ]
+          },
+          {
+            "label": "Exchange",
+            "samples": [
+              {
+                "identity": 24,
+                "labels": [
+                  "Exchange"
+                ],
+                "properties": {
+                  "code": "CHX"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:24"
+              },
+              {
+                "identity": 25,
+                "labels": [
+                  "Exchange"
+                ],
+                "properties": {
+                  "code": "NYSE"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+              }
+            ]
+          },
+          {
+            "label": "Section",
+            "samples": [
+              {
+                "identity": 8869,
+                "labels": [
+                  "Section"
+                ],
+                "properties": {
+                  "filingAccession": "0001558370-21-001489",
+                  "item": "ALL",
+                  "title": "Document"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+              },
+              {
+                "identity": 16798,
+                "labels": [
+                  "Section"
+                ],
+                "properties": {
+                  "filingAccession": "0001558370-22-001584",
+                  "item": "ALL",
+                  "title": "Document"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:16798"
+              },
+              {
+                "identity": 24867,
+                "labels": [
+                  "Section"
+                ],
+                "properties": {
+                  "filingAccession": "0001558370-23-002376",
+                  "item": "ALL",
+                  "title": "Document"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:24867"
+              },
+              {
+                "identity": 34078,
+                "labels": [
+                  "Section"
+                ],
+                "properties": {
+                  "filingAccession": "0000051143-24-000012",
+                  "item": "ALL",
+                  "title": "Document"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34078"
+              },
+              {
+                "identity": 42680,
+                "labels": [
+                  "Section"
+                ],
+                "properties": {
+                  "filingAccession": "0000051143-25-000015",
+                  "item": "ALL",
+                  "title": "Document"
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:42680"
+              }
+            ]
+          },
+          {
+            "label": "Sentence",
+            "samples": [
+              {
+                "identity": 8870,
+                "labels": [
+                  "Sentence"
+                ],
+                "properties": {
+                  "id": "3935edb012a892ebd88fdf4e9c42a45a",
+                  "text": "Indicate by check mark if the registrant is a well-known seasoned issuer as defined in Rule 405 of the Securities Act.",
+                  "order": 0
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8870"
+              },
+              {
+                "identity": 8871,
+                "labels": [
+                  "Sentence"
+                ],
+                "properties": {
+                  "id": "6c2a559ecc70222ed32ee4b35bd0f06e",
+                  "text": "Yes ☒ No ☐ Indicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act.",
+                  "order": 1
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8871"
+              },
+              {
+                "identity": 8872,
+                "labels": [
+                  "Sentence"
+                ],
+                "properties": {
+                  "id": "e0ca4ab06fbc1d07434650491161d465",
+                  "text": "Yes ☐ No ☒ Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.",
+                  "order": 2
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8872"
+              },
+              {
+                "identity": 8873,
+                "labels": [
+                  "Sentence"
+                ],
+                "properties": {
+                  "id": "1c272391601bf310aaef35b938491cd9",
+                  "text": "Yes ☒ No ☐ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).",
+                  "order": 3
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8873"
+              },
+              {
+                "identity": 8874,
+                "labels": [
+                  "Sentence"
+                ],
+                "properties": {
+                  "id": "759a38a967509daabf41915b62382577",
+                  "text": "Yes ☒ No ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company.",
+                  "order": 4
+                },
+                "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8874"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "type": "FILED",
+            "samples": [
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "rel": {
+                  "identity": 1152921504606846976,
+                  "start": 0,
+                  "end": 1,
+                  "type": "FILED",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152921504606846976",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 9214,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2022-02-22T16:07:29-05:00",
+                    "accession": "0001558370-22-001584",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-22-001584\", \"filedAt\": \"2022-02-22T16:07:29-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837022001584/0001558370-22-001584.txt#/ibm-20211231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021/2021_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021/2021_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021/2021_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:9214"
+                },
+                "rel": {
+                  "identity": 6917529027641091070,
+                  "start": 0,
+                  "end": 9214,
+                  "type": "FILED",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917529027641091070",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:9214"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 17133,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2023-02-28T16:26:11-05:00",
+                    "accession": "0001558370-23-002376",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-23-002376\", \"filedAt\": \"2023-02-28T16:26:11-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837023002376/0001558370-23-002376.txt#/ibm-20221231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022/2022_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022/2022_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022/2022_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:17133"
+                },
+                "rel": {
+                  "identity": 6917529027641098989,
+                  "start": 0,
+                  "end": 17133,
+                  "type": "FILED",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917529027641098989",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:17133"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 25190,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2024-02-26T06:41:57-05:00",
+                    "accession": "0000051143-24-000012",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0000051143-24-000012\", \"filedAt\": \"2024-02-26T06:41:57-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000005114324000012/0000051143-24-000012.txt#/ibm-20231231.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023/2023_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023/2023_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023/2023_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25190"
+                },
+                "rel": {
+                  "identity": 6917529027641107046,
+                  "start": 0,
+                  "end": 25190,
+                  "type": "FILED",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917529027641107046",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25190"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 34530,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2025-02-25T16:12:45-05:00",
+                    "accession": "0000051143-25-000015",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0000051143-25-000015\", \"filedAt\": \"2025-02-25T16:12:45-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000005114325000015/0000051143-25-000015.txt#/ibm-20241231.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024/2024_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024/2024_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024/2024_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34530"
+                },
+                "rel": {
+                  "identity": 6917529027641116386,
+                  "start": 0,
+                  "end": 34530,
+                  "type": "FILED",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917529027641116386",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34530"
+                }
+              }
+            ]
+          },
+          {
+            "type": "LISTED_SECURITY",
+            "samples": [
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 2,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM",
+                    "exchange": "NYSE",
+                    "title": "Capital stock, par value $.20 per share"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:2"
+                },
+                "rel": {
+                  "identity": 6917530127152709634,
+                  "start": 0,
+                  "end": 2,
+                  "type": "LISTED_SECURITY",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917530127152709634",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:2"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 3,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 21B",
+                    "exchange": "NYSE",
+                    "title": "0.500% Notes due 2021"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:3"
+                },
+                "rel": {
+                  "identity": 6917530127152709635,
+                  "start": 0,
+                  "end": 3,
+                  "type": "LISTED_SECURITY",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917530127152709635",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:3"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 4,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 22A",
+                    "exchange": "NYSE",
+                    "title": "2.625% Notes due 2022"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:4"
+                },
+                "rel": {
+                  "identity": 6917530127152709636,
+                  "start": 0,
+                  "end": 4,
+                  "type": "LISTED_SECURITY",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917530127152709636",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:4"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 5,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 23A",
+                    "exchange": "NYSE",
+                    "title": "1.250% Notes due 2023"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:5"
+                },
+                "rel": {
+                  "identity": 6917530127152709637,
+                  "start": 0,
+                  "end": 5,
+                  "type": "LISTED_SECURITY",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917530127152709637",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:5"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 6,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 23B",
+                    "exchange": "NYSE",
+                    "title": "0.375% Notes due 2023"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6"
+                },
+                "rel": {
+                  "identity": 6917530127152709638,
+                  "start": 0,
+                  "end": 6,
+                  "type": "LISTED_SECURITY",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917530127152709638",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 7,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 24A",
+                    "exchange": "NYSE",
+                    "title": "1.125% Notes due 2024"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:7"
+                },
+                "rel": {
+                  "identity": 6917530127152709639,
+                  "start": 0,
+                  "end": 7,
+                  "type": "LISTED_SECURITY",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917530127152709639",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:7"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 8,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 25A",
+                    "exchange": "NYSE",
+                    "title": "2.875% Notes due 2025"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8"
+                },
+                "rel": {
+                  "identity": 6917530127152709640,
+                  "start": 0,
+                  "end": 8,
+                  "type": "LISTED_SECURITY",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917530127152709640",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 9,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 25B",
+                    "exchange": "NYSE",
+                    "title": "0.950% Notes due 2025"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:9"
+                },
+                "rel": {
+                  "identity": 6917530127152709641,
+                  "start": 0,
+                  "end": 9,
+                  "type": "LISTED_SECURITY",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917530127152709641",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:9"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 10,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 25C",
+                    "exchange": "NYSE",
+                    "title": "0.875% Notes due 2025"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:10"
+                },
+                "rel": {
+                  "identity": 6917530127152709642,
+                  "start": 0,
+                  "end": 10,
+                  "type": "LISTED_SECURITY",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917530127152709642",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:10"
+                }
+              },
+              {
+                "source": {
+                  "identity": 0,
+                  "labels": [
+                    "Organization"
+                  ],
+                  "properties": {
+                    "cik": "51143",
+                    "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0"
+                },
+                "target": {
+                  "identity": 11,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 26B",
+                    "exchange": "NYSE",
+                    "title": "0.300% Notes due 2026"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:11"
+                },
+                "rel": {
+                  "identity": 6917530127152709643,
+                  "start": 0,
+                  "end": 11,
+                  "type": "LISTED_SECURITY",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917530127152709643",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:0",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:11"
+                }
+              }
+            ]
+          },
+          {
+            "type": "ON_EXCHANGE",
+            "samples": [
+              {
+                "source": {
+                  "identity": 2,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM",
+                    "exchange": "NYSE",
+                    "title": "Capital stock, par value $.20 per share"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:2"
+                },
+                "target": {
+                  "identity": 24,
+                  "labels": [
+                    "Exchange"
+                  ],
+                  "properties": {
+                    "code": "CHX"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:24"
+                },
+                "rel": {
+                  "identity": 1152923703630102530,
+                  "start": 2,
+                  "end": 24,
+                  "type": "ON_EXCHANGE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152923703630102530",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:2",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:24"
+                }
+              },
+              {
+                "source": {
+                  "identity": 2,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM",
+                    "exchange": "NYSE",
+                    "title": "Capital stock, par value $.20 per share"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:2"
+                },
+                "target": {
+                  "identity": 25,
+                  "labels": [
+                    "Exchange"
+                  ],
+                  "properties": {
+                    "code": "NYSE"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                },
+                "rel": {
+                  "identity": 1155175503443787778,
+                  "start": 2,
+                  "end": 25,
+                  "type": "ON_EXCHANGE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1155175503443787778",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:2",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                }
+              },
+              {
+                "source": {
+                  "identity": 3,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 21B",
+                    "exchange": "NYSE",
+                    "title": "0.500% Notes due 2021"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:3"
+                },
+                "target": {
+                  "identity": 25,
+                  "labels": [
+                    "Exchange"
+                  ],
+                  "properties": {
+                    "code": "NYSE"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                },
+                "rel": {
+                  "identity": 1152923703630102531,
+                  "start": 3,
+                  "end": 25,
+                  "type": "ON_EXCHANGE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152923703630102531",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:3",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                }
+              },
+              {
+                "source": {
+                  "identity": 4,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 22A",
+                    "exchange": "NYSE",
+                    "title": "2.625% Notes due 2022"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:4"
+                },
+                "target": {
+                  "identity": 25,
+                  "labels": [
+                    "Exchange"
+                  ],
+                  "properties": {
+                    "code": "NYSE"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                },
+                "rel": {
+                  "identity": 1152923703630102532,
+                  "start": 4,
+                  "end": 25,
+                  "type": "ON_EXCHANGE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152923703630102532",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:4",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                }
+              },
+              {
+                "source": {
+                  "identity": 5,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 23A",
+                    "exchange": "NYSE",
+                    "title": "1.250% Notes due 2023"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:5"
+                },
+                "target": {
+                  "identity": 25,
+                  "labels": [
+                    "Exchange"
+                  ],
+                  "properties": {
+                    "code": "NYSE"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                },
+                "rel": {
+                  "identity": 1152923703630102533,
+                  "start": 5,
+                  "end": 25,
+                  "type": "ON_EXCHANGE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152923703630102533",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:5",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                }
+              },
+              {
+                "source": {
+                  "identity": 6,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 23B",
+                    "exchange": "NYSE",
+                    "title": "0.375% Notes due 2023"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6"
+                },
+                "target": {
+                  "identity": 25,
+                  "labels": [
+                    "Exchange"
+                  ],
+                  "properties": {
+                    "code": "NYSE"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                },
+                "rel": {
+                  "identity": 1152923703630102534,
+                  "start": 6,
+                  "end": 25,
+                  "type": "ON_EXCHANGE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152923703630102534",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                }
+              },
+              {
+                "source": {
+                  "identity": 7,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 24A",
+                    "exchange": "NYSE",
+                    "title": "1.125% Notes due 2024"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:7"
+                },
+                "target": {
+                  "identity": 25,
+                  "labels": [
+                    "Exchange"
+                  ],
+                  "properties": {
+                    "code": "NYSE"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                },
+                "rel": {
+                  "identity": 1152923703630102535,
+                  "start": 7,
+                  "end": 25,
+                  "type": "ON_EXCHANGE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152923703630102535",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:7",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                }
+              },
+              {
+                "source": {
+                  "identity": 8,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 25A",
+                    "exchange": "NYSE",
+                    "title": "2.875% Notes due 2025"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8"
+                },
+                "target": {
+                  "identity": 25,
+                  "labels": [
+                    "Exchange"
+                  ],
+                  "properties": {
+                    "code": "NYSE"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                },
+                "rel": {
+                  "identity": 1152923703630102536,
+                  "start": 8,
+                  "end": 25,
+                  "type": "ON_EXCHANGE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152923703630102536",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                }
+              },
+              {
+                "source": {
+                  "identity": 9,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 25B",
+                    "exchange": "NYSE",
+                    "title": "0.950% Notes due 2025"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:9"
+                },
+                "target": {
+                  "identity": 25,
+                  "labels": [
+                    "Exchange"
+                  ],
+                  "properties": {
+                    "code": "NYSE"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                },
+                "rel": {
+                  "identity": 1152923703630102537,
+                  "start": 9,
+                  "end": 25,
+                  "type": "ON_EXCHANGE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152923703630102537",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:9",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                }
+              },
+              {
+                "source": {
+                  "identity": 10,
+                  "labels": [
+                    "Security"
+                  ],
+                  "properties": {
+                    "symbol": "IBM 25C",
+                    "exchange": "NYSE",
+                    "title": "0.875% Notes due 2025"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:10"
+                },
+                "target": {
+                  "identity": 25,
+                  "labels": [
+                    "Exchange"
+                  ],
+                  "properties": {
+                    "code": "NYSE"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                },
+                "rel": {
+                  "identity": 1152923703630102538,
+                  "start": 10,
+                  "end": 25,
+                  "type": "ON_EXCHANGE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152923703630102538",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:10",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25"
+                }
+              }
+            ]
+          },
+          {
+            "type": "OF_CONCEPT",
+            "samples": [
+              {
+                "source": {
+                  "identity": 26,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "5ff6180a3cf2cec40425c3227406e3fc",
+                    "value": "893594090",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "INF"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:26"
+                },
+                "target": {
+                  "identity": 114,
+                  "labels": [
+                    "Concept"
+                  ],
+                  "properties": {
+                    "name": "CoverPage.EntityCommonStockSharesOutstanding"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:114"
+                },
+                "rel": {
+                  "identity": 1152924803141730330,
+                  "start": 26,
+                  "end": 114,
+                  "type": "OF_CONCEPT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152924803141730330",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:26",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:114"
+                }
+              },
+              {
+                "source": {
+                  "identity": 27,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "994adef576358a837e3626cb24cf33f7",
+                    "value": "107500000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-8"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:27"
+                },
+                "target": {
+                  "identity": 115,
+                  "labels": [
+                    "Concept"
+                  ],
+                  "properties": {
+                    "name": "CoverPage.EntityPublicFloat"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:115"
+                },
+                "rel": {
+                  "identity": 1152924803141730331,
+                  "start": 27,
+                  "end": 115,
+                  "type": "OF_CONCEPT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152924803141730331",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:27",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:115"
+                }
+              },
+              {
+                "source": {
+                  "identity": 28,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "de9b9d9143eac85fd1354460836d2a38",
+                    "value": "Capital stock, par value $.20 per share",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:28"
+                },
+                "target": {
+                  "identity": 116,
+                  "labels": [
+                    "Concept"
+                  ],
+                  "properties": {
+                    "name": "CoverPage.Security12bTitle"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:116"
+                },
+                "rel": {
+                  "identity": 1152924803141730332,
+                  "start": 28,
+                  "end": 116,
+                  "type": "OF_CONCEPT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152924803141730332",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:28",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:116"
+                }
+              },
+              {
+                "source": {
+                  "identity": 29,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "ab852c1ecc4b6cbdc409cf8c3c12d78e",
+                    "value": "us-gaap:CommonStockMember",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:29"
+                },
+                "target": {
+                  "identity": 117,
+                  "labels": [
+                    "Concept"
+                  ],
+                  "properties": {
+                    "name": "Security12bTitle.segment"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:117"
+                },
+                "rel": {
+                  "identity": 1152924803141730333,
+                  "start": 29,
+                  "end": 117,
+                  "type": "OF_CONCEPT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152924803141730333",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:29",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:117"
+                }
+              },
+              {
+                "source": {
+                  "identity": 30,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "dcc0371fcb93b78a8c43585f10b51218",
+                    "value": "exch:XCHI",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:30"
+                },
+                "target": {
+                  "identity": 117,
+                  "labels": [
+                    "Concept"
+                  ],
+                  "properties": {
+                    "name": "Security12bTitle.segment"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:117"
+                },
+                "rel": {
+                  "identity": 1152924803141730334,
+                  "start": 30,
+                  "end": 117,
+                  "type": "OF_CONCEPT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152924803141730334",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:30",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:117"
+                }
+              },
+              {
+                "source": {
+                  "identity": 31,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "abb07de2f8a368148dce7a1da44fec48",
+                    "value": "Capital stock, par value $.20 per share",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:31"
+                },
+                "target": {
+                  "identity": 116,
+                  "labels": [
+                    "Concept"
+                  ],
+                  "properties": {
+                    "name": "CoverPage.Security12bTitle"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:116"
+                },
+                "rel": {
+                  "identity": 1152924803141730335,
+                  "start": 31,
+                  "end": 116,
+                  "type": "OF_CONCEPT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152924803141730335",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:31",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:116"
+                }
+              },
+              {
+                "source": {
+                  "identity": 32,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "cac6d204923d8e64826d8d1fee7f6894",
+                    "value": "exch:XNYS",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:32"
+                },
+                "target": {
+                  "identity": 117,
+                  "labels": [
+                    "Concept"
+                  ],
+                  "properties": {
+                    "name": "Security12bTitle.segment"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:117"
+                },
+                "rel": {
+                  "identity": 1152924803141730336,
+                  "start": 32,
+                  "end": 117,
+                  "type": "OF_CONCEPT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152924803141730336",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:32",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:117"
+                }
+              },
+              {
+                "source": {
+                  "identity": 33,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "58fa6f10563f783b117e04e7da7e95ab",
+                    "value": "0.500% Notes due 2021",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:33"
+                },
+                "target": {
+                  "identity": 116,
+                  "labels": [
+                    "Concept"
+                  ],
+                  "properties": {
+                    "name": "CoverPage.Security12bTitle"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:116"
+                },
+                "rel": {
+                  "identity": 1152924803141730337,
+                  "start": 33,
+                  "end": 116,
+                  "type": "OF_CONCEPT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152924803141730337",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:33",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:116"
+                }
+              },
+              {
+                "source": {
+                  "identity": 34,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "d247535d9bad6d2015de89eb6f13382d",
+                    "value": "ibm:Notes0.500PercentDue2021Member",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34"
+                },
+                "target": {
+                  "identity": 117,
+                  "labels": [
+                    "Concept"
+                  ],
+                  "properties": {
+                    "name": "Security12bTitle.segment"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:117"
+                },
+                "rel": {
+                  "identity": 1152924803141730338,
+                  "start": 34,
+                  "end": 117,
+                  "type": "OF_CONCEPT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152924803141730338",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:117"
+                }
+              },
+              {
+                "source": {
+                  "identity": 35,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "257d8c469ba601443f0fbe47aafd775c",
+                    "value": "2.625% Notes due 2022",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:35"
+                },
+                "target": {
+                  "identity": 116,
+                  "labels": [
+                    "Concept"
+                  ],
+                  "properties": {
+                    "name": "CoverPage.Security12bTitle"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:116"
+                },
+                "rel": {
+                  "identity": 1152924803141730339,
+                  "start": 35,
+                  "end": 116,
+                  "type": "OF_CONCEPT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152924803141730339",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:35",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:116"
+                }
+              }
+            ]
+          },
+          {
+            "type": "HAS_FACT",
+            "samples": [
+              {
+                "source": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "target": {
+                  "identity": 26,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "5ff6180a3cf2cec40425c3227406e3fc",
+                    "value": "893594090",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "INF"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:26"
+                },
+                "rel": {
+                  "identity": 6917533425687592986,
+                  "start": 1,
+                  "end": 26,
+                  "type": "HAS_FACT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917533425687592986",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:26"
+                }
+              },
+              {
+                "source": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "target": {
+                  "identity": 27,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "994adef576358a837e3626cb24cf33f7",
+                    "value": "107500000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-8"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:27"
+                },
+                "rel": {
+                  "identity": 6917533425687592987,
+                  "start": 1,
+                  "end": 27,
+                  "type": "HAS_FACT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917533425687592987",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:27"
+                }
+              },
+              {
+                "source": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "target": {
+                  "identity": 28,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "de9b9d9143eac85fd1354460836d2a38",
+                    "value": "Capital stock, par value $.20 per share",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:28"
+                },
+                "rel": {
+                  "identity": 6917533425687592988,
+                  "start": 1,
+                  "end": 28,
+                  "type": "HAS_FACT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917533425687592988",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:28"
+                }
+              },
+              {
+                "source": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "target": {
+                  "identity": 29,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "ab852c1ecc4b6cbdc409cf8c3c12d78e",
+                    "value": "us-gaap:CommonStockMember",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:29"
+                },
+                "rel": {
+                  "identity": 6917533425687592989,
+                  "start": 1,
+                  "end": 29,
+                  "type": "HAS_FACT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917533425687592989",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:29"
+                }
+              },
+              {
+                "source": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "target": {
+                  "identity": 30,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "dcc0371fcb93b78a8c43585f10b51218",
+                    "value": "exch:XCHI",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:30"
+                },
+                "rel": {
+                  "identity": 6917533425687592990,
+                  "start": 1,
+                  "end": 30,
+                  "type": "HAS_FACT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917533425687592990",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:30"
+                }
+              },
+              {
+                "source": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "target": {
+                  "identity": 31,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "abb07de2f8a368148dce7a1da44fec48",
+                    "value": "Capital stock, par value $.20 per share",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:31"
+                },
+                "rel": {
+                  "identity": 6917533425687592991,
+                  "start": 1,
+                  "end": 31,
+                  "type": "HAS_FACT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917533425687592991",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:31"
+                }
+              },
+              {
+                "source": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "target": {
+                  "identity": 32,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "cac6d204923d8e64826d8d1fee7f6894",
+                    "value": "exch:XNYS",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:32"
+                },
+                "rel": {
+                  "identity": 6917533425687592992,
+                  "start": 1,
+                  "end": 32,
+                  "type": "HAS_FACT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917533425687592992",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:32"
+                }
+              },
+              {
+                "source": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "target": {
+                  "identity": 33,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "58fa6f10563f783b117e04e7da7e95ab",
+                    "value": "0.500% Notes due 2021",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:33"
+                },
+                "rel": {
+                  "identity": 6917533425687592993,
+                  "start": 1,
+                  "end": 33,
+                  "type": "HAS_FACT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917533425687592993",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:33"
+                }
+              },
+              {
+                "source": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "target": {
+                  "identity": 34,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "d247535d9bad6d2015de89eb6f13382d",
+                    "value": "ibm:Notes0.500PercentDue2021Member",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34"
+                },
+                "rel": {
+                  "identity": 6917533425687592994,
+                  "start": 1,
+                  "end": 34,
+                  "type": "HAS_FACT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917533425687592994",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34"
+                }
+              },
+              {
+                "source": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "target": {
+                  "identity": 35,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "257d8c469ba601443f0fbe47aafd775c",
+                    "value": "2.625% Notes due 2022",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:35"
+                },
+                "rel": {
+                  "identity": 6917533425687592995,
+                  "start": 1,
+                  "end": 35,
+                  "type": "HAS_FACT",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917533425687592995",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:35"
+                }
+              }
+            ]
+          },
+          {
+            "type": "FOR_PERIOD",
+            "samples": [
+              {
+                "source": {
+                  "identity": 26,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "5ff6180a3cf2cec40425c3227406e3fc",
+                    "value": "893594090",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "INF"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:26"
+                },
+                "target": {
+                  "identity": 120,
+                  "labels": [
+                    "Period"
+                  ],
+                  "properties": {
+                    "id": "bd6bb2dd9951811c543a5d4d97592d6c",
+                    "instant": "2021-02-10"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:120"
+                },
+                "rel": {
+                  "identity": 1152927002164985882,
+                  "start": 26,
+                  "end": 120,
+                  "type": "FOR_PERIOD",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152927002164985882",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:26",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:120"
+                }
+              },
+              {
+                "source": {
+                  "identity": 27,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "994adef576358a837e3626cb24cf33f7",
+                    "value": "107500000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-8"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:27"
+                },
+                "target": {
+                  "identity": 121,
+                  "labels": [
+                    "Period"
+                  ],
+                  "properties": {
+                    "id": "5e144951aa56c1ddee28f5927e25468c",
+                    "instant": "2020-06-30"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:121"
+                },
+                "rel": {
+                  "identity": 1152927002164985883,
+                  "start": 27,
+                  "end": 121,
+                  "type": "FOR_PERIOD",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152927002164985883",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:27",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:121"
+                }
+              },
+              {
+                "source": {
+                  "identity": 28,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "de9b9d9143eac85fd1354460836d2a38",
+                    "value": "Capital stock, par value $.20 per share",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:28"
+                },
+                "target": {
+                  "identity": 122,
+                  "labels": [
+                    "Period"
+                  ],
+                  "properties": {
+                    "start": "2020-01-01",
+                    "end": "2020-12-31",
+                    "id": "52636434b0704925d8ab6ff31c13f56c"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:122"
+                },
+                "rel": {
+                  "identity": 1152927002164985884,
+                  "start": 28,
+                  "end": 122,
+                  "type": "FOR_PERIOD",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152927002164985884",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:28",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:122"
+                }
+              },
+              {
+                "source": {
+                  "identity": 29,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "ab852c1ecc4b6cbdc409cf8c3c12d78e",
+                    "value": "us-gaap:CommonStockMember",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:29"
+                },
+                "target": {
+                  "identity": 123,
+                  "labels": [
+                    "Period"
+                  ],
+                  "properties": {
+                    "id": "7d010443693eec253a121e2aa2ba177c"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:123"
+                },
+                "rel": {
+                  "identity": 1152927002164985885,
+                  "start": 29,
+                  "end": 123,
+                  "type": "FOR_PERIOD",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152927002164985885",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:29",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:123"
+                }
+              },
+              {
+                "source": {
+                  "identity": 30,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "dcc0371fcb93b78a8c43585f10b51218",
+                    "value": "exch:XCHI",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:30"
+                },
+                "target": {
+                  "identity": 123,
+                  "labels": [
+                    "Period"
+                  ],
+                  "properties": {
+                    "id": "7d010443693eec253a121e2aa2ba177c"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:123"
+                },
+                "rel": {
+                  "identity": 1152927002164985886,
+                  "start": 30,
+                  "end": 123,
+                  "type": "FOR_PERIOD",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152927002164985886",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:30",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:123"
+                }
+              },
+              {
+                "source": {
+                  "identity": 31,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "abb07de2f8a368148dce7a1da44fec48",
+                    "value": "Capital stock, par value $.20 per share",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:31"
+                },
+                "target": {
+                  "identity": 122,
+                  "labels": [
+                    "Period"
+                  ],
+                  "properties": {
+                    "start": "2020-01-01",
+                    "end": "2020-12-31",
+                    "id": "52636434b0704925d8ab6ff31c13f56c"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:122"
+                },
+                "rel": {
+                  "identity": 1152927002164985887,
+                  "start": 31,
+                  "end": 122,
+                  "type": "FOR_PERIOD",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152927002164985887",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:31",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:122"
+                }
+              },
+              {
+                "source": {
+                  "identity": 32,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "cac6d204923d8e64826d8d1fee7f6894",
+                    "value": "exch:XNYS",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:32"
+                },
+                "target": {
+                  "identity": 123,
+                  "labels": [
+                    "Period"
+                  ],
+                  "properties": {
+                    "id": "7d010443693eec253a121e2aa2ba177c"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:123"
+                },
+                "rel": {
+                  "identity": 1152927002164985888,
+                  "start": 32,
+                  "end": 123,
+                  "type": "FOR_PERIOD",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152927002164985888",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:32",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:123"
+                }
+              },
+              {
+                "source": {
+                  "identity": 33,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "58fa6f10563f783b117e04e7da7e95ab",
+                    "value": "0.500% Notes due 2021",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:33"
+                },
+                "target": {
+                  "identity": 122,
+                  "labels": [
+                    "Period"
+                  ],
+                  "properties": {
+                    "start": "2020-01-01",
+                    "end": "2020-12-31",
+                    "id": "52636434b0704925d8ab6ff31c13f56c"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:122"
+                },
+                "rel": {
+                  "identity": 1152927002164985889,
+                  "start": 33,
+                  "end": 122,
+                  "type": "FOR_PERIOD",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152927002164985889",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:33",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:122"
+                }
+              },
+              {
+                "source": {
+                  "identity": 34,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "d247535d9bad6d2015de89eb6f13382d",
+                    "value": "ibm:Notes0.500PercentDue2021Member",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34"
+                },
+                "target": {
+                  "identity": 123,
+                  "labels": [
+                    "Period"
+                  ],
+                  "properties": {
+                    "id": "7d010443693eec253a121e2aa2ba177c"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:123"
+                },
+                "rel": {
+                  "identity": 1152927002164985890,
+                  "start": 34,
+                  "end": 123,
+                  "type": "FOR_PERIOD",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152927002164985890",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:123"
+                }
+              },
+              {
+                "source": {
+                  "identity": 35,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "257d8c469ba601443f0fbe47aafd775c",
+                    "value": "2.625% Notes due 2022",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:35"
+                },
+                "target": {
+                  "identity": 122,
+                  "labels": [
+                    "Period"
+                  ],
+                  "properties": {
+                    "start": "2020-01-01",
+                    "end": "2020-12-31",
+                    "id": "52636434b0704925d8ab6ff31c13f56c"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:122"
+                },
+                "rel": {
+                  "identity": 1152927002164985891,
+                  "start": 35,
+                  "end": 122,
+                  "type": "FOR_PERIOD",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152927002164985891",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:35",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:122"
+                }
+              }
+            ]
+          },
+          {
+            "type": "HAS_DIMENSION",
+            "samples": [
+              {
+                "source": {
+                  "identity": 28,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "de9b9d9143eac85fd1354460836d2a38",
+                    "value": "Capital stock, par value $.20 per share",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:28"
+                },
+                "target": {
+                  "identity": 124,
+                  "labels": [
+                    "Dimension"
+                  ],
+                  "properties": {
+                    "member": "us-gaap:CommonStockMember",
+                    "axis": "us-gaap:StatementClassOfStockAxis"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:124"
+                },
+                "rel": {
+                  "identity": 1152928101676613660,
+                  "start": 28,
+                  "end": 124,
+                  "type": "HAS_DIMENSION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152928101676613660",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:28",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:124"
+                }
+              },
+              {
+                "source": {
+                  "identity": 28,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "de9b9d9143eac85fd1354460836d2a38",
+                    "value": "Capital stock, par value $.20 per share",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:28"
+                },
+                "target": {
+                  "identity": 125,
+                  "labels": [
+                    "Dimension"
+                  ],
+                  "properties": {
+                    "member": "exch:XCHI",
+                    "axis": "dei:EntityListingsExchangeAxis"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:125"
+                },
+                "rel": {
+                  "identity": 1155179901490298908,
+                  "start": 28,
+                  "end": 125,
+                  "type": "HAS_DIMENSION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1155179901490298908",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:28",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:125"
+                }
+              },
+              {
+                "source": {
+                  "identity": 31,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "abb07de2f8a368148dce7a1da44fec48",
+                    "value": "Capital stock, par value $.20 per share",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:31"
+                },
+                "target": {
+                  "identity": 124,
+                  "labels": [
+                    "Dimension"
+                  ],
+                  "properties": {
+                    "member": "us-gaap:CommonStockMember",
+                    "axis": "us-gaap:StatementClassOfStockAxis"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:124"
+                },
+                "rel": {
+                  "identity": 1152928101676613663,
+                  "start": 31,
+                  "end": 124,
+                  "type": "HAS_DIMENSION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152928101676613663",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:31",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:124"
+                }
+              },
+              {
+                "source": {
+                  "identity": 31,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "abb07de2f8a368148dce7a1da44fec48",
+                    "value": "Capital stock, par value $.20 per share",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:31"
+                },
+                "target": {
+                  "identity": 126,
+                  "labels": [
+                    "Dimension"
+                  ],
+                  "properties": {
+                    "member": "exch:XNYS",
+                    "axis": "dei:EntityListingsExchangeAxis"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:126"
+                },
+                "rel": {
+                  "identity": 1155179901490298911,
+                  "start": 31,
+                  "end": 126,
+                  "type": "HAS_DIMENSION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1155179901490298911",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:31",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:126"
+                }
+              },
+              {
+                "source": {
+                  "identity": 33,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "58fa6f10563f783b117e04e7da7e95ab",
+                    "value": "0.500% Notes due 2021",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:33"
+                },
+                "target": {
+                  "identity": 126,
+                  "labels": [
+                    "Dimension"
+                  ],
+                  "properties": {
+                    "member": "exch:XNYS",
+                    "axis": "dei:EntityListingsExchangeAxis"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:126"
+                },
+                "rel": {
+                  "identity": 1155179901490298913,
+                  "start": 33,
+                  "end": 126,
+                  "type": "HAS_DIMENSION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1155179901490298913",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:33",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:126"
+                }
+              },
+              {
+                "source": {
+                  "identity": 33,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "58fa6f10563f783b117e04e7da7e95ab",
+                    "value": "0.500% Notes due 2021",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:33"
+                },
+                "target": {
+                  "identity": 127,
+                  "labels": [
+                    "Dimension"
+                  ],
+                  "properties": {
+                    "member": "ibm:Notes0.500PercentDue2021Member",
+                    "axis": "us-gaap:StatementClassOfStockAxis"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:127"
+                },
+                "rel": {
+                  "identity": 1152928101676613665,
+                  "start": 33,
+                  "end": 127,
+                  "type": "HAS_DIMENSION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152928101676613665",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:33",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:127"
+                }
+              },
+              {
+                "source": {
+                  "identity": 35,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "257d8c469ba601443f0fbe47aafd775c",
+                    "value": "2.625% Notes due 2022",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:35"
+                },
+                "target": {
+                  "identity": 126,
+                  "labels": [
+                    "Dimension"
+                  ],
+                  "properties": {
+                    "member": "exch:XNYS",
+                    "axis": "dei:EntityListingsExchangeAxis"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:126"
+                },
+                "rel": {
+                  "identity": 1155179901490298915,
+                  "start": 35,
+                  "end": 126,
+                  "type": "HAS_DIMENSION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1155179901490298915",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:35",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:126"
+                }
+              },
+              {
+                "source": {
+                  "identity": 35,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "257d8c469ba601443f0fbe47aafd775c",
+                    "value": "2.625% Notes due 2022",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:35"
+                },
+                "target": {
+                  "identity": 128,
+                  "labels": [
+                    "Dimension"
+                  ],
+                  "properties": {
+                    "member": "ibm:Notes2.625PercentDue2022Member",
+                    "axis": "us-gaap:StatementClassOfStockAxis"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:128"
+                },
+                "rel": {
+                  "identity": 1152928101676613667,
+                  "start": 35,
+                  "end": 128,
+                  "type": "HAS_DIMENSION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152928101676613667",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:35",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:128"
+                }
+              },
+              {
+                "source": {
+                  "identity": 37,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "99653be3819750f77683110821b498fd",
+                    "value": "1.250% Notes due 2023",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:37"
+                },
+                "target": {
+                  "identity": 126,
+                  "labels": [
+                    "Dimension"
+                  ],
+                  "properties": {
+                    "member": "exch:XNYS",
+                    "axis": "dei:EntityListingsExchangeAxis"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:126"
+                },
+                "rel": {
+                  "identity": 1155179901490298917,
+                  "start": 37,
+                  "end": 126,
+                  "type": "HAS_DIMENSION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1155179901490298917",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:37",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:126"
+                }
+              },
+              {
+                "source": {
+                  "identity": 37,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "99653be3819750f77683110821b498fd",
+                    "value": "1.250% Notes due 2023",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:37"
+                },
+                "target": {
+                  "identity": 129,
+                  "labels": [
+                    "Dimension"
+                  ],
+                  "properties": {
+                    "member": "ibm:Notes1.25PercentDue2023Member",
+                    "axis": "us-gaap:StatementClassOfStockAxis"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:129"
+                },
+                "rel": {
+                  "identity": 1152928101676613669,
+                  "start": 37,
+                  "end": 129,
+                  "type": "HAS_DIMENSION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152928101676613669",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:37",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:129"
+                }
+              }
+            ]
+          },
+          {
+            "type": "MEASURED_IN",
+            "samples": [
+              {
+                "source": {
+                  "identity": 26,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "5ff6180a3cf2cec40425c3227406e3fc",
+                    "value": "893594090",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "INF"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:26"
+                },
+                "target": {
+                  "identity": 148,
+                  "labels": [
+                    "Unit"
+                  ],
+                  "properties": {
+                    "measure": "Unit_Standard_shares_kYEzuwpNAUa1Gl54KgO43w"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:148"
+                },
+                "rel": {
+                  "identity": 1152929201188241434,
+                  "start": 26,
+                  "end": 148,
+                  "type": "MEASURED_IN",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152929201188241434",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:26",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:148"
+                }
+              },
+              {
+                "source": {
+                  "identity": 27,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "994adef576358a837e3626cb24cf33f7",
+                    "value": "107500000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-8"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:27"
+                },
+                "target": {
+                  "identity": 149,
+                  "labels": [
+                    "Unit"
+                  ],
+                  "properties": {
+                    "measure": "Unit_Standard_USD__sUl59HTYU6qiqlZcAUX_w"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                },
+                "rel": {
+                  "identity": 1152929201188241435,
+                  "start": 27,
+                  "end": 149,
+                  "type": "MEASURED_IN",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152929201188241435",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:27",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                }
+              },
+              {
+                "source": {
+                  "identity": 205,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "522a3194e89fa9fa72ef6df4abed585e",
+                    "value": "45004000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-6"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:205"
+                },
+                "target": {
+                  "identity": 149,
+                  "labels": [
+                    "Unit"
+                  ],
+                  "properties": {
+                    "measure": "Unit_Standard_USD__sUl59HTYU6qiqlZcAUX_w"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                },
+                "rel": {
+                  "identity": 1152929201188241613,
+                  "start": 205,
+                  "end": 149,
+                  "type": "MEASURED_IN",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152929201188241613",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:205",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                }
+              },
+              {
+                "source": {
+                  "identity": 207,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "6d352287418758b67f74d92dcc0f9667",
+                    "value": "47493000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-6"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:207"
+                },
+                "target": {
+                  "identity": 149,
+                  "labels": [
+                    "Unit"
+                  ],
+                  "properties": {
+                    "measure": "Unit_Standard_USD__sUl59HTYU6qiqlZcAUX_w"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                },
+                "rel": {
+                  "identity": 1152929201188241615,
+                  "start": 207,
+                  "end": 149,
+                  "type": "MEASURED_IN",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152929201188241615",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:207",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                }
+              },
+              {
+                "source": {
+                  "identity": 208,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "d2485a11e9b011d43a84ae7855c5e2ab",
+                    "value": "49257000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-6"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:208"
+                },
+                "target": {
+                  "identity": 149,
+                  "labels": [
+                    "Unit"
+                  ],
+                  "properties": {
+                    "measure": "Unit_Standard_USD__sUl59HTYU6qiqlZcAUX_w"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                },
+                "rel": {
+                  "identity": 1152929201188241616,
+                  "start": 208,
+                  "end": 149,
+                  "type": "MEASURED_IN",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152929201188241616",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:208",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                }
+              },
+              {
+                "source": {
+                  "identity": 209,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "7b74f6cb9d3633152a5b392376f088c5",
+                    "value": "27484000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-6"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:209"
+                },
+                "target": {
+                  "identity": 149,
+                  "labels": [
+                    "Unit"
+                  ],
+                  "properties": {
+                    "measure": "Unit_Standard_USD__sUl59HTYU6qiqlZcAUX_w"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                },
+                "rel": {
+                  "identity": 1152929201188241617,
+                  "start": 209,
+                  "end": 149,
+                  "type": "MEASURED_IN",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152929201188241617",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:209",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                }
+              },
+              {
+                "source": {
+                  "identity": 211,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "501409485e5891ed16e9ed6d0b8ab789",
+                    "value": "28252000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-6"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:211"
+                },
+                "target": {
+                  "identity": 149,
+                  "labels": [
+                    "Unit"
+                  ],
+                  "properties": {
+                    "measure": "Unit_Standard_USD__sUl59HTYU6qiqlZcAUX_w"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                },
+                "rel": {
+                  "identity": 1152929201188241619,
+                  "start": 211,
+                  "end": 149,
+                  "type": "MEASURED_IN",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152929201188241619",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:211",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                }
+              },
+              {
+                "source": {
+                  "identity": 212,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "940aa4c2d8ddda5b95e1df45eea06684",
+                    "value": "28735000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-6"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:212"
+                },
+                "target": {
+                  "identity": 149,
+                  "labels": [
+                    "Unit"
+                  ],
+                  "properties": {
+                    "measure": "Unit_Standard_USD__sUl59HTYU6qiqlZcAUX_w"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                },
+                "rel": {
+                  "identity": 1152929201188241620,
+                  "start": 212,
+                  "end": 149,
+                  "type": "MEASURED_IN",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152929201188241620",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:212",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                }
+              },
+              {
+                "source": {
+                  "identity": 213,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "67a198c6bb5e809a105ddf9d3789fa7c",
+                    "value": "1133000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-6"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:213"
+                },
+                "target": {
+                  "identity": 149,
+                  "labels": [
+                    "Unit"
+                  ],
+                  "properties": {
+                    "measure": "Unit_Standard_USD__sUl59HTYU6qiqlZcAUX_w"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                },
+                "rel": {
+                  "identity": 1152929201188241621,
+                  "start": 213,
+                  "end": 149,
+                  "type": "MEASURED_IN",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152929201188241621",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:213",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                }
+              },
+              {
+                "source": {
+                  "identity": 215,
+                  "labels": [
+                    "Fact"
+                  ],
+                  "properties": {
+                    "id": "fcfb6f0aebc2856198b5003e35abdc8e",
+                    "value": "1402000000",
+                    "sourcePath": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+                    "valueType": "string",
+                    "decimals": "-6"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:215"
+                },
+                "target": {
+                  "identity": 149,
+                  "labels": [
+                    "Unit"
+                  ],
+                  "properties": {
+                    "measure": "Unit_Standard_USD__sUl59HTYU6qiqlZcAUX_w"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                },
+                "rel": {
+                  "identity": 1152929201188241623,
+                  "start": 215,
+                  "end": 149,
+                  "type": "MEASURED_IN",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1152929201188241623",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:215",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:149"
+                }
+              }
+            ]
+          },
+          {
+            "type": "HAS_SECTION",
+            "samples": [
+              {
+                "source": {
+                  "identity": 1,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2021-02-23T17:08:23-05:00",
+                    "accession": "0001558370-21-001489",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-21-001489\", \"filedAt\": \"2021-02-23T17:08:23-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1"
+                },
+                "target": {
+                  "identity": 8869,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-21-001489",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                },
+                "rel": {
+                  "identity": 6917537823734112933,
+                  "start": 1,
+                  "end": 8869,
+                  "type": "HAS_SECTION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917537823734112933",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:1",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                }
+              },
+              {
+                "source": {
+                  "identity": 9214,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2022-02-22T16:07:29-05:00",
+                    "accession": "0001558370-22-001584",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-22-001584\", \"filedAt\": \"2022-02-22T16:07:29-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837022001584/0001558370-22-001584.txt#/ibm-20211231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021/2021_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021/2021_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2021/2021_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:9214"
+                },
+                "target": {
+                  "identity": 16798,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-22-001584",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:16798"
+                },
+                "rel": {
+                  "identity": 6917537823734120862,
+                  "start": 9214,
+                  "end": 16798,
+                  "type": "HAS_SECTION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917537823734120862",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:9214",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:16798"
+                }
+              },
+              {
+                "source": {
+                  "identity": 17133,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2023-02-28T16:26:11-05:00",
+                    "accession": "0001558370-23-002376",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0001558370-23-002376\", \"filedAt\": \"2023-02-28T16:26:11-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000155837023002376/0001558370-23-002376.txt#/ibm-20221231x10k.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022/2022_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022/2022_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2022/2022_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:17133"
+                },
+                "target": {
+                  "identity": 24867,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-23-002376",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:24867"
+                },
+                "rel": {
+                  "identity": 6917537823734128931,
+                  "start": 17133,
+                  "end": 24867,
+                  "type": "HAS_SECTION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917537823734128931",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:17133",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:24867"
+                }
+              },
+              {
+                "source": {
+                  "identity": 25190,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2024-02-26T06:41:57-05:00",
+                    "accession": "0000051143-24-000012",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0000051143-24-000012\", \"filedAt\": \"2024-02-26T06:41:57-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000005114324000012/0000051143-24-000012.txt#/ibm-20231231.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023/2023_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023/2023_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2023/2023_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25190"
+                },
+                "target": {
+                  "identity": 34078,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0000051143-24-000012",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34078"
+                },
+                "rel": {
+                  "identity": 6917537823734138142,
+                  "start": 25190,
+                  "end": 34078,
+                  "type": "HAS_SECTION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917537823734138142",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:25190",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34078"
+                }
+              },
+              {
+                "source": {
+                  "identity": 34530,
+                  "labels": [
+                    "Filing"
+                  ],
+                  "properties": {
+                    "formType": "10-K",
+                    "filedAt": "2025-02-25T16:12:45-05:00",
+                    "accession": "0000051143-25-000015",
+                    "sourceFolder": "/Users/briangormanly/projects/strategery/playground-1/10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024",
+                    "sourceMeta": "{\"ticker\": \"IBM\", \"company\": \"INTERNATIONAL BUSINESS MACHINES CORP\", \"cik\": \"51143\", \"formType\": \"10-K\", \"accessionNo\": \"0000051143-25-000015\", \"filedAt\": \"2025-02-25T16:12:45-05:00\", \"primary_html_url\": \"https://www.sec.gov/Archives/edgar/data/51143/000005114325000015/0000051143-25-000015.txt#/ibm-20241231.htm\", \"artifacts\": {\"xbrl_json\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024/2024_10k.json\", \"primary_html\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024/2024_10k_primary.html\", \"primary_txt\": \"10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2024/2024_10k_primary.txt\"}}"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34530"
+                },
+                "target": {
+                  "identity": 42680,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0000051143-25-000015",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:42680"
+                },
+                "rel": {
+                  "identity": 6917537823734146744,
+                  "start": 34530,
+                  "end": 42680,
+                  "type": "HAS_SECTION",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917537823734146744",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:34530",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:42680"
+                }
+              }
+            ]
+          },
+          {
+            "type": "HAS_SENTENCE",
+            "samples": [
+              {
+                "source": {
+                  "identity": 8869,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-21-001489",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                },
+                "target": {
+                  "identity": 8870,
+                  "labels": [
+                    "Sentence"
+                  ],
+                  "properties": {
+                    "id": "3935edb012a892ebd88fdf4e9c42a45a",
+                    "text": "Indicate by check mark if the registrant is a well-known seasoned issuer as defined in Rule 405 of the Securities Act.",
+                    "order": 0
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8870"
+                },
+                "rel": {
+                  "identity": 6917538923245740710,
+                  "start": 8869,
+                  "end": 8870,
+                  "type": "HAS_SENTENCE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917538923245740710",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8870"
+                }
+              },
+              {
+                "source": {
+                  "identity": 8869,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-21-001489",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                },
+                "target": {
+                  "identity": 8871,
+                  "labels": [
+                    "Sentence"
+                  ],
+                  "properties": {
+                    "id": "6c2a559ecc70222ed32ee4b35bd0f06e",
+                    "text": "Yes ☒ No ☐ Indicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act.",
+                    "order": 1
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8871"
+                },
+                "rel": {
+                  "identity": 6917538923245740711,
+                  "start": 8869,
+                  "end": 8871,
+                  "type": "HAS_SENTENCE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917538923245740711",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8871"
+                }
+              },
+              {
+                "source": {
+                  "identity": 8869,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-21-001489",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                },
+                "target": {
+                  "identity": 8872,
+                  "labels": [
+                    "Sentence"
+                  ],
+                  "properties": {
+                    "id": "e0ca4ab06fbc1d07434650491161d465",
+                    "text": "Yes ☐ No ☒ Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.",
+                    "order": 2
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8872"
+                },
+                "rel": {
+                  "identity": 6917538923245740712,
+                  "start": 8869,
+                  "end": 8872,
+                  "type": "HAS_SENTENCE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917538923245740712",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8872"
+                }
+              },
+              {
+                "source": {
+                  "identity": 8869,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-21-001489",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                },
+                "target": {
+                  "identity": 8873,
+                  "labels": [
+                    "Sentence"
+                  ],
+                  "properties": {
+                    "id": "1c272391601bf310aaef35b938491cd9",
+                    "text": "Yes ☒ No ☐ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).",
+                    "order": 3
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8873"
+                },
+                "rel": {
+                  "identity": 6917538923245740713,
+                  "start": 8869,
+                  "end": 8873,
+                  "type": "HAS_SENTENCE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917538923245740713",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8873"
+                }
+              },
+              {
+                "source": {
+                  "identity": 8869,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-21-001489",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                },
+                "target": {
+                  "identity": 8874,
+                  "labels": [
+                    "Sentence"
+                  ],
+                  "properties": {
+                    "id": "759a38a967509daabf41915b62382577",
+                    "text": "Yes ☒ No ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company.",
+                    "order": 4
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8874"
+                },
+                "rel": {
+                  "identity": 6917538923245740714,
+                  "start": 8869,
+                  "end": 8874,
+                  "type": "HAS_SENTENCE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917538923245740714",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8874"
+                }
+              },
+              {
+                "source": {
+                  "identity": 8869,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-21-001489",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                },
+                "target": {
+                  "identity": 8875,
+                  "labels": [
+                    "Sentence"
+                  ],
+                  "properties": {
+                    "id": "8f9b9c264f0f92cf9a34c50f5087642f",
+                    "text": "See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company” and “emerging growth company” in Rule 12b-2 of the Exchange Act. ​ ​ Large accelerated filer ☒ Accelerated filer ☐ Non-accelerated filer ☐ Smaller reporting company ☐ ​ Emerging growth company ☐ ​ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐ Indicate by check mark whether the registrant has ﬁled a report on and attestation to its management’s assessment of the e ﬀ ectiveness of its internal control over ﬁnancial reporting under Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered public accounting ﬁrm that prepared or issued its audit report. ☒ Indicate by check mark whether the registrant is a shell company (as defined in Exchange Act Rule 12b-2).",
+                    "order": 5
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8875"
+                },
+                "rel": {
+                  "identity": 6917538923245740715,
+                  "start": 8869,
+                  "end": 8875,
+                  "type": "HAS_SENTENCE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917538923245740715",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8875"
+                }
+              },
+              {
+                "source": {
+                  "identity": 8869,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-21-001489",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                },
+                "target": {
+                  "identity": 8876,
+                  "labels": [
+                    "Sentence"
+                  ],
+                  "properties": {
+                    "id": "5539609f651a6f43e189e37212ba2300",
+                    "text": "Yes ☐ No ☒ The aggregate market value of the voting stock held by non-affiliates of the registrant as of the last business day of the registrant’s most recently completed second fiscal quarter was $ 107.5 billion.",
+                    "order": 6
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8876"
+                },
+                "rel": {
+                  "identity": 6917538923245740716,
+                  "start": 8869,
+                  "end": 8876,
+                  "type": "HAS_SENTENCE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917538923245740716",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8876"
+                }
+              },
+              {
+                "source": {
+                  "identity": 8869,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-21-001489",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                },
+                "target": {
+                  "identity": 8877,
+                  "labels": [
+                    "Sentence"
+                  ],
+                  "properties": {
+                    "id": "39a2e2a7374a0810cc8db747eb32000b",
+                    "text": "The registrant had 893,594,090 shares of common stock outstanding at February 10, 2021.",
+                    "order": 7
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8877"
+                },
+                "rel": {
+                  "identity": 6917538923245740717,
+                  "start": 8869,
+                  "end": 8877,
+                  "type": "HAS_SENTENCE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917538923245740717",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8877"
+                }
+              },
+              {
+                "source": {
+                  "identity": 8869,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-21-001489",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                },
+                "target": {
+                  "identity": 8878,
+                  "labels": [
+                    "Sentence"
+                  ],
+                  "properties": {
+                    "id": "b214c29496ffd85ae1d2ee4782b3e847",
+                    "text": "Documents incorporated by reference: Portions of IBM’s Annual Report to Stockholders for the year ended December 31, 2020 are incorporated by reference into Parts I, II and IV of this Form 10-K.",
+                    "order": 8
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8878"
+                },
+                "rel": {
+                  "identity": 6917538923245740718,
+                  "start": 8869,
+                  "end": 8878,
+                  "type": "HAS_SENTENCE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917538923245740718",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8878"
+                }
+              },
+              {
+                "source": {
+                  "identity": 8869,
+                  "labels": [
+                    "Section"
+                  ],
+                  "properties": {
+                    "filingAccession": "0001558370-21-001489",
+                    "item": "ALL",
+                    "title": "Document"
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869"
+                },
+                "target": {
+                  "identity": 8879,
+                  "labels": [
+                    "Sentence"
+                  ],
+                  "properties": {
+                    "id": "294572d64ba844013b60ce8fdf05552d",
+                    "text": "Portions of IBM’s definitive Proxy Statement to be filed with the Securities and Exchange Commission and delivered to stockholders in connection with the Annual Meeting of Stockholders to be held April 27, 2021 are incorporated by reference into Part III of this Form 10-K. ​ ​ ​ ​ Table of Contents Table of Contents ​ ​ ​ ​ PART I 1 ​ ​ ​ ​ Item 1.",
+                    "order": 9
+                  },
+                  "elementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8879"
+                },
+                "rel": {
+                  "identity": 6917538923245740719,
+                  "start": 8869,
+                  "end": 8879,
+                  "type": "HAS_SENTENCE",
+                  "properties": {},
+                  "elementId": "5:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:6917538923245740719",
+                  "startNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8869",
+                  "endNodeElementId": "4:a5d4e64a-afd7-4f86-9c71-62ace58e3e55:8879"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+]
