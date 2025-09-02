@@ -40,7 +40,7 @@ def get_cache_filename(search_params):
     hash_obj = hashlib.md5(params_str.encode())
     return f"query_{hash_obj.hexdigest()}.json"
 
-def is_cache_valid(path, days=7):
+def is_cache_valid(path, days=30):
     if not os.path.exists(path):
         return False
     file_time = datetime.fromtimestamp(os.path.getmtime(path))
