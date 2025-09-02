@@ -1,4 +1,4 @@
-from sec_api import QueryApi
+from sec_api import QueryApi, XbrlApi
 import os
 import json
 import hashlib
@@ -13,6 +13,7 @@ def load_api_key():
         raise FileNotFoundError("api_key.txt file not found. Please create this file with your SEC API key.")
 
 queryApi = QueryApi(api_key=load_api_key())
+xbrlApi = XbrlApi(api_key=load_api_key())
 
 # Define search parameters
 search_params = {
@@ -75,6 +76,51 @@ def load_from_cache(cache_file):
         "filings": cache_data.get("filings", [])
     }
 
+def extract_year_from_filing_date(filed_at):
+    """Extract year from filing date string like '2025-02-25T16:12:45-05:00'"""
+    try:
+        return filed_at.split('-')[0]
+    except:
+        return "unknown_year"
+
+def get_company_folder_name(company_name):
+    """Create a safe folder name from company name"""
+    # Remove special characters and replace spaces with underscores
+    safe_name = "".join(c if c.isalnum() or c in (' ', '_', '-') else '' for c in company_name)
+    safe_name = safe_name.replace(' ', '_').strip('_')
+    return safe_name
+
+def get_xbrl_cache_path(filing):
+    """Generate cache file path for XBRL data"""
+    company_name = filing.get('companyName', 'unknown_company')
+    year = extract_year_from_filing_date(filing.get('filedAt', ''))
+    
+    company_folder = get_company_folder_name(company_name)
+    cache_dir = os.path.join("10k", company_folder)
+    
+    # Create directory if it doesn't exist
+    if not os.path.exists(cache_dir):
+        os.makedirs(cache_dir)
+    
+    filename = f"{year}_10k.json"
+    return os.path.join(cache_dir, filename)
+
+def save_xbrl_to_cache(xbrl_data, cache_file_path):
+    """Save XBRL JSON data to cache file"""
+    cache_data = {
+        "timestamp": datetime.now().isoformat(),
+        "xbrl_data": xbrl_data
+    }
+    
+    with open(cache_file_path, 'w') as f:
+        json.dump(cache_data, f, indent=2)
+
+def load_xbrl_from_cache(cache_file_path):
+    """Load XBRL JSON data from cache file"""
+    with open(cache_file_path, 'r') as f:
+        cache_data = json.load(f)
+    return cache_data.get("xbrl_data", {})
+
 try:
     # Create response folder if it doesn't exist
     response_folder = "response"
@@ -115,7 +161,47 @@ try:
         print(f"  Link to TXT: {filing['linkToTxt']}")
         print("--------------------------------")
 
-    
+    # Convert each 10-K filing to JSON using XbrlApi
+    print("\nConverting 10-K filings to JSON...")
+    for i, filing in enumerate(response["filings"], 1):
+        try:
+            # Generate cache path for this filing
+            xbrl_cache_path = get_xbrl_cache_path(filing)
+            year = extract_year_from_filing_date(filing.get('filedAt', ''))
+            company_folder = get_company_folder_name(filing.get('companyName', 'unknown_company'))
+            
+            print(f"Processing filing {i}/5: {filing['accessionNo']} ({year})")
+            print(f"Company: {filing['companyName']}")
+            print(f"Cache path: {xbrl_cache_path}")
+            
+            # Check if we have valid cached XBRL data
+            if is_cache_valid(xbrl_cache_path):
+                print(f"Using cached XBRL data for {year} (within last week)")
+                xbrl_json = load_xbrl_from_cache(xbrl_cache_path)
+            else:
+                print(f"Making XBRL API request for {year}...")
+                url_10k = filing['linkToFilingDetails']
+                print(f"URL: {url_10k}")
+                
+                # Convert XBRL to JSON
+                xbrl_json = xbrlApi.xbrl_to_json(htm_url=url_10k)
+                
+                # Save to cache
+                save_xbrl_to_cache(xbrl_json, xbrl_cache_path)
+                print(f"XBRL data cached to: {xbrl_cache_path}")
+            
+            print(f"Successfully processed filing {filing['accessionNo']} ({year})")
+            print(f"JSON keys available: {list(xbrl_json.keys()) if isinstance(xbrl_json, dict) else 'Not a dictionary'}")
+            print("=" * 50)
+
+            # print("--------------------------------")
+            # print(xbrl_json)
+            # print("--------------------------------")
+            
+        except Exception as filing_error:
+            print(f"Error processing filing {filing['accessionNo']}: {filing_error}")
+            print("=" * 50)
+            continue
 
 except Exception as e:
     print(f"An error occurred: {e}")
