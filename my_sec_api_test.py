@@ -3,6 +3,7 @@ import os
 import json
 import hashlib
 from datetime import datetime, timedelta
+from bs4 import BeautifulSoup
 
 # Read API key from file
 def load_api_key():
@@ -15,11 +16,14 @@ def load_api_key():
 queryApi = QueryApi(api_key=load_api_key())
 xbrlApi = XbrlApi(api_key=load_api_key())
 
+# Configuration: Number of years of 10-K filings to retrieve
+numYears = 1  # This will get the last 5 years (e.g., 2024, 2023, 2022, 2021, 2020)
+
 # Define search parameters
 search_params = {
     "query": "ticker:IBM AND formType:\"10-K\"",  # Search for IBM's 10-K filings
     "from": "0",                                 # Start from the first result
-    "size": "5",                                # Retrieve 2 filings per request
+    "size": str(numYears),                      # Retrieve numYears filings per request
     "sort": [{"filedAt": {"order": "desc"}}]    # Sort by filing date in descending order
 }
 
@@ -93,8 +97,10 @@ def get_company_folder_name(company_name):
 def get_xbrl_cache_path(filing):
     """Generate cache file path for XBRL data"""
     company_name = filing.get('companyName', 'unknown_company')
-    year = extract_year_from_filing_date(filing.get('filedAt', ''))
-    
+
+    fy = (xbrl_json.get("CoverPage", {}) or {}).get("DocumentFiscalYearFocus")
+    year_for_filename = fy or extract_year_from_filing_date(filing.get("filedAt",""))
+
     company_folder = get_company_folder_name(company_name)
     cache_dir = os.path.join("10k", company_folder)
     
@@ -102,7 +108,7 @@ def get_xbrl_cache_path(filing):
     if not os.path.exists(cache_dir):
         os.makedirs(cache_dir)
     
-    filename = f"{year}_10k.json"
+    filename = f"{year_for_filename}_10k.json"
     return os.path.join(cache_dir, filename)
 
 def save_xbrl_to_cache(xbrl_data, cache_file_path):
@@ -120,6 +126,37 @@ def load_xbrl_from_cache(cache_file_path):
     with open(cache_file_path, 'r') as f:
         cache_data = json.load(f)
     return cache_data.get("xbrl_data", {})
+
+
+TEXTBLOCK_SUFFIXES = ("TextBlock", "PolicyTextBlock", "TableTextBlock", "NarrativeTextBlock")
+
+def strip_html_to_text(html: str) -> str:
+    soup = BeautifulSoup(html, "lxml")
+    # remove non-content tags
+    for t in soup(["style", "script"]):
+        t.decompose()
+    # unwrap purely presentational containers and drop all attributes
+    for tag in soup.find_all(True):
+        if tag.name in {"span", "font", "div"}:
+            tag.unwrap()
+        else:
+            tag.attrs = {}
+    # collapse to readable text
+    return soup.get_text("\n", strip=True)
+
+def clean_textblocks(obj):
+    """Recursively replace *TextBlock HTML with plain text; leave numeric facts alone."""
+    if isinstance(obj, dict):
+        cleaned = {}
+        for k, v in obj.items():
+            if isinstance(v, str) and any(k.endswith(suf) for suf in TEXTBLOCK_SUFFIXES) and "<" in v and ">" in v:
+                cleaned[k.replace("TextBlock", "Text")] = strip_html_to_text(v)
+            else:
+                cleaned[k] = clean_textblocks(v)
+        return cleaned
+    if isinstance(obj, list):
+        return [clean_textblocks(x) for x in obj]
+    return obj
 
 try:
     # Create response folder if it doesn't exist
@@ -170,7 +207,7 @@ try:
             year = extract_year_from_filing_date(filing.get('filedAt', ''))
             company_folder = get_company_folder_name(filing.get('companyName', 'unknown_company'))
             
-            print(f"Processing filing {i}/5: {filing['accessionNo']} ({year})")
+            print(f"Processing filing {i}/{numYears}: {filing['accessionNo']} ({year})")
             print(f"Company: {filing['companyName']}")
             print(f"Cache path: {xbrl_cache_path}")
             
@@ -185,6 +222,9 @@ try:
                 
                 # Convert XBRL to JSON
                 xbrl_json = xbrlApi.xbrl_to_json(htm_url=url_10k)
+
+                # Clean the XBRL JSON
+                xbrl_json = clean_textblocks(xbrl_json)
                 
                 # Save to cache
                 save_xbrl_to_cache(xbrl_json, xbrl_cache_path)
