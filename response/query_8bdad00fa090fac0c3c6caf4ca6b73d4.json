@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-09-01T22:30:00.898531",
+  "total": {
+    "value": 28,
+    "relation": "eq"
+  },
+  "filings": [
+    {
+      "ticker": "IBM",
+      "formType": "10-K",
+      "accessionNo": "0000051143-25-000015",
+      "cik": "51143",
+      "companyNameLong": "INTERNATIONAL BUSINESS MACHINES CORP (Filer)",
+      "companyName": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "linkToFilingDetails": "https://www.sec.gov/Archives/edgar/data/51143/000005114325000015/ibm-20241231.htm",
+      "description": "Form 10-K - Annual report [Section 13 and 15(d), not S-K Item 405]",
+      "linkToTxt": "https://www.sec.gov/Archives/edgar/data/51143/000005114325000015/0000051143-25-000015.txt",
+      "filedAt": "2025-02-25T16:12:45-05:00"
+    },
+    {
+      "ticker": "IBM",
+      "formType": "10-K",
+      "accessionNo": "0000051143-24-000012",
+      "cik": "51143",
+      "companyNameLong": "INTERNATIONAL BUSINESS MACHINES CORP (Filer)",
+      "companyName": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "linkToFilingDetails": "https://www.sec.gov/Archives/edgar/data/51143/000005114324000012/ibm-20231231.htm",
+      "description": "Form 10-K - Annual report [Section 13 and 15(d), not S-K Item 405]",
+      "linkToTxt": "https://www.sec.gov/Archives/edgar/data/51143/000005114324000012/0000051143-24-000012.txt",
+      "filedAt": "2024-02-26T06:41:57-05:00"
+    },
+    {
+      "ticker": "IBM",
+      "formType": "10-K",
+      "accessionNo": "0001558370-23-002376",
+      "cik": "51143",
+      "companyNameLong": "INTERNATIONAL BUSINESS MACHINES CORP (Filer)",
+      "companyName": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "linkToFilingDetails": "https://www.sec.gov/ix?doc=/Archives/edgar/data/51143/000155837023002376/ibm-20221231x10k.htm",
+      "description": "Form 10-K - Annual report [Section 13 and 15(d), not S-K Item 405]",
+      "linkToTxt": "https://www.sec.gov/Archives/edgar/data/51143/000155837023002376/0001558370-23-002376.txt",
+      "filedAt": "2023-02-28T16:26:11-05:00"
+    },
+    {
+      "ticker": "IBM",
+      "formType": "10-K",
+      "accessionNo": "0001558370-22-001584",
+      "cik": "51143",
+      "companyNameLong": "INTERNATIONAL BUSINESS MACHINES CORP (Filer)",
+      "companyName": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "linkToFilingDetails": "https://www.sec.gov/Archives/edgar/data/51143/000155837022001584/ibm-20211231x10k.htm",
+      "description": "Form 10-K - Annual report [Section 13 and 15(d), not S-K Item 405]",
+      "linkToTxt": "https://www.sec.gov/Archives/edgar/data/51143/000155837022001584/0001558370-22-001584.txt",
+      "filedAt": "2022-02-22T16:07:29-05:00"
+    },
+    {
+      "ticker": "IBM",
+      "formType": "10-K",
+      "accessionNo": "0001558370-21-001489",
+      "cik": "51143",
+      "companyNameLong": "INTERNATIONAL BUSINESS MACHINES CORP (Filer)",
+      "companyName": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "linkToFilingDetails": "https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/ibm-20201231x10k.htm",
+      "description": "Form 10-K - Annual report [Section 13 and 15(d), not S-K Item 405]",
+      "linkToTxt": "https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt",
+      "filedAt": "2021-02-23T17:08:23-05:00"
+    }
+  ]
+}

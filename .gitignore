@@ -194,8 +194,8 @@ Desktop.ini
 *~
 
 # Project specific
-response/
-10k/
+#response/   # don't ignore response directory as it contains the SEC API response to share with others and avoid api calls
+#10k/       # don't ignore 10k directory as it contains the 10k filings to share with others and avoid api calls
 cache/
 data/
 logs/

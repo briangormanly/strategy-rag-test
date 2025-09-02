@@ -1,0 +1,14 @@
+{
+  "ticker": "IBM",
+  "company": "INTERNATIONAL BUSINESS MACHINES CORP",
+  "cik": "51143",
+  "formType": "10-K",
+  "accessionNo": "0001558370-21-001489",
+  "filedAt": "2021-02-23T17:08:23-05:00",
+  "primary_html_url": "https://www.sec.gov/Archives/edgar/data/51143/000155837021001489/0001558370-21-001489.txt#/ibm-20201231x10k.htm",
+  "artifacts": {
+    "xbrl_json": "10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k.json",
+    "primary_html": "10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.html",
+    "primary_txt": "10k/INTERNATIONAL_BUSINESS_MACHINES_CORP/2020/2020_10k_primary.txt"
+  }
+}
