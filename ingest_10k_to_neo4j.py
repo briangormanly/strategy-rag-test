@@ -706,9 +706,9 @@ def ingest_folder(folder: Path, extract_topics_flag: bool = False):
         sections = extract_sections_and_sentences_from_html(html_text)
 
     # Connect to Neo4j
-    uri = os.getenv("NEO4J_URI", "neo4j://127.0.0.1:7687")
+    uri = os.getenv("NEO4J_URI", "bolt://127.0.0.1:7687")
     user = os.getenv("NEO4J_USER", "neo4j")
-    pwd = os.getenv("NEO4J_PASSWORD", "neo4j")
+    pwd = os.getenv("NEO4J_PASSWORD", "neo4j_password")
 
     driver = GraphDatabase.driver(uri, auth=(user, pwd))
     apply_schema(driver)

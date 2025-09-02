@@ -1,0 +1,21 @@
+# Core dependencies for SEC API and 10-K filing processing
+sec-api==1.0.32
+neo4j==5.28.2
+beautifulsoup4==4.13.5
+requests==2.32.5
+
+# News ingestion dependencies
+feedparser==6.0.11
+nltk==3.8.1
+
+# Natural Language Processing (optional but recommended)
+# Required for named entity recognition and advanced text processing
+spacy==3.7.6
+
+# MCP server support (optional)
+# Only needed if running kg_query.py in MCP server mode
+mcp==1.0.0
+
+# Python standard library extensions
+# These are typically included with Python but listed for completeness
+# argparse, hashlib, json, os, re, time, datetime, pathlib, typing, collections, logging, sys, textwrap, urllib.parse
