@@ -1,11 +1,21 @@
 from sec_api import QueryApi, XbrlApi
 import os
+import re
 import json
 import hashlib
+import requests
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
-# Read API key from file
+# ---------- Config ----------
+NUM_YEARS = 1  # how many most-recent 10-K filings to pull
+SEC_HEADERS = {
+    # Per SEC guidance, identify yourself. Replace with your contact info.
+    "User-Agent": "Research script (your_email@example.com)"
+}
+REQUEST_TIMEOUT = 30
+
+# ---------- Helpers ----------
 def load_api_key():
     try:
         with open('api_key.txt', 'r') as f:
@@ -16,15 +26,11 @@ def load_api_key():
 queryApi = QueryApi(api_key=load_api_key())
 xbrlApi = XbrlApi(api_key=load_api_key())
 
-# Configuration: Number of years of 10-K filings to retrieve
-numYears = 1  # This will get the last 5 years (e.g., 2024, 2023, 2022, 2021, 2020)
-
-# Define search parameters
 search_params = {
-    "query": "ticker:IBM AND formType:\"10-K\"",  # Search for IBM's 10-K filings
-    "from": "0",                                 # Start from the first result
-    "size": str(numYears),                      # Retrieve numYears filings per request
-    "sort": [{"filedAt": {"order": "desc"}}]    # Sort by filing date in descending order
+    "query": "ticker:IBM AND formType:\"10-K\"",
+    "from": "0",
+    "size": str(NUM_YEARS),
+    "sort": [{"filedAt": {"order": "desc"}}]
 }
 
 def get_cache_filename(search_params):
@@ -32,17 +38,43 @@ def get_cache_filename(search_params):
     hash_obj = hashlib.md5(params_str.encode())
     return f"query_{hash_obj.hexdigest()}.json"
 
-def is_cache_valid(cache_file, days=7):
-    if not os.path.exists(cache_file):
+def is_cache_valid(path, days=7):
+    if not os.path.exists(path):
         return False
-    
-    file_time = datetime.fromtimestamp(os.path.getmtime(cache_file))
+    file_time = datetime.fromtimestamp(os.path.getmtime(path))
     cutoff_time = datetime.now() - timedelta(days=days)
-    
     return file_time > cutoff_time
 
+def extract_year_from_filing_date(filed_at):
+    try:
+        return filed_at.split('-')[0]
+    except Exception:
+        return "unknown_year"
+
+def get_company_folder_name(company_name):
+    safe = "".join(c if c.isalnum() or c in (' ', '_', '-') else '' for c in (company_name or 'unknown_company'))
+    return safe.replace(' ', '_').strip('_') or 'unknown_company'
+
+def ensure_dir(path):
+    if not os.path.exists(path):
+        os.makedirs(path, exist_ok=True)
+
+def filing_paths(filing, year=None):
+    year = year or extract_year_from_filing_date(filing.get("filedAt", ""))
+    company = get_company_folder_name(filing.get("companyName", "unknown_company"))
+    base_dir = os.path.join("10k", company)
+    ensure_dir(base_dir)
+    base = os.path.join(base_dir, f"{year}_10k")
+    return {
+        "xbrl_json": base + ".json",
+        "primary_html": base + "_primary.html",
+        "primary_txt": base + "_primary.txt",
+        "meta": base + "_meta.json",
+        "dir": base_dir,
+        "base": base
+    }
+
 def extract_filing_fields(filing):
-    """Extract only the required fields from a filing object"""
     return {
         "ticker": filing.get("ticker"),
         "formType": filing.get("formType"),
@@ -56,96 +88,39 @@ def extract_filing_fields(filing):
         "filedAt": filing.get("filedAt")
     }
 
-def save_to_cache(response, cache_file):
-    # Extract only the required fields from each filing
-    simplified_filings = []
-    for filing in response.get("filings", []):
-        simplified_filings.append(extract_filing_fields(filing))
-    
-    cache_data = {
-        "timestamp": datetime.now().isoformat(),
-        "total": response.get("total", {}),
-        "filings": simplified_filings
-    }
-    
+def save_search_cache(response, cache_file):
+    simplified = [extract_filing_fields(f) for f in response.get("filings", [])]
     with open(cache_file, 'w') as f:
-        json.dump(cache_data, f, indent=2)
+        json.dump({"timestamp": datetime.now().isoformat(),
+                   "total": response.get("total", {}),
+                   "filings": simplified}, f, indent=2)
 
-def load_from_cache(cache_file):
+def load_search_cache(cache_file):
     with open(cache_file, 'r') as f:
-        cache_data = json.load(f)
-    # Return the simplified data structure (no longer nested under "response")
-    return {
-        "total": cache_data.get("total", {}),
-        "filings": cache_data.get("filings", [])
-    }
+        d = json.load(f)
+    return {"total": d.get("total", {}), "filings": d.get("filings", [])}
 
-def extract_year_from_filing_date(filed_at):
-    """Extract year from filing date string like '2025-02-25T16:12:45-05:00'"""
-    try:
-        return filed_at.split('-')[0]
-    except:
-        return "unknown_year"
-
-def get_company_folder_name(company_name):
-    """Create a safe folder name from company name"""
-    # Remove special characters and replace spaces with underscores
-    safe_name = "".join(c if c.isalnum() or c in (' ', '_', '-') else '' for c in company_name)
-    safe_name = safe_name.replace(' ', '_').strip('_')
-    return safe_name
-
-def get_xbrl_cache_path(filing):
-    """Generate cache file path for XBRL data"""
-    company_name = filing.get('companyName', 'unknown_company')
-
-    fy = (xbrl_json.get("CoverPage", {}) or {}).get("DocumentFiscalYearFocus")
-    year_for_filename = fy or extract_year_from_filing_date(filing.get("filedAt",""))
-
-    company_folder = get_company_folder_name(company_name)
-    cache_dir = os.path.join("10k", company_folder)
-    
-    # Create directory if it doesn't exist
-    if not os.path.exists(cache_dir):
-        os.makedirs(cache_dir)
-    
-    filename = f"{year_for_filename}_10k.json"
-    return os.path.join(cache_dir, filename)
-
-def save_xbrl_to_cache(xbrl_data, cache_file_path):
-    """Save XBRL JSON data to cache file"""
-    cache_data = {
-        "timestamp": datetime.now().isoformat(),
-        "xbrl_data": xbrl_data
-    }
-    
-    with open(cache_file_path, 'w') as f:
-        json.dump(cache_data, f, indent=2)
-
-def load_xbrl_from_cache(cache_file_path):
-    """Load XBRL JSON data from cache file"""
-    with open(cache_file_path, 'r') as f:
-        cache_data = json.load(f)
-    return cache_data.get("xbrl_data", {})
-
-
+# ---------- HTML → Text cleaning ----------
 TEXTBLOCK_SUFFIXES = ("TextBlock", "PolicyTextBlock", "TableTextBlock", "NarrativeTextBlock")
 
 def strip_html_to_text(html: str) -> str:
-    soup = BeautifulSoup(html, "lxml")
-    # remove non-content tags
-    for t in soup(["style", "script"]):
+    soup = BeautifulSoup(html, "html.parser")
+    # Remove non-content tags
+    for t in soup(["style", "script", "noscript"]):
         t.decompose()
-    # unwrap purely presentational containers and drop all attributes
+    # Unwrap common presentational containers; drop attributes to reduce noise
     for tag in soup.find_all(True):
         if tag.name in {"span", "font", "div"}:
             tag.unwrap()
         else:
             tag.attrs = {}
-    # collapse to readable text
-    return soup.get_text("\n", strip=True)
+    text = soup.get_text("\n", strip=True)
+    # normalize whitespace
+    text = re.sub(r"[ \t]+\n", "\n", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text
 
 def clean_textblocks(obj):
-    """Recursively replace *TextBlock HTML with plain text; leave numeric facts alone."""
     if isinstance(obj, dict):
         cleaned = {}
         for k, v in obj.items():
@@ -158,90 +133,223 @@ def clean_textblocks(obj):
         return [clean_textblocks(x) for x in obj]
     return obj
 
+# ---------- Primary iXBRL discovery ----------
+def derive_folder_index_json_url(filing):
+    """
+    Try to build .../<accession-no>/index.json from either linkToFilingDetails or linkToTxt.
+    """
+    details = filing.get("linkToFilingDetails") or ""
+    txt = filing.get("linkToTxt") or ""
+    # Common patterns:
+    #   ...-index.htm  -> ...-index.json
+    #   ...-index.html -> ...-index.json
+    if details:
+        u = (details
+             .replace("-index.htm", "-index.json")
+             .replace("-index.html", "-index.json"))
+        if u.endswith(".json"):
+            return u
+    # Fallback: /.../<accession>.txt  ->  /.../<accession>/index.json
+    if txt and txt.endswith(".txt"):
+        return txt[:-4] + "/index.json"
+    return None
+
+def fetch_json(url):
+    r = requests.get(url, headers=SEC_HEADERS, timeout=REQUEST_TIMEOUT)
+    r.raise_for_status()
+    return r.json()
+
+def fetch_text(url):
+    r = requests.get(url, headers=SEC_HEADERS, timeout=REQUEST_TIMEOUT)
+    r.raise_for_status()
+    return r.text
+
+def pick_primary_html_from_index(index_json, index_json_url):
+    """
+    SEC folder index.json lists all files. Choose the primary 10-K HTML (prefer iXBRL).
+    """
+    items = (index_json.get("directory", {}) or {}).get("item", []) or []
+    base = index_json_url.rsplit("/", 1)[0]  # folder URL
+    # Candidates: TYPE == '10-K' and .htm(l)
+    def is_html(name):
+        return name.lower().endswith((".htm", ".html"))
+    # Prefer items explicitly typed as 10-K
+    typed = [it for it in items if it.get("type", "").upper() in {"10-K", "10K", "10-K405"} and is_html(it.get("name",""))]
+    candidates = typed if typed else [it for it in items if is_html(it.get("name",""))]
+    if not candidates:
+        return None, None
+    # Heuristic: choose the largest by size (often the full HTML)
+    best = max(candidates, key=lambda it: int(it.get("size", "0") or 0))
+    url = f"{base}/{best.get('name')}"
+    html = fetch_text(url)
+    # If not iXBRL, see if any other candidate contains '<ix:' (rare but safe)
+    if "<ix:" not in html and len(candidates) > 1:
+        for it in sorted(candidates, key=lambda x: int(x.get("size","0") or 0), reverse=True):
+            alt_url = f"{base}/{it.get('name')}"
+            alt_html = fetch_text(alt_url)
+            if "<ix:" in alt_html:
+                return alt_url, alt_html
+    return url, html
+
+def iter_submission_documents(submission_txt):
+    """
+    Yields dicts with keys: type, filename, text (raw inside <TEXT>...</TEXT>).
+    """
+    for m in re.finditer(r"(?is)<DOCUMENT>(.*?)</DOCUMENT>", submission_txt):
+        block = m.group(1)
+        doc_type = re.search(r"(?im)^\s*<TYPE>\s*([^\r\n<]+)", block)
+        filename = re.search(r"(?im)^\s*<FILENAME>\s*([^\r\n<]+)", block)
+        text_match = re.search(r"(?is)<TEXT>(.*?)</TEXT>", block)
+        yield {
+            "type": (doc_type.group(1).strip() if doc_type else "").upper(),
+            "filename": (filename.group(1).strip() if filename else ""),
+            "text": text_match.group(1) if text_match else ""
+        }
+
+def pick_primary_html_from_submission_txt(link_to_txt):
+    """
+    Parse the .txt submission to locate the 10-K HTML block; prefer iXBRL.
+    """
+    txt = fetch_text(link_to_txt)
+    docs = list(iter_submission_documents(txt))
+    # Primary candidates
+    html_docs = [d for d in docs if d["filename"].lower().endswith((".htm", ".html"))]
+    tenk_html = [d for d in html_docs if d["type"] in {"10-K", "10K", "10-K405"}] or html_docs
+    if not tenk_html:
+        return None, None
+    # Prefer iXBRL by scanning for '<ix:' token; else choose largest length
+    best = None
+    for d in tenk_html:
+        if "<ix:" in d["text"]:
+            best = d
+            break
+    if best is None:
+        best = max(tenk_html, key=lambda d: len(d["text"]))
+    # Reconstruct a synthetic 'url' for meta; raw HTML content is in d["text"]
+    return f"{link_to_txt}#/{best['filename']}", best["text"]
+
+# ---------- Main ----------
 try:
-    # Create response folder if it doesn't exist
-    response_folder = "response"
-    if not os.path.exists(response_folder):
-        os.makedirs(response_folder)
-    
-    # Generate cache filename based on search parameters
-    cache_filename = get_cache_filename(search_params)
-    cache_file_path = os.path.join(response_folder, cache_filename)
-    
-    # Check if we have a valid cache (within last week)
-    if is_cache_valid(cache_file_path):
-        print("Using cached response (within last week)")
-        response = load_from_cache(cache_file_path)
+    ensure_dir("response")
+    cache_path = os.path.join("response", get_cache_filename(search_params))
+
+    if is_cache_valid(cache_path):
+        print("Using cached search response (≤7 days old)")
+        response = load_search_cache(cache_path)
     else:
-        print("Making API request...")
-        # Execute the search query
+        print("Fetching filings list…")
         response = queryApi.get_filings(search_params)
-        
-        # Save response to cache
-        save_to_cache(response, cache_file_path)
-        print(f"Response cached to: {cache_file_path}")
+        save_search_cache(response, cache_path)
+        response = load_search_cache(cache_path)
+        print(f"Cached search to: {cache_path}")
 
-    # Print the total number of matching filings
-    print(f"Total filings matching the criteria: {response['total']['value']}")
-
-    # Iterate and print details of each retrieved filing
+    print(f"Total filings matching: {response['total'].get('value')}")
     print("\nRetrieved Filings:")
-    for filing in response["filings"]:
-        print(f"  Accession No: {filing['accessionNo']}")
-        print(f"  Form Type: {filing['formType']}")
-        print(f"  Filed At: {filing['filedAt']}")
-        print(f"  Company Name: {filing['companyName']}")
-        print(f"  CIK: {filing['cik']}")
-        print(f"  Company Name Long: {filing['companyNameLong']}")
-        print(f"  Description: {filing['description']}")
-        print(f"  Link to Filing Details: {filing['linkToFilingDetails']}")
-        print(f"  Link to TXT: {filing['linkToTxt']}")
+    for f in response["filings"]:
+        print(f"  Accession No: {f['accessionNo']}")
+        print(f"  Form Type: {f['formType']}")
+        print(f"  Filed At: {f['filedAt']}")
+        print(f"  Company: {f['companyName']} (CIK {f['cik']})")
+        print(f"  Details: {f['linkToFilingDetails']}")
+        print(f"  TXT:     {f['linkToTxt']}")
         print("--------------------------------")
 
-    # Convert each 10-K filing to JSON using XbrlApi
-    print("\nConverting 10-K filings to JSON...")
+    print("\nProcessing filings…")
     for i, filing in enumerate(response["filings"], 1):
+        year_guess = extract_year_from_filing_date(filing.get("filedAt",""))
+        paths = filing_paths(filing, year_guess)
+
+        print(f"\n[{i}/{len(response['filings'])}] {filing['companyName']} {filing['accessionNo']} ({year_guess})")
+        primary_html = None
+        primary_url = None
+
+        # 1) Try folder index.json to locate primary iXBRL HTML
         try:
-            # Generate cache path for this filing
-            xbrl_cache_path = get_xbrl_cache_path(filing)
-            year = extract_year_from_filing_date(filing.get('filedAt', ''))
-            company_folder = get_company_folder_name(filing.get('companyName', 'unknown_company'))
-            
-            print(f"Processing filing {i}/{numYears}: {filing['accessionNo']} ({year})")
-            print(f"Company: {filing['companyName']}")
-            print(f"Cache path: {xbrl_cache_path}")
-            
-            # Check if we have valid cached XBRL data
-            if is_cache_valid(xbrl_cache_path):
-                print(f"Using cached XBRL data for {year} (within last week)")
-                xbrl_json = load_xbrl_from_cache(xbrl_cache_path)
+            idx_url = derive_folder_index_json_url(filing)
+            if idx_url:
+                idx_json = fetch_json(idx_url)
+                primary_url, primary_html = pick_primary_html_from_index(idx_json, idx_url)
+        except Exception as e:
+            print(f"  index.json method failed: {e}")
+
+        # 2) Fallback: parse linkToTxt submission
+        if not primary_html:
+            try:
+                lt = filing.get("linkToTxt")
+                if lt:
+                    primary_url, primary_html = pick_primary_html_from_submission_txt(lt)
+            except Exception as e:
+                print(f"  linkToTxt fallback failed: {e}")
+
+        if not primary_html:
+            print("  Could not locate primary 10-K HTML; skipping text extraction for this filing.")
+        else:
+            # Save raw primary HTML (cache-aware)
+            if not is_cache_valid(paths["primary_html"]) or os.path.getsize(paths["primary_html"]) == 0:
+                with open(paths["primary_html"], "w", encoding="utf-8") as f:
+                    f.write(primary_html)
+                print(f"  Saved primary HTML → {paths['primary_html']}")
             else:
-                print(f"Making XBRL API request for {year}...")
-                url_10k = filing['linkToFilingDetails']
-                print(f"URL: {url_10k}")
-                
-                # Convert XBRL to JSON
-                xbrl_json = xbrlApi.xbrl_to_json(htm_url=url_10k)
+                print(f"  Using cached primary HTML → {paths['primary_html']}")
 
-                # Clean the XBRL JSON
+            # Save cleaned plain-text for search/IR
+            cleaned = strip_html_to_text(primary_html)
+            with open(paths["primary_txt"], "w", encoding="utf-8") as f:
+                f.write(cleaned)
+            print(f"  Saved cleaned text → {paths['primary_txt']} (chars: {len(cleaned):,})")
+
+        # 3) XBRL: convert to JSON (use the primary HTML URL if we found one)
+        try:
+            if is_cache_valid(paths["xbrl_json"]):
+                with open(paths["xbrl_json"], "r") as f:
+                    xbrl_json = json.load(f)
+                print(f"  Using cached XBRL JSON → {paths['xbrl_json']}")
+            else:
+                # Prefer calling with the primary HTML URL (better than details page)
+                xbrl_src_url = primary_url or filing['linkToFilingDetails']
+                print(f"  Converting XBRL from: {xbrl_src_url}")
+                xbrl_json = xbrlApi.xbrl_to_json(htm_url=xbrl_src_url)
                 xbrl_json = clean_textblocks(xbrl_json)
-                
-                # Save to cache
-                save_xbrl_to_cache(xbrl_json, xbrl_cache_path)
-                print(f"XBRL data cached to: {xbrl_cache_path}")
-            
-            print(f"Successfully processed filing {filing['accessionNo']} ({year})")
-            print(f"JSON keys available: {list(xbrl_json.keys()) if isinstance(xbrl_json, dict) else 'Not a dictionary'}")
-            print("=" * 50)
+                with open(paths["xbrl_json"], "w") as f:
+                    json.dump({"timestamp": datetime.now().isoformat(),
+                               "xbrl_data": xbrl_json}, f, indent=2)
+                print(f"  Saved XBRL JSON → {paths['xbrl_json']}")
 
-            # print("--------------------------------")
-            # print(xbrl_json)
-            # print("--------------------------------")
-            
-        except Exception as filing_error:
-            print(f"Error processing filing {filing['accessionNo']}: {filing_error}")
-            print("=" * 50)
-            continue
+            # If the CoverPage has DocumentFiscalYearFocus, consider renaming base files (optional)
+            try:
+                fy = (xbrl_json.get("xbrl_data", xbrl_json).get("CoverPage", {}) or {}).get("DocumentFiscalYearFocus")
+                if fy and fy != year_guess:
+                    # rename files to fiscal year
+                    new_paths = filing_paths(filing, fy)
+                    for key in ("xbrl_json", "primary_html", "primary_txt", "meta"):
+                        if os.path.exists(paths[key]) and paths[key] != new_paths[key]:
+                            os.replace(paths[key], new_paths[key])
+                    paths = new_paths
+                    print(f"  Renamed artifacts to fiscal year {fy}")
+            except Exception:
+                pass
+
+        except Exception as e:
+            print(f"  XBRL conversion failed: {e}")
+
+        # 4) Write a small metadata file tying it all together
+        meta = {
+            "ticker": filing.get("ticker"),
+            "company": filing.get("companyName"),
+            "cik": filing.get("cik"),
+            "formType": filing.get("formType"),
+            "accessionNo": filing.get("accessionNo"),
+            "filedAt": filing.get("filedAt"),
+            "primary_html_url": primary_url,
+            "artifacts": {
+                "xbrl_json": paths["xbrl_json"],
+                "primary_html": paths["primary_html"],
+                "primary_txt": paths["primary_txt"]
+            }
+        }
+        with open(paths["meta"], "w") as f:
+            json.dump(meta, f, indent=2)
+        print(f"  Wrote meta → {paths['meta']}")
 
 except Exception as e:
     print(f"An error occurred: {e}")
