@@ -241,7 +241,7 @@ class Neo4jRetriever:
             return session.run(q, cik=cik, limit=limit).data()
 
     def get_comprehensive_context(self, prompt: str, cik: Optional[str], k: int = 50) -> Dict[str, Any]:
-        """Get comprehensive context using multiple retrieval strategies."""
+        """Get comprehensive context using multiple retrieval strategies including news and sentiment."""
         with self.driver.session(database=self.cfg.database) as session:
             tokens = pick_tokens(prompt, k=8)
             
@@ -265,7 +265,7 @@ class Neo4jRetriever:
                        collect(DISTINCT past_fact.value)[..2] AS past_values
                 ORDER BY filed DESC
                 LIMIT $k
-            """, tokens=tokens, cik=cik, k=k//2).data()
+            """, tokens=tokens, cik=cik, k=k//3).data()
             
             # 2. Get narrative with concept and entity links
             try:
@@ -285,22 +285,26 @@ class Neo4jRetriever:
                            collect(DISTINCT ent.text)[..3] AS entities
                     ORDER BY score DESC
                     LIMIT $k
-                """, query=prompt, cik=cik, k=k//2).data()
+                """, query=prompt, cik=cik, k=k//3).data()
             except Exception:
                 # Fallback without fulltext search
-                narrative_context = self.top_sentences(prompt, cik, k//2)
+                narrative_context = self.top_sentences(prompt, cik, k//3)
                 # Add empty arrays for missing fields
                 for item in narrative_context:
                     item.setdefault('concepts', [])
                     item.setdefault('fact_values', [])
                     item.setdefault('entities', [])
             
-            # 3. Get strategic context based on question type
+            # 3. Get news articles with sentiment analysis
+            news_context = self.get_news_context(prompt, cik, k//3)
+            
+            # 4. Get strategic context based on question type
             strategic_context = self.get_strategic_context(prompt, cik)
             
             return {
                 "facts_with_trends": fact_context,
                 "narrative_with_links": narrative_context,
+                "news_with_sentiment": news_context,
                 "strategic_context": strategic_context
             }
 
@@ -382,6 +386,121 @@ class Neo4jRetriever:
             
             return context
 
+    def get_news_context(self, prompt: str, cik: Optional[str], limit: int = 20) -> Dict[str, Any]:
+        """Get news articles with sentiment analysis for context."""
+        with self.driver.session(database=self.cfg.database) as session:
+            tokens = pick_tokens(prompt, k=6)
+            
+            # Get recent news articles with sentiment
+            try:
+                # First try fulltext search on articles
+                news_articles = session.run("""
+                    CALL db.index.fulltext.queryNodes("articleContent", $query) YIELD node, score
+                    MATCH (node:Article)
+                    OPTIONAL MATCH (node)-[:MENTIONS_ORGANIZATION]->(o:Organization)
+                    OPTIONAL MATCH (node)-[:HAS_SENTIMENT]->(s:Sentiment)
+                    OPTIONAL MATCH (node)-[:PUBLISHED_BY]->(pub:Publisher)
+                    OPTIONAL MATCH (node)-[:WRITTEN_BY]->(au:Author)
+                    OPTIONAL MATCH (node)-[:DISCUSSES_FINANCIAL_CONCEPT]->(c:Concept)
+                    OPTIONAL MATCH (node)-[:MENTIONS_ENTITY]->(ent:Entity)
+                    WHERE $cik IS NULL OR o.cik = $cik
+                    RETURN node.title AS title, node.publishedDate AS published,
+                           node.url AS url, node.summary AS summary,
+                           s.label AS sentiment_label, s.compound AS sentiment_score,
+                           s.positive AS positive, s.negative AS negative, s.neutral AS neutral,
+                           pub.name AS publisher, au.name AS author,
+                           collect(DISTINCT c.name)[..3] AS financial_concepts,
+                           collect(DISTINCT ent.text)[..5] AS entities,
+                           score, o.name AS organization
+                    ORDER BY score DESC, published DESC
+                    LIMIT $limit
+                """, query=prompt, cik=cik, limit=limit).data()
+            except Exception:
+                # Fallback: keyword-based search on articles
+                if tokens:
+                    where_clauses = []
+                    params = {"cik": cik, "limit": limit}
+                    
+                    for i, token in enumerate(tokens[:4]):
+                        where_clauses.append(f"(toLower(a.title) CONTAINS toLower($token{i}) OR toLower(a.content) CONTAINS toLower($token{i}))")
+                        params[f"token{i}"] = token
+                    
+                    where_condition = " OR ".join(where_clauses) if where_clauses else "true"
+                    
+                    news_articles = session.run(f"""
+                        MATCH (a:Article)
+                        WHERE {where_condition}
+                        OPTIONAL MATCH (a)-[:MENTIONS_ORGANIZATION]->(o:Organization)
+                        OPTIONAL MATCH (a)-[:HAS_SENTIMENT]->(s:Sentiment)
+                        OPTIONAL MATCH (a)-[:PUBLISHED_BY]->(pub:Publisher)
+                        OPTIONAL MATCH (a)-[:WRITTEN_BY]->(au:Author)
+                        OPTIONAL MATCH (a)-[:DISCUSSES_FINANCIAL_CONCEPT]->(c:Concept)
+                        OPTIONAL MATCH (a)-[:MENTIONS_ENTITY]->(ent:Entity)
+                        WHERE $cik IS NULL OR o.cik = $cik
+                        RETURN a.title AS title, a.publishedDate AS published,
+                               a.url AS url, a.summary AS summary,
+                               s.label AS sentiment_label, s.compound AS sentiment_score,
+                               s.positive AS positive, s.negative AS negative, s.neutral AS neutral,
+                               pub.name AS publisher, au.name AS author,
+                               collect(DISTINCT c.name)[..3] AS financial_concepts,
+                               collect(DISTINCT ent.text)[..5] AS entities,
+                               0.5 AS score, o.name AS organization
+                        ORDER BY published DESC
+                        LIMIT $limit
+                    """, **params).data()
+                else:
+                    news_articles = []
+            
+            # Get news sentiment timeline around filing dates
+            sentiment_timeline = []
+            if cik:
+                try:
+                    sentiment_timeline = session.run("""
+                        MATCH (o:Organization {cik: $cik})-[:FILED]->(f:Filing)
+                        MATCH (a:Article)-[:MENTIONS_ORGANIZATION]->(o)
+                        MATCH (a)-[:HAS_SENTIMENT]->(s:Sentiment)
+                        WHERE f.filedAt IS NOT NULL AND a.publishedDate IS NOT NULL
+                          AND abs(duration.between(date(f.filedAt), date(a.publishedDate)).days) <= 60
+                        RETURN f.filedAt AS filing_date, f.formType AS form_type, f.accession AS accession,
+                               a.publishedDate AS news_date, a.title AS news_title,
+                               s.label AS sentiment, s.compound AS sentiment_score,
+                               duration.between(date(f.filedAt), date(a.publishedDate)).days AS days_from_filing
+                        ORDER BY filing_date DESC, news_date DESC
+                        LIMIT 15
+                    """, cik=cik).data()
+                except Exception:
+                    sentiment_timeline = []
+            
+            # Get sentiment summary for recent period
+            sentiment_summary = {}
+            if cik:
+                try:
+                    sentiment_summary = session.run("""
+                        MATCH (o:Organization {cik: $cik})
+                        MATCH (a:Article)-[:MENTIONS_ORGANIZATION]->(o)
+                        MATCH (a)-[:HAS_SENTIMENT]->(s:Sentiment)
+                        WHERE a.publishedDate >= date() - duration({days: 90})
+                        RETURN 
+                            count(a) AS total_articles,
+                            avg(s.compound) AS avg_sentiment,
+                            sum(CASE WHEN s.label = 'positive' THEN 1 ELSE 0 END) AS positive_count,
+                            sum(CASE WHEN s.label = 'negative' THEN 1 ELSE 0 END) AS negative_count,
+                            sum(CASE WHEN s.label = 'neutral' THEN 1 ELSE 0 END) AS neutral_count
+                    """, cik=cik).single()
+                    
+                    if sentiment_summary:
+                        sentiment_summary = dict(sentiment_summary)
+                    else:
+                        sentiment_summary = {}
+                except Exception:
+                    sentiment_summary = {}
+            
+            return {
+                "articles": news_articles,
+                "sentiment_timeline": sentiment_timeline,
+                "sentiment_summary": sentiment_summary
+            }
+
 # ---------------------------
 # Context building
 # ---------------------------
@@ -433,6 +552,63 @@ def build_enhanced_context(prompt: str, cik: Optional[str], org_name: Optional[s
             lines.append(f"- [Item {item.get('item', '?')}] {item.get('filed', '?')}: {text_preview}...{concepts_str}{facts_str}{entities_str}")
         lines.append("")
     
+    # News and sentiment context
+    news_context = context_data.get("news_with_sentiment", {})
+    
+    if news_context.get("sentiment_summary") and any(news_context["sentiment_summary"].values()):
+        lines.append("<<NEWS SENTIMENT SUMMARY (Last 90 Days)>>")
+        summary = news_context["sentiment_summary"]
+        total = summary.get("total_articles", 0)
+        if total > 0:
+            avg_sentiment = summary.get("avg_sentiment", 0)
+            pos_count = summary.get("positive_count", 0)
+            neg_count = summary.get("negative_count", 0)
+            neu_count = summary.get("neutral_count", 0)
+            
+            lines.append(f"- Total articles: {total}")
+            lines.append(f"- Average sentiment: {avg_sentiment:.3f} ({'Positive' if avg_sentiment > 0.05 else 'Negative' if avg_sentiment < -0.05 else 'Neutral'})")
+            lines.append(f"- Distribution: {pos_count} positive, {neg_count} negative, {neu_count} neutral")
+        lines.append("")
+    
+    if news_context.get("articles"):
+        lines.append("<<RECENT NEWS ARTICLES WITH SENTIMENT>>")
+        for article in news_context["articles"][:12]:
+            sentiment_info = ""
+            if article.get("sentiment_label") and article.get("sentiment_score") is not None:
+                sentiment_info = f" [Sentiment: {article['sentiment_label']} ({article['sentiment_score']:.2f})]"
+            
+            concepts_info = ""
+            if article.get("financial_concepts"):
+                concepts_info = f" [Financial: {', '.join(article['financial_concepts'])}]"
+            
+            entities_info = ""
+            if article.get("entities"):
+                entities_info = f" [Entities: {', '.join(article['entities'][:3])}]"
+            
+            publisher_info = f" [{article.get('publisher', 'Unknown')}]" if article.get('publisher') else ""
+            
+            title = article.get('title', 'No title')[:100]
+            published = article.get('published', 'Unknown date')
+            
+            lines.append(f"- {published}{publisher_info}: {title}...{sentiment_info}{concepts_info}{entities_info}")
+        lines.append("")
+    
+    if news_context.get("sentiment_timeline"):
+        lines.append("<<NEWS SENTIMENT AROUND FILING DATES>>")
+        for timeline_item in news_context["sentiment_timeline"][:10]:
+            filing_date = timeline_item.get("filing_date", "?")
+            form_type = timeline_item.get("form_type", "?")
+            news_date = timeline_item.get("news_date", "?")
+            news_title = timeline_item.get("news_title", "No title")[:80]
+            sentiment = timeline_item.get("sentiment", "?")
+            sentiment_score = timeline_item.get("sentiment_score", 0)
+            days_diff = timeline_item.get("days_from_filing", 0)
+            
+            timing = f"{abs(days_diff)} days {'after' if days_diff > 0 else 'before'}" if days_diff != 0 else "same day"
+            
+            lines.append(f"- {form_type} filing {filing_date} → {news_date} ({timing}): {news_title}... [Sentiment: {sentiment} ({sentiment_score:.2f})]")
+        lines.append("")
+    
     # Strategic context sections
     strategic_context = context_data.get("strategic_context", {})
     
@@ -466,10 +642,12 @@ def build_enhanced_context(prompt: str, cik: Optional[str], org_name: Optional[s
     lines.append("<<INSTRUCTIONS>>")
     lines.append(
         "Using the enhanced context above, provide comprehensive strategic analysis. "
-        "Connect quantitative financial trends with qualitative narrative insights. "
-        "Reference specific accession numbers, time periods, and cross-link related concepts. "
-        "For trend analysis, explain the progression and implications over time. "
-        "Organize your response in clear sections addressing the user's specific questions."
+        "Connect quantitative financial trends with qualitative narrative insights and market sentiment. "
+        "Reference specific accession numbers, time periods, news sentiment scores, and cross-link related concepts. "
+        "For trend analysis, explain the progression and implications over time, including market perception. "
+        "Correlate news sentiment patterns with financial events and filing dates to identify market reactions. "
+        "Use sentiment timeline data to understand how the market responded to financial disclosures. "
+        "Organize your response in clear sections addressing the user's specific questions with integrated analysis."
     )
     return "\n".join(lines)
 
@@ -587,11 +765,13 @@ def run_pipeline(prompt: str, cfg: Neo4jConfig, show_context: bool = False) -> D
         # Generate response with enhanced system prompt
         llm = make_llm_from_env()
         system = ("You are an expert financial analyst and strategic planning assistant. "
-                 "You have access to comprehensive financial data, narrative disclosures, and temporal trends. "
-                 "Provide strategic insights that connect quantitative metrics with qualitative context. "
+                 "You have access to comprehensive financial data, narrative disclosures, temporal trends, "
+                 "news articles with sentiment analysis, and cross-referenced market intelligence. "
+                 "Provide strategic insights that connect quantitative metrics with qualitative context and market sentiment. "
                  "Structure your responses clearly with specific sections addressing different aspects of the analysis. "
-                 "Always cite specific data points, accession numbers, and time periods when making claims. "
-                 "When analyzing trends, explain both the numerical progression and business implications.")
+                 "Always cite specific data points, accession numbers, time periods, and news sentiment when making claims. "
+                 "When analyzing trends, explain both the numerical progression, business implications, and market perception. "
+                 "Correlate news sentiment with financial performance and filing dates to provide comprehensive analysis.")
         
         answer = llm.generate(system, ctx)
 
