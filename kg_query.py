@@ -60,6 +60,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import requests  # type: ignore
 from neo4j import GraphDatabase  # type: ignore
+from collections import defaultdict
 
 # ---------------------------
 # Utilities
@@ -239,62 +240,253 @@ class Neo4jRetriever:
             """
             return session.run(q, cik=cik, limit=limit).data()
 
+    def get_comprehensive_context(self, prompt: str, cik: Optional[str], k: int = 50) -> Dict[str, Any]:
+        """Get comprehensive context using multiple retrieval strategies."""
+        with self.driver.session(database=self.cfg.database) as session:
+            tokens = pick_tokens(prompt, k=8)
+            
+            # 1. Get related facts with temporal context
+            fact_context = session.run("""
+                WITH $tokens AS search_tokens
+                UNWIND search_tokens AS token
+                MATCH (c:Concept) WHERE toLower(c.name) CONTAINS toLower(token)
+                MATCH (f:Filing)-[:HAS_FACT]->(fact:Fact)-[:OF_CONCEPT]->(c)
+                MATCH (fact)-[:FOR_PERIOD]->(p:Period)
+                OPTIONAL MATCH (o:Organization)-[:FILED]->(f)
+                OPTIONAL MATCH (fact)-[:PRECEDES*1..2]->(future_fact:Fact)
+                OPTIONAL MATCH (past_fact:Fact)-[:PRECEDES*1..2]->(fact)
+                WHERE $cik IS NULL OR o.cik = $cik
+                RETURN c.name AS concept, fact.value AS value, 
+                       CASE WHEN p.end IS NOT NULL THEN p.end 
+                            WHEN p.instant IS NOT NULL THEN p.instant 
+                            ELSE p.start END AS period,
+                       f.filedAt AS filed, f.accession AS accession,
+                       collect(DISTINCT future_fact.value)[..2] AS future_values,
+                       collect(DISTINCT past_fact.value)[..2] AS past_values
+                ORDER BY filed DESC
+                LIMIT $k
+            """, tokens=tokens, cik=cik, k=k//2).data()
+            
+            # 2. Get narrative with concept and entity links
+            try:
+                narrative_context = session.run("""
+                    CALL db.index.fulltext.queryNodes("sentenceText", $query) YIELD node, score
+                    MATCH (sec:Section)-[:HAS_SENTENCE]->(node)
+                    MATCH (f:Filing {accession: sec.filingAccession})
+                    OPTIONAL MATCH (node)-[:DISCUSSES_CONCEPT]->(c:Concept)
+                    OPTIONAL MATCH (node)-[:REFERENCES_FACT]->(fact:Fact)
+                    OPTIONAL MATCH (node)-[:MENTIONS_ENTITY]->(ent:Entity)
+                    OPTIONAL MATCH (o:Organization)-[:FILED]->(f)
+                    WHERE $cik IS NULL OR o.cik = $cik
+                    RETURN node.text AS text, score, sec.item AS item, sec.title AS title,
+                           f.filedAt AS filed, f.accession AS accession,
+                           collect(DISTINCT c.name)[..3] AS concepts,
+                           collect(DISTINCT fact.value)[..3] AS fact_values,
+                           collect(DISTINCT ent.text)[..3] AS entities
+                    ORDER BY score DESC
+                    LIMIT $k
+                """, query=prompt, cik=cik, k=k//2).data()
+            except Exception:
+                # Fallback without fulltext search
+                narrative_context = self.top_sentences(prompt, cik, k//2)
+                # Add empty arrays for missing fields
+                for item in narrative_context:
+                    item.setdefault('concepts', [])
+                    item.setdefault('fact_values', [])
+                    item.setdefault('entities', [])
+            
+            # 3. Get strategic context based on question type
+            strategic_context = self.get_strategic_context(prompt, cik)
+            
+            return {
+                "facts_with_trends": fact_context,
+                "narrative_with_links": narrative_context,
+                "strategic_context": strategic_context
+            }
+
+    def get_strategic_context(self, prompt: str, cik: Optional[str]) -> Dict[str, Any]:
+        """Get context optimized for strategic analysis questions."""
+        with self.driver.session(database=self.cfg.database) as session:
+            # Identify question type
+            prompt_lower = prompt.lower()
+            is_trend_question = any(word in prompt_lower for word in 
+                                   ["trend", "change", "growth", "decline", "over time", "historical", "compare"])
+            is_risk_question = any(word in prompt_lower for word in 
+                                  ["risk", "threat", "challenge", "concern", "problem", "uncertainty"])
+            is_strategy_question = any(word in prompt_lower for word in 
+                                     ["strategy", "strategic", "direction", "future", "plan", "initiative"])
+            
+            context = {}
+            
+            if is_trend_question:
+                # Get time-series data for key financial metrics
+                try:
+                    context["trends"] = session.run("""
+                        MATCH (o:Organization {cik: $cik})-[:FILED]->(f:Filing)-[:HAS_FACT]->(fact:Fact)
+                        MATCH (fact)-[:OF_CONCEPT]->(c:Concept)
+                        MATCH (fact)-[:FOR_PERIOD]->(p:Period)
+                        WHERE c.name CONTAINS 'Revenue' OR c.name CONTAINS 'NetIncome' OR 
+                              c.name CONTAINS 'TotalAssets' OR c.name CONTAINS 'TotalDebt' OR
+                              c.name CONTAINS 'CashAndCashEquivalents'
+                        RETURN c.name AS concept, fact.value AS value, 
+                               CASE WHEN p.end IS NOT NULL THEN p.end 
+                                    WHEN p.instant IS NOT NULL THEN p.instant 
+                                    ELSE p.start END AS period, 
+                               f.filedAt AS filed, f.accession AS accession
+                        ORDER BY c.name, period DESC
+                        LIMIT 30
+                    """, cik=cik).data()
+                except Exception as e:
+                    context["trends"] = []
+            
+            if is_risk_question:
+                # Get risk-related narrative
+                try:
+                    context["risks"] = session.run("""
+                        MATCH (s:Sentence) 
+                        WHERE toLower(s.text) CONTAINS 'risk' OR 
+                              toLower(s.text) CONTAINS 'uncertainty' OR
+                              toLower(s.text) CONTAINS 'challenge' OR
+                              toLower(s.text) CONTAINS 'threat'
+                        MATCH (sec:Section)-[:HAS_SENTENCE]->(s)
+                        MATCH (f:Filing {accession: sec.filingAccession})
+                        MATCH (o:Organization {cik: $cik})-[:FILED]->(f)
+                        RETURN s.text AS text, sec.item AS item, sec.title AS title, 
+                               f.filedAt AS filed, f.accession AS accession
+                        ORDER BY filed DESC
+                        LIMIT 15
+                    """, cik=cik).data()
+                except Exception:
+                    context["risks"] = []
+            
+            if is_strategy_question:
+                # Get strategy-related content
+                try:
+                    context["strategy"] = session.run("""
+                        MATCH (s:Sentence) 
+                        WHERE toLower(s.text) CONTAINS 'strategy' OR 
+                              toLower(s.text) CONTAINS 'strategic' OR
+                              toLower(s.text) CONTAINS 'initiative' OR
+                              toLower(s.text) CONTAINS 'future' OR
+                              toLower(s.text) CONTAINS 'plan'
+                        MATCH (sec:Section)-[:HAS_SENTENCE]->(s)
+                        MATCH (f:Filing {accession: sec.filingAccession})
+                        MATCH (o:Organization {cik: $cik})-[:FILED]->(f)
+                        RETURN s.text AS text, sec.item AS item, sec.title AS title, 
+                               f.filedAt AS filed, f.accession AS accession
+                        ORDER BY filed DESC
+                        LIMIT 15
+                    """, cik=cik).data()
+                except Exception:
+                    context["strategy"] = []
+            
+            return context
+
 # ---------------------------
 # Context building
 # ---------------------------
 
-def build_context(prompt: str, cik: Optional[str], org_name: Optional[str],
-                  sentences: List[Dict[str, Any]], facts: List[Dict[str, Any]], filings: List[Dict[str, Any]]) -> str:
+def build_enhanced_context(prompt: str, cik: Optional[str], org_name: Optional[str],
+                          context_data: Dict[str, Any]) -> str:
+    """Build context with temporal trends and cross-references."""
     lines = []
     lines.append("<<PROMPT>>")
     lines.append(prompt.strip())
     lines.append("")
-
+    
     if cik or org_name:
         lines.append("<<ORGANIZATION>>")
         lines.append(f"name: {org_name or 'Unknown'}")
         lines.append(f"cik: {cik or 'Unknown'}")
         lines.append("")
-
-    if filings:
-        lines.append("<<FILINGS (most recent)>>")
-        for row in filings[:8]:
-            lines.append(f"- {row.get('filedAt','?')} {row.get('formType','?')} accession {row.get('accession','?')}")
-        lines.append("")
-
-    if facts:
-        lines.append("<<FACTS (recent, concept-matched)>>")
-        # group by concept
-        by_concept: Dict[str, List[Dict[str, Any]]] = {}
-        for r in facts:
-            by_concept.setdefault(r["concept"], []).append(r)
-        # limit per concept
-        for concept, rs in list(by_concept.items())[:12]:
+    
+    # Enhanced facts with trends
+    facts_with_trends = context_data.get("facts_with_trends", [])
+    if facts_with_trends:
+        lines.append("<<FINANCIAL METRICS WITH TRENDS>>")
+        by_concept = defaultdict(list)
+        for fact in facts_with_trends:
+            by_concept[fact["concept"]].append(fact)
+        
+        for concept, facts in list(by_concept.items())[:8]:
             lines.append(f"- {concept}:")
-            for r in rs[:3]:
-                dims_str = ", ".join([f"{d.get('axis')}={d.get('member')}" for d in r.get("dims") or [] if d.get('axis') and d.get('member')])
-                p = r.get("instant") or r.get("end") or r.get("start") or "?"
-                unit = r.get("unit") or ""
-                lines.append(f"    • {r.get('value')} {unit} @ {p} (filed {r.get('filedAt','?')} acc {r.get('accession','?')})" + (f" [{dims_str}]" if dims_str else ""))
+            for fact in sorted(facts, key=lambda x: x.get("period", "") or "", reverse=True)[:3]:
+                trend_info = ""
+                if fact.get("past_values") and any(fact["past_values"]):
+                    trend_info += f" (prev: {', '.join(map(str, fact['past_values']))})"
+                if fact.get("future_values") and any(fact["future_values"]):
+                    trend_info += f" (next: {', '.join(map(str, fact['future_values']))})"
+                
+                lines.append(f"    • {fact.get('value')} @ {fact.get('period', '?')} (filed {fact.get('filed','?')} acc {fact.get('accession','?')}){trend_info}")
         lines.append("")
-
-    if sentences:
-        lines.append("<<NARRATIVE SENTENCES (top)>>")
-        for s in sentences[:20]:
-            item = s.get("item") or ""
-            filed = s.get("filedAt") or ""
-            acc = s.get("accession") or ""
-            lines.append(f"- [Item {item}] {filed} acc {acc}: {normspace(s.get('text',''))}")
+    
+    # Enhanced narrative with concept links
+    narrative_with_links = context_data.get("narrative_with_links", [])
+    if narrative_with_links:
+        lines.append("<<NARRATIVE WITH FINANCIAL CONCEPT LINKS>>")
+        for item in narrative_with_links[:15]:
+            concepts_str = f" [Concepts: {', '.join(item.get('concepts', []))}]" if item.get('concepts') else ""
+            facts_str = f" [Values: {', '.join(map(str, item.get('fact_values', [])))}]" if item.get('fact_values') else ""
+            entities_str = f" [Entities: {', '.join(item.get('entities', []))}]" if item.get('entities') else ""
+            
+            text_preview = normspace(item.get('text', ''))[:200]
+            lines.append(f"- [Item {item.get('item', '?')}] {item.get('filed', '?')}: {text_preview}...{concepts_str}{facts_str}{entities_str}")
         lines.append("")
-
-    # final guide to model
+    
+    # Strategic context sections
+    strategic_context = context_data.get("strategic_context", {})
+    
+    if strategic_context.get("trends"):
+        lines.append("<<TIME-SERIES FINANCIAL DATA>>")
+        trends_by_concept = defaultdict(list)
+        for trend in strategic_context["trends"]:
+            trends_by_concept[trend["concept"]].append(trend)
+        
+        for concept, trend_data in list(trends_by_concept.items())[:5]:
+            lines.append(f"- {concept}:")
+            for data in sorted(trend_data, key=lambda x: x.get("period", "") or "", reverse=True)[:4]:
+                lines.append(f"    • {data.get('value')} @ {data.get('period', '?')} (acc {data.get('accession', '?')})")
+        lines.append("")
+    
+    if strategic_context.get("risks"):
+        lines.append("<<RISK FACTORS & CHALLENGES>>")
+        for risk in strategic_context["risks"][:8]:
+            text_preview = normspace(risk.get('text', ''))[:150]
+            lines.append(f"- [Item {risk.get('item', '?')}] {risk.get('filed', '?')}: {text_preview}...")
+        lines.append("")
+    
+    if strategic_context.get("strategy"):
+        lines.append("<<STRATEGIC INITIATIVES & DIRECTION>>")
+        for strategy in strategic_context["strategy"][:8]:
+            text_preview = normspace(strategy.get('text', ''))[:150]
+            lines.append(f"- [Item {strategy.get('item', '?')}] {strategy.get('filed', '?')}: {text_preview}...")
+        lines.append("")
+    
+    # Final guide to model
     lines.append("<<INSTRUCTIONS>>")
     lines.append(
-        "Using the context above, answer the user's prompt. "
-        "Cite accession numbers or items when relevant. "
-        "If data is insufficient, state assumptions. Be concise but specific."
+        "Using the enhanced context above, provide comprehensive strategic analysis. "
+        "Connect quantitative financial trends with qualitative narrative insights. "
+        "Reference specific accession numbers, time periods, and cross-link related concepts. "
+        "For trend analysis, explain the progression and implications over time. "
+        "Organize your response in clear sections addressing the user's specific questions."
     )
     return "\n".join(lines)
+
+# Legacy function for backward compatibility
+def build_context(prompt: str, cik: Optional[str], org_name: Optional[str],
+                  sentences: List[Dict[str, Any]], facts: List[Dict[str, Any]], filings: List[Dict[str, Any]]) -> str:
+    """Legacy context building function - maintained for compatibility."""
+    context_data = {
+        "facts_with_trends": [{"concept": f.get("concept"), "value": f.get("value"), 
+                              "period": f.get("instant") or f.get("end") or f.get("start"),
+                              "filed": f.get("filedAt"), "accession": f.get("accession")} for f in facts],
+        "narrative_with_links": [{"text": s.get("text"), "item": s.get("item"), 
+                                 "filed": s.get("filedAt"), "accession": s.get("accession"),
+                                 "concepts": [], "fact_values": [], "entities": []} for s in sentences],
+        "strategic_context": {}
+    }
+    return build_enhanced_context(prompt, cik, org_name, context_data)
 
 # ---------------------------
 # Local LLM adapters
@@ -383,20 +575,28 @@ def make_llm_from_env() -> LLMBase:
 def run_pipeline(prompt: str, cfg: Neo4jConfig, show_context: bool = False) -> Dict[str, Any]:
     retriever = Neo4jRetriever(cfg)
     try:
+        # Resolve organization
         cik, org_name = retriever.resolve_org_from_prompt(prompt)
-        toks = pick_tokens(prompt, k=12)
-        sentences = retriever.top_sentences(prompt, cik=cik, k=40)
-        facts = retriever.top_facts(tokens=toks, cik=cik, limit=80)
-        filings = retriever.filing_summary(cik=cik, limit=8)
+        
+        # Get comprehensive context using enhanced retrieval
+        context_data = retriever.get_comprehensive_context(prompt, cik=cik, k=50)
+        
+        # Build enhanced context
+        ctx = build_enhanced_context(prompt, cik, org_name, context_data)
 
-        ctx = build_context(prompt, cik, org_name, sentences, facts, filings)
-
+        # Generate response with enhanced system prompt
         llm = make_llm_from_env()
-        system = "You are a strategic planning assistant using financial and disclosure-analysis to provide insights and recommendations for organizations. Your answer should be augmented and driven by the supplied context when possible. Respond is cleaning defined sections, do not use tables."
+        system = ("You are an expert financial analyst and strategic planning assistant. "
+                 "You have access to comprehensive financial data, narrative disclosures, and temporal trends. "
+                 "Provide strategic insights that connect quantitative metrics with qualitative context. "
+                 "Structure your responses clearly with specific sections addressing different aspects of the analysis. "
+                 "Always cite specific data points, accession numbers, and time periods when making claims. "
+                 "When analyzing trends, explain both the numerical progression and business implications.")
+        
         answer = llm.generate(system, ctx)
 
         if show_context:
-            return {"answer": answer, "context": ctx, "cik": cik, "org": org_name}
+            return {"answer": answer, "context": ctx, "cik": cik, "org": org_name, "context_data": context_data}
         return {"answer": answer, "cik": cik, "org": org_name}
     finally:
         retriever.close()

@@ -43,6 +43,27 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple, Union
 
 from bs4 import BeautifulSoup  # type: ignore
 from neo4j import GraphDatabase  # type: ignore
+from collections import defaultdict
+import logging
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Try to import spacy for NER, make it optional
+try:
+    import spacy
+    HAS_SPACY = True
+    try:
+        nlp = spacy.load("en_core_web_sm")
+    except OSError:
+        logger.warning("spaCy model 'en_core_web_sm' not found. Install with: python -m spacy download en_core_web_sm")
+        HAS_SPACY = False
+        nlp = None
+except ImportError:
+    logger.warning("spaCy not installed. Install with: pip install spacy. NER features will be disabled.")
+    HAS_SPACY = False
+    nlp = None
 
 # ------------------------------
 # Data classes & utilities
@@ -128,6 +149,8 @@ SCHEMA_QUERIES = [
     "CREATE CONSTRAINT IF NOT EXISTS FOR (sent:Sentence) REQUIRE sent.id IS UNIQUE",
     # Topics (optional)
     "CREATE CONSTRAINT IF NOT EXISTS FOR (t:Topic) REQUIRE t.name IS UNIQUE",
+    # Entities (new)
+    "CREATE CONSTRAINT IF NOT EXISTS FOR (e:Entity) REQUIRE (e.text, e.type) IS NODE KEY",
     # Full-text index on Sentence.text for narrative search
     "CREATE FULLTEXT INDEX sentenceText IF NOT EXISTS FOR (s:Sentence) ON EACH [s.text]",
 ]
@@ -366,6 +389,246 @@ def extract_topics(sentences: List[str], top_k: int = 40) -> List[str]:
     return [k for k, _ in items[:top_k]]
 
 # ------------------------------
+# Enhanced Entity Recognition and Linking
+# ------------------------------
+
+def extract_entities_from_sentences(sentences: List[str]) -> Dict[str, List[Tuple[str, int, str]]]:
+    """Extract named entities and link them to sentences."""
+    if not HAS_SPACY or not nlp:
+        logger.info("Spacy not available, skipping entity extraction")
+        return {}
+    
+    entity_mentions = defaultdict(list)
+    
+    for i, sentence in enumerate(sentences):
+        try:
+            doc = nlp(sentence[:1000])  # Limit sentence length for performance
+            for ent in doc.ents:
+                if ent.label_ in ["ORG", "PERSON", "GPE", "MONEY", "PERCENT", "DATE", "PRODUCT"]:
+                    entity_text = ent.text.strip().lower()
+                    if len(entity_text) > 2:  # Filter out very short entities
+                        entity_mentions[entity_text].append((sentence, i, ent.label_))
+        except Exception as e:
+            logger.warning(f"Error processing sentence {i}: {e}")
+            continue
+    
+    return dict(entity_mentions)
+
+def create_entity_nodes(session, entities: Dict[str, List[Tuple[str, int, str]]], accession: str):
+    """Create Entity nodes and link them to sentences."""
+    if not entities:
+        return
+    
+    entity_rows = []
+    sentence_entity_links = []
+    
+    for entity_text, mentions in entities.items():
+        if len(mentions) < 2:  # Only keep entities mentioned multiple times
+            continue
+            
+        entity_type = mentions[0][2]  # Get entity type from first mention
+        entity_rows.append({
+            "text": entity_text,
+            "type": entity_type,
+            "mention_count": len(mentions),
+            "accession": accession
+        })
+        
+        # Create sentence-entity links
+        for sentence, sentence_idx, _ in mentions:
+            sentence_id = stable_hash(accession, "ALL", str(sentence_idx), sentence)
+            sentence_entity_links.append({
+                "entity_text": entity_text,
+                "entity_type": entity_type,
+                "sentence_id": sentence_id,
+                "accession": accession
+            })
+    
+    if entity_rows:
+        # Create entities
+        session.run("""
+            UNWIND $entities AS e
+            MERGE (ent:Entity {text: e.text, type: e.type})
+            SET ent.mentionCount = e.mention_count
+            WITH ent, e
+            MATCH (f:Filing {accession: e.accession})
+            MERGE (f)-[:MENTIONS_ENTITY]->(ent)
+        """, entities=entity_rows)
+        
+        # Link entities to sentences
+        session.run("""
+            UNWIND $links AS link
+            MATCH (ent:Entity {text: link.entity_text, type: link.entity_type})
+            MATCH (s:Sentence {id: link.sentence_id})
+            MERGE (s)-[:MENTIONS_ENTITY]->(ent)
+        """, links=sentence_entity_links)
+        
+        logger.info(f"Created {len(entity_rows)} entities with {len(sentence_entity_links)} sentence links")
+
+def create_temporal_fact_relationships(session, cik: str):
+    """Link facts of the same concept across different periods."""
+    try:
+        result = session.run("""
+            MATCH (o:Organization {cik: $cik})-[:FILED]->(f:Filing)-[:HAS_FACT]->(fact:Fact)-[:OF_CONCEPT]->(c:Concept)
+            MATCH (fact)-[:FOR_PERIOD]->(p:Period)
+            WITH c, collect({
+                fact: fact, 
+                period: p, 
+                filing: f,
+                end_date: CASE 
+                    WHEN p.end IS NOT NULL THEN p.end 
+                    WHEN p.instant IS NOT NULL THEN p.instant 
+                    ELSE p.start 
+                END
+            }) AS facts
+            WHERE size(facts) > 1
+            
+            // Sort facts by date and create PRECEDES relationships
+            WITH c, [f IN facts WHERE f.end_date IS NOT NULL | f] AS dated_facts
+            WHERE size(dated_facts) > 1
+            
+            UNWIND range(0, size(dated_facts)-2) AS i
+            WITH c, dated_facts[i] AS current, dated_facts[i+1] AS next
+            WHERE current.end_date < next.end_date
+            
+            MERGE (current.fact)-[r:PRECEDES {concept: c.name}]->(next.fact)
+            SET r.time_diff = duration.between(date(current.end_date), date(next.end_date)).days
+            
+            RETURN count(r) AS relationships_created
+        """, cik=cik)
+        
+        count = result.single()["relationships_created"]
+        logger.info(f"Created {count} temporal fact relationships for CIK {cik}")
+        
+    except Exception as e:
+        logger.warning(f"Error creating temporal relationships: {e}")
+
+def link_concepts_to_narrative(session, accession: str):
+    """Link financial concepts mentioned in narrative to actual facts."""
+    try:
+        result = session.run("""
+            MATCH (f:Filing {accession: $accession})-[:HAS_FACT]->(fact:Fact)-[:OF_CONCEPT]->(c:Concept)
+            MATCH (f)-[:HAS_SECTION]->(sec:Section)-[:HAS_SENTENCE]->(s:Sentence)
+            
+            // Extract the last part of the concept name for matching
+            WITH fact, c, s, sec, split(c.name, '.') AS concept_parts
+            WITH fact, c, s, sec, concept_parts[-1] AS concept_name
+            
+            WHERE toLower(s.text) CONTAINS toLower(concept_name) OR
+                  toLower(s.text) CONTAINS toLower(replace(concept_name, 'Entity', '')) OR
+                  toLower(s.text) CONTAINS toLower(replace(concept_name, 'Document', '')) OR
+                  // Match common financial terms
+                  (concept_name IN ['Revenue', 'NetIncome', 'TotalAssets', 'TotalDebt'] AND 
+                   (toLower(s.text) CONTAINS 'revenue' OR 
+                    toLower(s.text) CONTAINS 'income' OR 
+                    toLower(s.text) CONTAINS 'assets' OR 
+                    toLower(s.text) CONTAINS 'debt'))
+            
+            MERGE (s)-[:DISCUSSES_CONCEPT]->(c)
+            MERGE (s)-[:REFERENCES_FACT]->(fact)
+            
+            RETURN count(DISTINCT s) AS sentences_linked, count(DISTINCT c) AS concepts_linked
+        """, accession=accession)
+        
+        result_data = result.single()
+        logger.info(f"Linked {result_data['sentences_linked']} sentences to {result_data['concepts_linked']} concepts")
+        
+    except Exception as e:
+        logger.warning(f"Error linking concepts to narrative: {e}")
+
+def create_enhanced_context_nodes(session, fact_records: List[FactRecord], accession: str):
+    """Create proper Context nodes from contextRef data."""
+    context_data = []
+    context_facts = defaultdict(list)
+    
+    for fact in fact_records:
+        if fact.context_ref:
+            context_facts[fact.context_ref].append(fact.id)
+    
+    for context_id, fact_ids in context_facts.items():
+        context_data.append({
+            "id": context_id,
+            "accession": accession,
+            "fact_count": len(fact_ids),
+            "fact_ids": fact_ids
+        })
+    
+    if context_data:
+        # Create context nodes
+        session.run("""
+            UNWIND $contexts AS ctx
+            MERGE (c:Context {id: ctx.id})
+            SET c.factCount = ctx.fact_count, c.filingAccession = ctx.accession
+            WITH c, ctx
+            MATCH (f:Filing {accession: ctx.accession})
+            MERGE (f)-[:HAS_CONTEXT]->(c)
+        """, contexts=context_data)
+        
+        # Link facts to contexts
+        for ctx in context_data:
+            session.run("""
+                MATCH (c:Context {id: $context_id})
+                UNWIND $fact_ids AS fact_id
+                MATCH (fact:Fact {id: fact_id})
+                MERGE (fact)-[:IN_CONTEXT]->(c)
+            """, context_id=ctx["id"], fact_ids=ctx["fact_ids"])
+        
+        logger.info(f"Created {len(context_data)} context nodes")
+
+def validate_fact_data(fact_records: List[FactRecord]) -> List[FactRecord]:
+    """Validate and clean fact data before ingestion."""
+    validated = []
+    skipped = 0
+    
+    for fact in fact_records:
+        # Skip facts with invalid values
+        if fact.value is None or (isinstance(fact.value, str) and fact.value.strip() == ""):
+            skipped += 1
+            continue
+        
+        # Normalize numeric values
+        if fact.value_type in ["integer", "float"] and isinstance(fact.value, str):
+            try:
+                # Remove common formatting characters
+                clean_value = fact.value.replace(',', '').replace('$', '').replace('%', '')
+                if '.' in clean_value:
+                    fact.value = float(clean_value)
+                else:
+                    fact.value = int(clean_value)
+            except ValueError:
+                # Keep as string if conversion fails
+                pass
+        
+        validated.append(fact)
+    
+    if skipped > 0:
+        logger.info(f"Validated {len(validated)} facts, skipped {skipped} invalid facts")
+    
+    return validated
+
+def log_ingestion_stats(session, accession: str):
+    """Log statistics about ingested data."""
+    try:
+        stats = session.run("""
+            MATCH (f:Filing {accession: $accession})
+            OPTIONAL MATCH (f)-[:HAS_FACT]->(fact:Fact)
+            OPTIONAL MATCH (f)-[:HAS_SECTION]->(sec:Section)-[:HAS_SENTENCE]->(sent:Sentence)
+            OPTIONAL MATCH (f)-[:MENTIONS_ENTITY]->(ent:Entity)
+            OPTIONAL MATCH (f)-[:HAS_CONTEXT]->(ctx:Context)
+            RETURN 
+                count(DISTINCT fact) AS facts, 
+                count(DISTINCT sent) AS sentences,
+                count(DISTINCT ent) AS entities,
+                count(DISTINCT ctx) AS contexts
+        """, accession=accession).single()
+        
+        logger.info(f"Filing {accession}: {stats['facts']} facts, {stats['sentences']} sentences, "
+                   f"{stats['entities']} entities, {stats['contexts']} contexts")
+        
+    except Exception as e:
+        logger.warning(f"Error logging stats: {e}")
+
+# ------------------------------
 # Ingestion
 # ------------------------------
 
@@ -434,7 +697,8 @@ def ingest_folder(folder: Path, extract_topics_flag: bool = False):
     fact_records: List[FactRecord] = []
     if xbrl_json:
         root = xbrl_json.get("xbrl_data", xbrl_json)
-        fact_records = build_fact_records(root, cik=cik, accession=accession, source_path=str(files["xbrl"] or ""))
+        raw_fact_records = build_fact_records(root, cik=cik, accession=accession, source_path=str(files["xbrl"] or ""))
+        fact_records = validate_fact_data(raw_fact_records)
 
     # Parse narrative into sections/sentences
     sections: List[Tuple[str, str, List[str]]] = []
@@ -538,10 +802,6 @@ def ingest_folder(folder: Path, extract_topics_flag: bool = False):
                     MERGE (unit:Unit {measure: u})
                     MERGE (fact)-[:MEASURED_IN]->(unit)
                 )
-                FOREACH (cr IN CASE WHEN r.context_ref IS NULL THEN [] ELSE [r.context_ref] END |
-                    MERGE (ctx:Context {id: cr})
-                    MERGE (fact)-[:IN_CONTEXT]->(ctx)
-                )
                 FOREACH (d IN r.dimensions |
                     MERGE (dim:Dimension {axis: d.axis, member: d.member})
                     MERGE (fact)-[:HAS_DIMENSION]->(dim)
@@ -549,6 +809,9 @@ def ingest_folder(folder: Path, extract_topics_flag: bool = False):
                 """,
                 rows=rows
             )
+            
+            # Create enhanced context nodes
+            create_enhanced_context_nodes(session, fact_records, accession)
 
         # Narrative: Sections and Sentences
         if sections:
@@ -584,6 +847,17 @@ def ingest_folder(folder: Path, extract_topics_flag: bool = False):
                     rows=sent_rows
                 )
 
+            # Enhanced processing: Entity recognition and concept linking
+            if sent_rows:
+                all_sentences = [s["text"] for s in sent_rows]
+                
+                # Extract and create entities
+                entities = extract_entities_from_sentences(all_sentences)
+                create_entity_nodes(session, entities, accession)
+                
+                # Link concepts to narrative
+                link_concepts_to_narrative(session, accession)
+            
             # Optional topics (very naive)
             if extract_topics_flag:
                 all_sents = [s["text"] for s in sent_rows]
@@ -616,8 +890,15 @@ def ingest_folder(folder: Path, extract_topics_flag: bool = False):
                 #         t=t
                 #     )
 
+    # Create temporal relationships after all data is ingested
+    with driver.session() as session:
+        create_temporal_fact_relationships(session, cik)
+        
+        # Log final statistics
+        log_ingestion_stats(session, accession)
+    
     driver.close()
-    print(f"Ingestion complete for folder: {folder}")
+    logger.info(f"Enhanced ingestion complete for folder: {folder}")
 
 def ingest_multiple_folders(root_folder: Path, extract_topics_flag: bool = False):
     """
