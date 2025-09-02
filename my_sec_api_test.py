@@ -8,10 +8,12 @@ from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
 # ---------- Config ----------
-NUM_YEARS = 5  # how many most-recent 10-K filings to pull
+TICKER = "IBM" # ticker symbol of the organization you want to pull filings for
+FORM_TYPE = "10-K" # form type of the filings you want to pull NOTE only '10-K' is currently supported
+NUM_YEARS = 5  # how many most-recent form filings to pull
 SEC_HEADERS = {
     # Per SEC guidance, identify yourself. Replace with your contact info.
-    "User-Agent": "Research script (your_email@example.com)"
+    "User-Agent": "Research script (brian.gormanly@marist.edu)"
 }
 REQUEST_TIMEOUT = 30
 
@@ -27,7 +29,7 @@ queryApi = QueryApi(api_key=load_api_key())
 xbrlApi = XbrlApi(api_key=load_api_key())
 
 search_params = {
-    "query": "ticker:IBM AND formType:\"10-K\"",
+    "query": f"ticker:{TICKER} AND formType:\"{FORM_TYPE}\"",
     "from": "0",
     "size": str(NUM_YEARS),
     "sort": [{"filedAt": {"order": "desc"}}]
