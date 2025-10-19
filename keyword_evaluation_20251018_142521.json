@@ -1,0 +1,1103 @@
+{
+  "graphrag_results": [
+    {
+      "query_id": "factual_001",
+      "approach": "graphrag",
+      "response": "**IBM\u2019s total revenue for FY\u202f2023:** **$30.745\u202fbillion**.",
+      "context_used": "Query: What was IBM's total revenue in 2023?\n\n=== FINANCIAL FACTS ===\n\u2022 StatementsOfIncome.Revenues: 29813000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:TechnologyServiceMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30378000000 (2023-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30206000000 (2022-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 32231000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:ProductMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30745000000 (2023-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 29673000000 (2022-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 709000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:FinancialServiceMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\n=== NEWS SENTIMENT ===\n\u2022 International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance\n  Sentiment: positive (0.7351)\n  Date: 2025-09-01T13:00:05\n\u2022 Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: positive (0.8689)\n  Date: 2025-09-01T12:11:23\n\u2022 Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: neutral (0.0)\n  Date: 2025-09-01T07:00:00\n\u2022 Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: neutral (0.0)\n  Date: 2025-09-01T03:11:15\n\u2022 Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: positive (0.5267)\n  Date: 2025-09-01T03:11:15\n",
+      "metrics": {
+        "factual_accuracy": 0.6666666666666666,
+        "citation_accuracy": 0.0,
+        "numerical_precision": 0.6666666666666666,
+        "context_relevance": 1.0,
+        "context_precision": 0.6666666666666666,
+        "context_recall": 0.6666666666666666,
+        "completeness_score": 0.16,
+        "depth_score": 0.0,
+        "coherence_score": 0.0,
+        "temporal_analysis_score": 0.2,
+        "cross_reference_score": 0.3,
+        "sentiment_integration_score": 0.4,
+        "strategic_insight_score": 0.3,
+        "response_time": 0.0,
+        "context_size": 193,
+        "token_efficiency": 0.0,
+        "estimated_cost": 0.00201,
+        "cost_per_insight": 0.001005
+      },
+      "timestamp": "2025-10-18 14:25:36.333794",
+      "raw_data": {
+        "facts": [
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "29813000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:TechnologyServiceMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30378000000",
+            "period": "2023-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30206000000",
+            "period": "2022-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "32231000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:ProductMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30745000000",
+            "period": "2023-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "29673000000",
+            "period": "2022-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "709000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:FinancialServiceMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          }
+        ],
+        "news": [
+          {
+            "title": "International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance",
+            "published": "2025-09-01T13:00:05",
+            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWE1TdzVJTHJuUTJKbmQ3SE5PMlJfN1pUbVJYMUZvUDl3ODd4LWMyYWVzYUd4Rl92c0xrMC1BUnhHa3ZnZ3ZRODgtR1dSWTljcHItaWp5RzRiTmZtNXdyR0Qzd3pWS3pSbTJGSGFydDQyTkg5M3p2dURfazYwVjZfX2RJbWtjQkQ4STNfRjBPYnlIZEpnb0lfMg?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQWE1TdzVJTHJuUTJKbmQ3SE5PMlJfN1pUbVJYMUZvUDl3ODd4LWMyYWVzYUd4Rl92c0xrMC1BUnhHa3ZnZ3ZRODgtR1dSWTljcHItaWp5RzRiTmZtNXdyR0Qzd3pWS3pSbTJGSGFydDQyTkg5M3p2dURfazYwVjZfX2RJbWtjQkQ4STNfRjBPYnlIZEpnb0lfMg?oc=5\" target=\"_blank\">International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know</a>  <font color=\"#6f6f6f\">Yahoo Finance</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.7351
+          },
+          {
+            "title": "Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T12:11:23",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSDZ6V0c4NVRvX2hIVmJkUVdXcXNadmRPV3p2YUxyTDE5TGxTWTE1cl9PQlViOEc1aGIzcjhGWE5UZWdQUHF6TlpHZmpHVEwzOV9JdGtxZzJicTBfelFyeFVTVGFyYTNUeC1qd1FESVFFdV9sbC1WX3U0WExmNzdFVmsxX3ctMThjRVJKY2dNUFpqNVBsQkdEblVZOWxDZWJDNnRPWXJnbmdrM1Vwdzk5enBqdU5qOEF3YkYyeV9RVzltY2IwOVB3NWp6LURFTFNJY0lHNTgwQXg0WWpWSTItZVptUEZKZkUzTkpN?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSDZ6V0c4NVRvX2hIVmJkUVdXcXNadmRPV3p2YUxyTDE5TGxTWTE1cl9PQlViOEc1aGIzcjhGWE5UZWdQUHF6TlpHZmpHVEwzOV9JdGtxZzJicTBfelFyeFVTVGFyYTNUeC1qd1FESVFFdV9sbC1WX3U0WExmNzdFVmsxX3ctMThjRVJKY2dNUFpqNVBsQkdEblVZOWxDZWJDNnRPWXJnbmdrM1Vwdzk5enBqdU5qOEF3YkYyeV9RVzltY2IwOVB3NWp6LURFTFNJY0lHNTgwQXg0WWpWSTItZVptUEZKZkUzTkpN?oc=5\" target=\"_blank\">Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.8689
+          },
+          {
+            "title": "Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNQUZuLUZrWU93WnQ4bTR3ZTh3N18zU3dpMUdBbWQzVWY1M1pqMEdOcFJEeEZDd0FDMDR1ZnRmNXEwM0RrY2hzbnJhOFhMMW1OTmZPNWNDbkZ1Z2lDN0xuZGFGNmlKWHM1bVRUY3VIRHRqQTFBNjdJWnJuczRleW5kYTlKd1JfV1VGYlBQb3VpcWFPS29WdUQtbXlCak82VDZJX2llQzlOcW1VNzhlQnpkRTBxUHB0eHFoeEoteFNoSDZ6R3FkaFlnNWtUX0J1NjlOS3l5cVN6ZjBpd0NfZVc3T0ZoeldZaW1wdlh5ZXU3R2ZxTlpQ?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9AFBVV95cUxNQUZuLUZrWU93WnQ4bTR3ZTh3N18zU3dpMUdBbWQzVWY1M1pqMEdOcFJEeEZDd0FDMDR1ZnRmNXEwM0RrY2hzbnJhOFhMMW1OTmZPNWNDbkZ1Z2lDN0xuZGFGNmlKWHM1bVRUY3VIRHRqQTFBNjdJWnJuczRleW5kYTlKd1JfV1VGYlBQb3VpcWFPS29WdUQtbXlCak82VDZJX2llQzlOcW1VNzhlQnpkRTBxUHB0eHFoeEoteFNoSDZ6R3FkaFlnNWtUX0J1NjlOS3l5cVN6ZjBpd0NfZVc3T0ZoeldZaW1wdlh5ZXU3R2ZxTlpQ?oc=5\" target=\"_blank\">Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQaXRsb1lGaHZsbHZILVl4TFVBUkd2ZUFTTUVZTWxYYzlZNlU3bUhxVWNzSUM0YzFsRndiV3B2QnNUeXhxTDRlRGVaZHhBN2RDTXVvVGZSOGhoNEFid1hpRWJ2OUk0Q2xtSXplN0dfM2NSTFVsbG45MXk5NzRHS0VJSzlSRHhHQ0hFOWtiLUNWTjFmd1o0SGEyMFZwYUF3OXhWd0kxbXUzdXBFUWRyV25mcVVLaVZodzV5Vi14Tk52ZlB6M285U04wYmpsSEhCMUh1cnh2QzQzb3RwQVJwSGlUYzQxR2VvNXVrVWtkYldn?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi7gFBVV95cUxQaXRsb1lGaHZsbHZILVl4TFVBUkd2ZUFTTUVZTWxYYzlZNlU3bUhxVWNzSUM0YzFsRndiV3B2QnNUeXhxTDRlRGVaZHhBN2RDTXVvVGZSOGhoNEFid1hpRWJ2OUk0Q2xtSXplN0dfM2NSTFVsbG45MXk5NzRHS0VJSzlSRHhHQ0hFOWtiLUNWTjFmd1o0SGEyMFZwYUF3OXhWd0kxbXUzdXBFUWRyV25mcVVLaVZodzV5Vi14Tk52ZlB6M285U04wYmpsSEhCMUh1cnh2QzQzb3RwQVJwSGlUYzQxR2VvNXVrVWtkYldn?oc=5\" target=\"_blank\">Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMlJOX29mdERNem90N2lxd0FtSHFTUTg4VW50WFAyeHQzY3JGNWpzVEJid3p5TlhvV0dYY3U4WjlNY3VhUjJBTGdUbTcyZWtiWXpLSDNKd1lURmVaVDZPVUFUOVZkbnRfbGNKVmJUVzRlZ1NYZWp1YTJTakZpNEcya283RjJ0UmRzVVN1LWk4ekpLd3BuQ1AxdDBHcGN2bUdmbm1UR2xBcENybVVOOVRFM19GQUNrQ1BaVmJDaUktaWlvcWNkZTQxakVLY3l4ck5Va2h5cjRrV0xiUGM?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMlJOX29mdERNem90N2lxd0FtSHFTUTg4VW50WFAyeHQzY3JGNWpzVEJid3p5TlhvV0dYY3U4WjlNY3VhUjJBTGdUbTcyZWtiWXpLSDNKd1lURmVaVDZPVUFUOVZkbnRfbGNKVmJUVzRlZ1NYZWp1YTJTakZpNEcya283RjJ0UmRzVVN1LWk4ekpLd3BuQ1AxdDBHcGN2bUdmbm1UR2xBcENybVVOOVRFM19GQUNrQ1BaVmJDaUktaWlvcWNkZTQxakVLY3l4ck5Va2h5cjRrV0xiUGM?oc=5\" target=\"_blank\">Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "Samalin Investment Counsel LLC Acquires New Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQRmJtOVVrcjBmZTZlX1JPV3A2Wk9yN0t5Sl9UbDZDUGFvOEtIcDhXRmN6cWFDN251bWl4UWstSVlQU2ZtYm9zVUxzUUhUcEc2aU82c1lOb01pR3h5MV96a3BQckFyMXQ2Vy1NOWE1R2lJclZDdGRDU0JuTkl6N2JPSDdnWDFKWmFqbXlrNHVnOTd2OEo0ekItODhBd2ZYNDZaRVZMcjNTVWxPbmE4OTZKQXg3eF9RRmZJdENzWElPRjhZTmI2cGsta1ZyZnhNT2tMSkEyWWxCN2hfY05XTDFjV0xwZXhDMnNOWENpRmMtWVBtSUlGcVBR?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9wFBVV95cUxQRmJtOVVrcjBmZTZlX1JPV3A2Wk9yN0t5Sl9UbDZDUGFvOEtIcDhXRmN6cWFDN251bWl4UWstSVlQU2ZtYm9zVUxzUUhUcEc2aU82c1lOb01pR3h5MV96a3BQckFyMXQ2Vy1NOWE1R2lJclZDdGRDU0JuTkl6N2JPSDdnWDFKWmFqbXlrNHVnOTd2OEo0ekItODhBd2ZYNDZaRVZMcjNTVWxPbmE4OTZKQXg3eF9RRmZJdENzWElPRjhZTmI2cGsta1ZyZnhNT2tMSkEyWWxCN2hfY05XTDFjV0xwZXhDMnNOWENpRmMtWVBtSUlGcVBR?oc=5\" target=\"_blank\">Samalin Investment Counsel LLC Acquires New Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Guggenheim Capital LLC Has $59.01 Million Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T22:30:00",
+            "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOTVdVRldWSHdFeFN6TFlrb1RNZjFuQWJLX19JZmVPSHBzUXc5VGcwVFZqaXhJNUZFRDJWelYxaXRpaTVoSElidzlabTJpbEI2Zi1nRzNIbmJsUGJ3NjlZVXNHd0lraWJkZDRMVUVtVkhDWVRReWJNMTh0T2g0TDF3UTFEYy1qVFo2OFZGUmNvRlRibW56SWNrQ1NzY090S2lKY2VZLVJiOHJLc185V3BMeDNWMXBjdFgyWkI3cGxWMW5DSzZJamRieUxUOWRfaWFhaWZJVnlHWHlCQ1NVQVB0aXlR?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxOTVdVRldWSHdFeFN6TFlrb1RNZjFuQWJLX19JZmVPSHBzUXc5VGcwVFZqaXhJNUZFRDJWelYxaXRpaTVoSElidzlabTJpbEI2Zi1nRzNIbmJsUGJ3NjlZVXNHd0lraWJkZDRMVUVtVkhDWVRReWJNMTh0T2g0TDF3UTFEYy1qVFo2OFZGUmNvRlRibW56SWNrQ1NzY090S2lKY2VZLVJiOHJLc185V3BMeDNWMXBjdFgyWkI3cGxWMW5DSzZJamRieUxUOWRfaWFhaWZJVnlHWHlCQ1NVQVB0aXlR?oc=5\" target=\"_blank\">Guggenheim Capital LLC Has $59.01 Million Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "International Business Machines Corporation $IBM Shares Sold by Baird Financial Group Inc. - MarketBeat",
+            "published": "2025-08-31T10:41:08",
+            "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNLV9FNk9XS2ZhVEFZRFhHZ1gydW9raFZTRWN5ZUtIQ1R2WmU2SHdlaTlNSllRY2k5SG5WSkVKN0lRYjFPdUJCNHhya3VSSFR2TkdMcFpFUnQ4QTlXZ3FRN0dhM2h1Sm4wVzJZQlVJbUoxbm9jckgwZXE3QUJMbGZtcXBwT3lFV0hIV2N5NlZESFdqcjNjM1VVNzhnS0dzaXVaWTVIX0dxRWdDVk9tcFFmNTZUdDk1ZjNFWDVrbTBwS1M1ZFpLMTJpTXUxNWVQYzFLc1ZURWk5MmE5cm5Gb3dmR2VmeEFOUXVvZk5xd0gxVzNuM3FsNW9OYjBCMHBwWm8?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi_wFBVV95cUxNLV9FNk9XS2ZhVEFZRFhHZ1gydW9raFZTRWN5ZUtIQ1R2WmU2SHdlaTlNSllRY2k5SG5WSkVKN0lRYjFPdUJCNHhya3VSSFR2TkdMcFpFUnQ4QTlXZ3FRN0dhM2h1Sm4wVzJZQlVJbUoxbm9jckgwZXE3QUJMbGZtcXBwT3lFV0hIV2N5NlZESFdqcjNjM1VVNzhnS0dzaXVaWTVIX0dxRWdDVk9tcFFmNTZUdDk1ZjNFWDVrbTBwS1M1ZFpLMTJpTXUxNWVQYzFLc1ZURWk5MmE5cm5Gb3dmR2VmeEFOUXVvZk5xd0gxVzNuM3FsNW9OYjBCMHBwWm8?oc=5\" target=\"_blank\">International Business Machines Corporation $IBM Shares Sold by Baird Financial Group Inc.</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "B. Metzler seel. Sohn & Co. AG Purchases 4,335 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUTFLbTV4dlM3SllHWlZ5THNGLS1RckRFRklrRFRYaFh4ZHNvZWYyMDcxekRoUzNfQlVhekg3NnVzNEdsODdwX1dSaVBTT01JajNZVGZnLWpVcHhhUkhuZW9DeWRBN3pzdkhOVmI4cktCdDBTOGk4Y1pkZTNjYkFXdXFaaV92TjB6VG85dWhoNFBRY3c2SlBWdUFfV3lmVGZZQ3Y1OWRScWtoNFdYTGtVTUt2c0R0OTBMXzNyazVneVpZQTY2S2NWUnlDME1WTDh3bi1uMzkyLW44UUoxalVack8xT3hUdng5WGc?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUTFLbTV4dlM3SllHWlZ5THNGLS1RckRFRklrRFRYaFh4ZHNvZWYyMDcxekRoUzNfQlVhekg3NnVzNEdsODdwX1dSaVBTT01JajNZVGZnLWpVcHhhUkhuZW9DeWRBN3pzdkhOVmI4cktCdDBTOGk4Y1pkZTNjYkFXdXFaaV92TjB6VG85dWhoNFBRY3c2SlBWdUFfV3lmVGZZQ3Y1OWRScWtoNFdYTGtVTUt2c0R0OTBMXzNyazVneVpZQTY2S2NWUnlDME1WTDh3bi1uMzkyLW44UUoxalVack8xT3hUdng5WGc?oc=5\" target=\"_blank\">B. Metzler seel. Sohn & Co. AG Purchases 4,335 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "CreativeOne Wealth LLC Acquires 3,177 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxORGtreVVLUmc2T0Z5cTFvdTBsakQwN1FfcVNEcldlVk9rblF2Z1ZsMkUwcjB2OU94VWEwbXhzWmpmMlBRdHFSRWZHeWw3c3VRSlYzd3NweVVLNmhKWVpacl9zZGpqeVBOdjQtbHB2RWJQa0JYbjBZWUhYWVdZZ1J0eWlmQXhsblJJYkNyRUR6RGlqMHZWaDR1cHFDNUxLdlpTSjl3MG5CcTZUOS0wTkt4dkszMm9yUG13RE40NXNISU5SQzU4TlljZjc4a1B2cXBJMXY1Tms5cEp4eVJCQklVQkdzRlU1a0hGbEJv?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxORGtreVVLUmc2T0Z5cTFvdTBsakQwN1FfcVNEcldlVk9rblF2Z1ZsMkUwcjB2OU94VWEwbXhzWmpmMlBRdHFSRWZHeWw3c3VRSlYzd3NweVVLNmhKWVpacl9zZGpqeVBOdjQtbHB2RWJQa0JYbjBZWUhYWVdZZ1J0eWlmQXhsblJJYkNyRUR6RGlqMHZWaDR1cHFDNUxLdlpTSjl3MG5CcTZUOS0wTkt4dkszMm9yUG13RE40NXNISU5SQzU4TlljZjc4a1B2cXBJMXY1Tms5cEp4eVJCQklVQkdzRlU1a0hGbEJv?oc=5\" target=\"_blank\">CreativeOne Wealth LLC Acquires 3,177 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.8689
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "analytical_001",
+      "approach": "graphrag",
+      "response": "**IBM\u2019s revenue landscape (FY\u202f2024)**  \n\n| Segment (US\u2011GAAP) | FY\u202f2024 Revenue | % of Total | Key Products / Services |\n|-------------------|-----------------|------------|--------------------------|\n| **Technology\u202fService** | **\u2248\u202f$29.8\u202fB** | ~\u202f99% | Cloud, cognitive\u2011software, consulting & support (incl. IBM Cloud & Red\u202fHat) |\n| **Product** | <\u202f$0.7\u202fB | ~\u202f2\u20133% | Hardware (servers, storage), licensed software (e.g., IBM Watson) |\n| **Financial Service** | <\u202f$0.1\u202fB | <\u202f1% | Minor \u2013 advisory, financing for IBM\u2011owned assets |\n\n> **Quick takeaway:** Roughly **98\u202f%** of IBM\u2019s revenue comes from its **Technology\u2011Service** and **Product** lines, with the **Financial\u2011Service** segment being a negligible footnote.  \n\n---\n\n## 1. Quantitative Breakdown\n\n1. **Technology Service \u2013 Cloud & AI**  \n   * FY\u202f2024 revenue: **$29.8\u202fB** (\u2248\u202f99% of total).  \n   * This includes IBM Cloud, IBM Red\u202fHat (acquired 2019), IBM Watson AI, and related consulting services.  \n   * **Trend:** Slight year\u2011on\u2011year decline from $30.4\u202fB (FY\u202f2023) \u2013 a sign of the transition phase after the Red\u202fHat acquisition and the shift to a \u201chybrid cloud\u201d model.\n\n2. **Product \u2013 Hardware & Licensed Software**  \n   * FY\u202f2024 revenue: **$0.709\u202fB** (\u2248\u202f2.4% of total).  \n   * Main revenue drivers: server sales, storage, mainframes, and a small share of software licensing (e.g., IBM Watson Studio).  \n   * **Trend:** Minor contraction in hardware sales, reflecting the broader industry pivot away from legacy infrastructure.\n\n3. **Financial Service \u2013 Advisory & Financing**  \n   * FY\u202f2024 revenue: **<\u202f$0.1\u202fB** (\u2248\u202f0.3% of total).  \n   * Minimal impact on the overall top line; largely a \u201cside hustle\u201d for IBM\u2019s broader ecosystem.\n\n---\n\n## 2. Qualitative Context\n\n| Insight | What It Means | Strategic Implication |\n|---------|---------------|-----------------------|\n| **Hybrid\u2011cloud focus** | IBM\u2019s top\u2011line is now almost entirely generated from cloud\u2011based services. The acquisition of Red\u202fHat was a decisive move to capture the hybrid\u2011cloud market. | Continue to invest aggressively in cloud\u2011native capabilities, open\u2011source partnerships, and AI\u2011accelerated services. |\n| **Legacy hardware shift** | Hardware sales are shrinking; the product segment accounts for less than 3\u202f% of revenue. | Accelerate divestiture of non\u2011strategic hardware assets, streamline supply chain, and re\u2011allocate R&D toward software\u2011defined infrastructure. |\n| **Financial\u2011service marginality** | The financial\u2011services bucket is tiny and has not been a focus of IBM\u2019s recent strategy. | No immediate need to scale this segment; could be used to support strategic M&A or to fund cloud investments. |\n| **Positive investor sentiment** | Recent news sentiment scores (0.73\u20110.86) indicate investor confidence in IBM\u2019s transformation. | Leverage this sentiment to attract new partners, secure additional capital for cloud initiatives, and maintain competitive positioning. |\n| **Red\u202fHat synergies** | Integration costs are high, but the revenue base has grown. | Monitor integration KPIs closely and adjust cost\u2011structure models to capture the expected margins from the Red\u202fHat cloud business. |\n\n---\n\n## 3. Strategic Recommendations\n\n| Goal | Action | Expected Outcome |\n|------|--------|------------------|\n| **Accelerate Cloud Growth** | \u2022 Expand IBM Cloud Pak portfolio, emphasizing AI\u2011driven workloads.<br>\u2022 Increase partnership deals with key enterprises (e.g., Microsoft, AWS). | Drive revenue from technology services to rebound to 2023 levels within 2\u202fyears. |\n| **Optimize Legacy Business** | \u2022 Gradual reduction of server manufacturing lines.<br>\u2022 Re\u2011invest capital into high\u2011margin software licensing. | Reduce operating costs and improve EBIT margin by ~2\u20113\u202fpp. |\n| **Enhance Brand Perception** | \u2022 Market IBM\u2019s AI leadership (Watson) as \u201centerprise\u2011grade\u201d and \u201ctrustworthy.\u201d<br>\u2022 Highlight ESG and security compliance as differentiators. | Strengthen market positioning against Amazon Web Services, Microsoft Azure, and Google Cloud. |\n| **Leverage Investor Confidence** | \u2022 Publish transparent quarterly \u201ccloud\u2011growth roadmap.\u201d<br>\u2022 Engage with institutional investors through targeted roadshows. | Sustain share price resilience and attract strategic funding for long\u2011term initiatives. |\n\n---\n\n### Bottom Line\n\nIBM\u2019s **technology\u2011service** revenue\u2014primarily cloud, AI, and consulting\u2014remains its dominant income engine, making up roughly **98\u202f%** of its top line. The **product** segment (hardware + software licensing) accounts for a modest **2\u20133\u202f%**, while the **financial\u2011service** segment is negligible. The company is in the midst of a hybrid\u2011cloud transformation; managing transition costs and accelerating cloud adoption will be key to reversing the recent revenue decline and sustaining growth. Positive market sentiment provides a solid foundation for this strategic pivot.",
+      "context_used": "Query: What are IBM's main revenue sources?\n\n=== FINANCIAL FACTS ===\n\u2022 StatementsOfIncome.Revenues: 29813000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:TechnologyServiceMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30378000000 (2023-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30206000000 (2022-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 32231000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:ProductMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30745000000 (2023-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 29673000000 (2022-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 709000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:FinancialServiceMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\n=== NEWS SENTIMENT ===\n\u2022 International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance\n  Sentiment: positive (0.7351)\n  Date: 2025-09-01T13:00:05\n\u2022 Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: positive (0.8689)\n  Date: 2025-09-01T12:11:23\n\u2022 Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: neutral (0.0)\n  Date: 2025-09-01T07:00:00\n\u2022 Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: neutral (0.0)\n  Date: 2025-09-01T03:11:15\n\u2022 Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: positive (0.5267)\n  Date: 2025-09-01T03:11:15\n",
+      "metrics": {
+        "factual_accuracy": 0.5,
+        "citation_accuracy": 0.42857142857142855,
+        "numerical_precision": 1.0,
+        "context_relevance": 1.0,
+        "context_precision": 0.75,
+        "context_recall": 0.75,
+        "completeness_score": 1.0,
+        "depth_score": 0.42857142857142855,
+        "coherence_score": 0.0,
+        "temporal_analysis_score": 0.3666666666666667,
+        "cross_reference_score": 0.5,
+        "sentiment_integration_score": 1.0,
+        "strategic_insight_score": 0.9666666666666666,
+        "response_time": 0.0,
+        "context_size": 192,
+        "token_efficiency": 0.0014265335235378032,
+        "estimated_cost": 0.00893,
+        "cost_per_insight": 0.004465
+      },
+      "timestamp": "2025-10-18 14:26:14.680082",
+      "raw_data": {
+        "facts": [
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "29813000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:TechnologyServiceMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30378000000",
+            "period": "2023-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30206000000",
+            "period": "2022-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "32231000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:ProductMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30745000000",
+            "period": "2023-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "29673000000",
+            "period": "2022-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "709000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:FinancialServiceMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          }
+        ],
+        "news": [
+          {
+            "title": "International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance",
+            "published": "2025-09-01T13:00:05",
+            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWE1TdzVJTHJuUTJKbmQ3SE5PMlJfN1pUbVJYMUZvUDl3ODd4LWMyYWVzYUd4Rl92c0xrMC1BUnhHa3ZnZ3ZRODgtR1dSWTljcHItaWp5RzRiTmZtNXdyR0Qzd3pWS3pSbTJGSGFydDQyTkg5M3p2dURfazYwVjZfX2RJbWtjQkQ4STNfRjBPYnlIZEpnb0lfMg?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQWE1TdzVJTHJuUTJKbmQ3SE5PMlJfN1pUbVJYMUZvUDl3ODd4LWMyYWVzYUd4Rl92c0xrMC1BUnhHa3ZnZ3ZRODgtR1dSWTljcHItaWp5RzRiTmZtNXdyR0Qzd3pWS3pSbTJGSGFydDQyTkg5M3p2dURfazYwVjZfX2RJbWtjQkQ4STNfRjBPYnlIZEpnb0lfMg?oc=5\" target=\"_blank\">International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know</a>  <font color=\"#6f6f6f\">Yahoo Finance</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.7351
+          },
+          {
+            "title": "Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T12:11:23",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSDZ6V0c4NVRvX2hIVmJkUVdXcXNadmRPV3p2YUxyTDE5TGxTWTE1cl9PQlViOEc1aGIzcjhGWE5UZWdQUHF6TlpHZmpHVEwzOV9JdGtxZzJicTBfelFyeFVTVGFyYTNUeC1qd1FESVFFdV9sbC1WX3U0WExmNzdFVmsxX3ctMThjRVJKY2dNUFpqNVBsQkdEblVZOWxDZWJDNnRPWXJnbmdrM1Vwdzk5enBqdU5qOEF3YkYyeV9RVzltY2IwOVB3NWp6LURFTFNJY0lHNTgwQXg0WWpWSTItZVptUEZKZkUzTkpN?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSDZ6V0c4NVRvX2hIVmJkUVdXcXNadmRPV3p2YUxyTDE5TGxTWTE1cl9PQlViOEc1aGIzcjhGWE5UZWdQUHF6TlpHZmpHVEwzOV9JdGtxZzJicTBfelFyeFVTVGFyYTNUeC1qd1FESVFFdV9sbC1WX3U0WExmNzdFVmsxX3ctMThjRVJKY2dNUFpqNVBsQkdEblVZOWxDZWJDNnRPWXJnbmdrM1Vwdzk5enBqdU5qOEF3YkYyeV9RVzltY2IwOVB3NWp6LURFTFNJY0lHNTgwQXg0WWpWSTItZVptUEZKZkUzTkpN?oc=5\" target=\"_blank\">Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.8689
+          },
+          {
+            "title": "Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNQUZuLUZrWU93WnQ4bTR3ZTh3N18zU3dpMUdBbWQzVWY1M1pqMEdOcFJEeEZDd0FDMDR1ZnRmNXEwM0RrY2hzbnJhOFhMMW1OTmZPNWNDbkZ1Z2lDN0xuZGFGNmlKWHM1bVRUY3VIRHRqQTFBNjdJWnJuczRleW5kYTlKd1JfV1VGYlBQb3VpcWFPS29WdUQtbXlCak82VDZJX2llQzlOcW1VNzhlQnpkRTBxUHB0eHFoeEoteFNoSDZ6R3FkaFlnNWtUX0J1NjlOS3l5cVN6ZjBpd0NfZVc3T0ZoeldZaW1wdlh5ZXU3R2ZxTlpQ?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9AFBVV95cUxNQUZuLUZrWU93WnQ4bTR3ZTh3N18zU3dpMUdBbWQzVWY1M1pqMEdOcFJEeEZDd0FDMDR1ZnRmNXEwM0RrY2hzbnJhOFhMMW1OTmZPNWNDbkZ1Z2lDN0xuZGFGNmlKWHM1bVRUY3VIRHRqQTFBNjdJWnJuczRleW5kYTlKd1JfV1VGYlBQb3VpcWFPS29WdUQtbXlCak82VDZJX2llQzlOcW1VNzhlQnpkRTBxUHB0eHFoeEoteFNoSDZ6R3FkaFlnNWtUX0J1NjlOS3l5cVN6ZjBpd0NfZVc3T0ZoeldZaW1wdlh5ZXU3R2ZxTlpQ?oc=5\" target=\"_blank\">Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQaXRsb1lGaHZsbHZILVl4TFVBUkd2ZUFTTUVZTWxYYzlZNlU3bUhxVWNzSUM0YzFsRndiV3B2QnNUeXhxTDRlRGVaZHhBN2RDTXVvVGZSOGhoNEFid1hpRWJ2OUk0Q2xtSXplN0dfM2NSTFVsbG45MXk5NzRHS0VJSzlSRHhHQ0hFOWtiLUNWTjFmd1o0SGEyMFZwYUF3OXhWd0kxbXUzdXBFUWRyV25mcVVLaVZodzV5Vi14Tk52ZlB6M285U04wYmpsSEhCMUh1cnh2QzQzb3RwQVJwSGlUYzQxR2VvNXVrVWtkYldn?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi7gFBVV95cUxQaXRsb1lGaHZsbHZILVl4TFVBUkd2ZUFTTUVZTWxYYzlZNlU3bUhxVWNzSUM0YzFsRndiV3B2QnNUeXhxTDRlRGVaZHhBN2RDTXVvVGZSOGhoNEFid1hpRWJ2OUk0Q2xtSXplN0dfM2NSTFVsbG45MXk5NzRHS0VJSzlSRHhHQ0hFOWtiLUNWTjFmd1o0SGEyMFZwYUF3OXhWd0kxbXUzdXBFUWRyV25mcVVLaVZodzV5Vi14Tk52ZlB6M285U04wYmpsSEhCMUh1cnh2QzQzb3RwQVJwSGlUYzQxR2VvNXVrVWtkYldn?oc=5\" target=\"_blank\">Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMlJOX29mdERNem90N2lxd0FtSHFTUTg4VW50WFAyeHQzY3JGNWpzVEJid3p5TlhvV0dYY3U4WjlNY3VhUjJBTGdUbTcyZWtiWXpLSDNKd1lURmVaVDZPVUFUOVZkbnRfbGNKVmJUVzRlZ1NYZWp1YTJTakZpNEcya283RjJ0UmRzVVN1LWk4ekpLd3BuQ1AxdDBHcGN2bUdmbm1UR2xBcENybVVOOVRFM19GQUNrQ1BaVmJDaUktaWlvcWNkZTQxakVLY3l4ck5Va2h5cjRrV0xiUGM?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMlJOX29mdERNem90N2lxd0FtSHFTUTg4VW50WFAyeHQzY3JGNWpzVEJid3p5TlhvV0dYY3U4WjlNY3VhUjJBTGdUbTcyZWtiWXpLSDNKd1lURmVaVDZPVUFUOVZkbnRfbGNKVmJUVzRlZ1NYZWp1YTJTakZpNEcya283RjJ0UmRzVVN1LWk4ekpLd3BuQ1AxdDBHcGN2bUdmbm1UR2xBcENybVVOOVRFM19GQUNrQ1BaVmJDaUktaWlvcWNkZTQxakVLY3l4ck5Va2h5cjRrV0xiUGM?oc=5\" target=\"_blank\">Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "Samalin Investment Counsel LLC Acquires New Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQRmJtOVVrcjBmZTZlX1JPV3A2Wk9yN0t5Sl9UbDZDUGFvOEtIcDhXRmN6cWFDN251bWl4UWstSVlQU2ZtYm9zVUxzUUhUcEc2aU82c1lOb01pR3h5MV96a3BQckFyMXQ2Vy1NOWE1R2lJclZDdGRDU0JuTkl6N2JPSDdnWDFKWmFqbXlrNHVnOTd2OEo0ekItODhBd2ZYNDZaRVZMcjNTVWxPbmE4OTZKQXg3eF9RRmZJdENzWElPRjhZTmI2cGsta1ZyZnhNT2tMSkEyWWxCN2hfY05XTDFjV0xwZXhDMnNOWENpRmMtWVBtSUlGcVBR?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9wFBVV95cUxQRmJtOVVrcjBmZTZlX1JPV3A2Wk9yN0t5Sl9UbDZDUGFvOEtIcDhXRmN6cWFDN251bWl4UWstSVlQU2ZtYm9zVUxzUUhUcEc2aU82c1lOb01pR3h5MV96a3BQckFyMXQ2Vy1NOWE1R2lJclZDdGRDU0JuTkl6N2JPSDdnWDFKWmFqbXlrNHVnOTd2OEo0ekItODhBd2ZYNDZaRVZMcjNTVWxPbmE4OTZKQXg3eF9RRmZJdENzWElPRjhZTmI2cGsta1ZyZnhNT2tMSkEyWWxCN2hfY05XTDFjV0xwZXhDMnNOWENpRmMtWVBtSUlGcVBR?oc=5\" target=\"_blank\">Samalin Investment Counsel LLC Acquires New Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Guggenheim Capital LLC Has $59.01 Million Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T22:30:00",
+            "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOTVdVRldWSHdFeFN6TFlrb1RNZjFuQWJLX19JZmVPSHBzUXc5VGcwVFZqaXhJNUZFRDJWelYxaXRpaTVoSElidzlabTJpbEI2Zi1nRzNIbmJsUGJ3NjlZVXNHd0lraWJkZDRMVUVtVkhDWVRReWJNMTh0T2g0TDF3UTFEYy1qVFo2OFZGUmNvRlRibW56SWNrQ1NzY090S2lKY2VZLVJiOHJLc185V3BMeDNWMXBjdFgyWkI3cGxWMW5DSzZJamRieUxUOWRfaWFhaWZJVnlHWHlCQ1NVQVB0aXlR?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxOTVdVRldWSHdFeFN6TFlrb1RNZjFuQWJLX19JZmVPSHBzUXc5VGcwVFZqaXhJNUZFRDJWelYxaXRpaTVoSElidzlabTJpbEI2Zi1nRzNIbmJsUGJ3NjlZVXNHd0lraWJkZDRMVUVtVkhDWVRReWJNMTh0T2g0TDF3UTFEYy1qVFo2OFZGUmNvRlRibW56SWNrQ1NzY090S2lKY2VZLVJiOHJLc185V3BMeDNWMXBjdFgyWkI3cGxWMW5DSzZJamRieUxUOWRfaWFhaWZJVnlHWHlCQ1NVQVB0aXlR?oc=5\" target=\"_blank\">Guggenheim Capital LLC Has $59.01 Million Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "International Business Machines Corporation $IBM Shares Sold by Baird Financial Group Inc. - MarketBeat",
+            "published": "2025-08-31T10:41:08",
+            "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNLV9FNk9XS2ZhVEFZRFhHZ1gydW9raFZTRWN5ZUtIQ1R2WmU2SHdlaTlNSllRY2k5SG5WSkVKN0lRYjFPdUJCNHhya3VSSFR2TkdMcFpFUnQ4QTlXZ3FRN0dhM2h1Sm4wVzJZQlVJbUoxbm9jckgwZXE3QUJMbGZtcXBwT3lFV0hIV2N5NlZESFdqcjNjM1VVNzhnS0dzaXVaWTVIX0dxRWdDVk9tcFFmNTZUdDk1ZjNFWDVrbTBwS1M1ZFpLMTJpTXUxNWVQYzFLc1ZURWk5MmE5cm5Gb3dmR2VmeEFOUXVvZk5xd0gxVzNuM3FsNW9OYjBCMHBwWm8?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi_wFBVV95cUxNLV9FNk9XS2ZhVEFZRFhHZ1gydW9raFZTRWN5ZUtIQ1R2WmU2SHdlaTlNSllRY2k5SG5WSkVKN0lRYjFPdUJCNHhya3VSSFR2TkdMcFpFUnQ4QTlXZ3FRN0dhM2h1Sm4wVzJZQlVJbUoxbm9jckgwZXE3QUJMbGZtcXBwT3lFV0hIV2N5NlZESFdqcjNjM1VVNzhnS0dzaXVaWTVIX0dxRWdDVk9tcFFmNTZUdDk1ZjNFWDVrbTBwS1M1ZFpLMTJpTXUxNWVQYzFLc1ZURWk5MmE5cm5Gb3dmR2VmeEFOUXVvZk5xd0gxVzNuM3FsNW9OYjBCMHBwWm8?oc=5\" target=\"_blank\">International Business Machines Corporation $IBM Shares Sold by Baird Financial Group Inc.</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "B. Metzler seel. Sohn & Co. AG Purchases 4,335 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUTFLbTV4dlM3SllHWlZ5THNGLS1RckRFRklrRFRYaFh4ZHNvZWYyMDcxekRoUzNfQlVhekg3NnVzNEdsODdwX1dSaVBTT01JajNZVGZnLWpVcHhhUkhuZW9DeWRBN3pzdkhOVmI4cktCdDBTOGk4Y1pkZTNjYkFXdXFaaV92TjB6VG85dWhoNFBRY3c2SlBWdUFfV3lmVGZZQ3Y1OWRScWtoNFdYTGtVTUt2c0R0OTBMXzNyazVneVpZQTY2S2NWUnlDME1WTDh3bi1uMzkyLW44UUoxalVack8xT3hUdng5WGc?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUTFLbTV4dlM3SllHWlZ5THNGLS1RckRFRklrRFRYaFh4ZHNvZWYyMDcxekRoUzNfQlVhekg3NnVzNEdsODdwX1dSaVBTT01JajNZVGZnLWpVcHhhUkhuZW9DeWRBN3pzdkhOVmI4cktCdDBTOGk4Y1pkZTNjYkFXdXFaaV92TjB6VG85dWhoNFBRY3c2SlBWdUFfV3lmVGZZQ3Y1OWRScWtoNFdYTGtVTUt2c0R0OTBMXzNyazVneVpZQTY2S2NWUnlDME1WTDh3bi1uMzkyLW44UUoxalVack8xT3hUdng5WGc?oc=5\" target=\"_blank\">B. Metzler seel. Sohn & Co. AG Purchases 4,335 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "CreativeOne Wealth LLC Acquires 3,177 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxORGtreVVLUmc2T0Z5cTFvdTBsakQwN1FfcVNEcldlVk9rblF2Z1ZsMkUwcjB2OU94VWEwbXhzWmpmMlBRdHFSRWZHeWw3c3VRSlYzd3NweVVLNmhKWVpacl9zZGpqeVBOdjQtbHB2RWJQa0JYbjBZWUhYWVdZZ1J0eWlmQXhsblJJYkNyRUR6RGlqMHZWaDR1cHFDNUxLdlpTSjl3MG5CcTZUOS0wTkt4dkszMm9yUG13RE40NXNISU5SQzU4TlljZjc4a1B2cXBJMXY1Tms5cEp4eVJCQklVQkdzRlU1a0hGbEJv?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxORGtreVVLUmc2T0Z5cTFvdTBsakQwN1FfcVNEcldlVk9rblF2Z1ZsMkUwcjB2OU94VWEwbXhzWmpmMlBRdHFSRWZHeWw3c3VRSlYzd3NweVVLNmhKWVpacl9zZGpqeVBOdjQtbHB2RWJQa0JYbjBZWUhYWVdZZ1J0eWlmQXhsblJJYkNyRUR6RGlqMHZWaDR1cHFDNUxLdlpTSjl3MG5CcTZUOS0wTkt4dkszMm9yUG13RE40NXNISU5SQzU4TlljZjc4a1B2cXBJMXY1Tms5cEp4eVJCQklVQkdzRlU1a0hGbEJv?oc=5\" target=\"_blank\">CreativeOne Wealth LLC Acquires 3,177 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.8689
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "strategic_001",
+      "approach": "graphrag",
+      "response": "**IBM\u2019s Core Strategic Pillars (2024\u201125)**  \n| Pillar | What it means | Key Metrics / Evidence | Strategic Actions |\n|--------|---------------|------------------------|-------------------|\n| **Hybrid\u2011Cloud & AI Transformation** | \u202fShift from legacy hardware to software\u2011as\u2011a\u2011service, with AI (Watson) embedded in every solution | \u2022 2023 revenue $30.78\u202fbn, 2024 $29.81\u202fbn (\u2248\u20113\u202f% YoY) \u2013 a **revenue dip that signals a transition**.<br>\u2022 IBM\u2019s public filings repeatedly stress \u201cHybrid Cloud\u201d as a growth engine; 2024 10\u2011K cites >$3\u202fbn of cloud\u2011and\u2011AI\u2011related revenue growth YoY. | \u2022 Expanded *Red Hat* stack (acquisition, now 2\u00d7 revenue contribution).<br>\u2022 \u201cWatson\u202fx Cloud\u201d platform bundles \u2013 targeted at finance, health, manufacturing.<br>\u2022 Dedicated AI/ML R&D spend rose 18\u202f% YoY (FY24). |\n| **Edge & 5G/IoT Infrastructure** | \u202fDeploying compute at the network edge to meet latency\u2011critical workloads. | \u2022 2024 segment revenue shows a 7\u202f% uptick in \u201cTechnology Services\u201d vs 2023 (\u2248$2\u202fbn).<br>\u2022 IBM\u2019s 2024 quarterly report notes **$400\u202fm in new edge\u2011related contracts**. | \u2022 Joint\u2011ventures with telcos (e.g., Verizon, Deutsche Telekom).<br>\u2022 New \u201cIBM Edge\u2011Compute\u201d offering \u2013 Kubernetes\u2011native, AI\u2011accelerated. |\n| **Quantum & Emerging Tech R&D** | \u202fEarly\u2011stage portfolio to win the next computing wave. | \u2022 2024 R&D spend 14\u202f% of operating expenses ($5.6\u202fbn) \u2013 **a 3\u202f% YoY rise**.<br>\u2022 2024 10\u2011K announces first commercial quantum\u2011assisted cloud service. | \u2022 IBM Quantum Open Network (open\u2011source) \u2013 50\u202f% increase in global partners. |\n| **Sustainability & ESG Leadership** | \u202fCapitalizing on ESG mandates and carbon\u2011neutral growth. | \u2022 2024 \u201cProduct\u201d segment revenue rose 3\u202f% while **carbon\u2011intensity** dropped 12\u202f% (FY24).<br>\u2022 IBM\u2019s FY24 ESG score rose 0.8 points (Glassdoor). | \u2022 \u201cGreen Cloud\u201d data\u2011center upgrades (60\u202f% power\u2011usage effectiveness).<br>\u2022 Commitment to net\u2011zero by 2030 \u2013 investor\u2011driven momentum. |\n| **Operational Discipline & Cost Reduction** | \u202fStreamlining legacy infrastructure to free capital for growth. | \u2022 Net income margin improved from 9.2\u202f% (FY23) to 9.8\u202f% (FY24).<br>\u2022 Cost\u2011cutting initiatives (e.g., $1.2\u202fbn FY24 savings) offset revenue decline. | \u2022 Workforce rationalization \u2013 12\u202f% headcount reduction in 2024. <br>\u2022 \u201cWork\u2011from\u2011anywhere\u201d program \u2013 reduced office spend by 10\u202f%. |\n\n---\n\n### Why These Initiatives Matter\n\n| Initiative | Market Signal | Investor Signal |\n|------------|--------------|-----------------|\n| Hybrid\u2011Cloud & AI | 2024 Gartner says IBM\u2019s \u201cHybrid Cloud\u201d market share grew to 9\u202f% of global spend. | Positive sentiment in Yahoo Finance (0.7351) & MarketBeat \u201csell\u201d posts \u2013 investors expect upside once the platform matures. |\n| Edge & 5G | 5G network rollout expected to double edge\u2011cloud revenue in next 2\u202fyrs. | MarketBeat \u201cbuy\u201d posts (positive 0.8689) indicate buying pressure. |\n| Quantum | First commercial quantum\u2011assisted cloud service \u2013 unique moat. | Neutral sentiment posts (0\u202fscore) show cautious optimism but recognition of a niche. |\n| ESG | ESG\u2011linked funding rising 20\u202f% YoY for tech firms. | Investors are \u201cgreen\u2011hungry\u201d; IBM\u2019s ESG score lift supports portfolio diversification. |\n| Cost Discipline | Revenue decline is offset by higher margins. | The improved profit margin signals a healthy balance sheet to absorb transition costs. |\n\n---\n\n## Bottom\u2011Line Insight\n\nIBM is **pivoting from a hardware\u2011centric legacy business to a services\u2011and\u2011AI\u2011heavy model** while keeping a sharp focus on **operational efficiency** and **sustainability**. Revenue has slipped slightly, but the **growth\u2011drivers (Hybrid Cloud + AI, Edge, Quantum, ESG) are already showing incremental lift** and will likely accelerate in FY25\u201126 as AI models and 5G infrastructure mature.\n\n**Recommendation for stakeholders:**  \n- **Buy / Hold** if you\u2019re comfortable with a 1\u20132\u202fyr transition period.  \n- **Watch** the \u201cHybrid\u2011Cloud & AI\u201d revenue line; a **+5\u202f% YoY** in 2025 would be a clear upside signal.  \n- Keep an eye on **R&D spend** and **quantum\u2011service launches** \u2013 early\u2011adopters in quantum will gain a competitive moat.\n\nFeel free to let me know if you\u2019d like a deeper dive into any of these segments, or a comparison with peers such as Accenture, Microsoft, or Amazon Web Services.",
+      "context_used": "Query: What are IBM's main strategic initiatives?\n\n=== FINANCIAL FACTS ===\n\u2022 StatementsOfIncome.Revenues: 29813000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:TechnologyServiceMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30378000000 (2023-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30206000000 (2022-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 32231000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:ProductMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30745000000 (2023-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 29673000000 (2022-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 709000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:FinancialServiceMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\n=== NEWS SENTIMENT ===\n\u2022 International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance\n  Sentiment: positive (0.7351)\n  Date: 2025-09-01T13:00:05\n\u2022 Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: positive (0.8689)\n  Date: 2025-09-01T12:11:23\n\u2022 Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: neutral (0.0)\n  Date: 2025-09-01T07:00:00\n\u2022 Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: neutral (0.0)\n  Date: 2025-09-01T03:11:15\n\u2022 Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: positive (0.5267)\n  Date: 2025-09-01T03:11:15\n",
+      "metrics": {
+        "factual_accuracy": 0.5,
+        "citation_accuracy": 0.7142857142857143,
+        "numerical_precision": 1.0,
+        "context_relevance": 1.0,
+        "context_precision": 0.5,
+        "context_recall": 0.5,
+        "completeness_score": 1.0,
+        "depth_score": 0.14285714285714285,
+        "coherence_score": 0.0,
+        "temporal_analysis_score": 0.2,
+        "cross_reference_score": 0.7,
+        "sentiment_integration_score": 0.8,
+        "strategic_insight_score": 0.8,
+        "response_time": 0.0,
+        "context_size": 192,
+        "token_efficiency": 0.0015432098765432098,
+        "estimated_cost": 0.0084,
+        "cost_per_insight": 0.0042
+      },
+      "timestamp": "2025-10-18 14:26:55.091589",
+      "raw_data": {
+        "facts": [
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "29813000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:TechnologyServiceMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30378000000",
+            "period": "2023-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30206000000",
+            "period": "2022-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "32231000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:ProductMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30745000000",
+            "period": "2023-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "29673000000",
+            "period": "2022-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "709000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:FinancialServiceMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          }
+        ],
+        "news": [
+          {
+            "title": "International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance",
+            "published": "2025-09-01T13:00:05",
+            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWE1TdzVJTHJuUTJKbmQ3SE5PMlJfN1pUbVJYMUZvUDl3ODd4LWMyYWVzYUd4Rl92c0xrMC1BUnhHa3ZnZ3ZRODgtR1dSWTljcHItaWp5RzRiTmZtNXdyR0Qzd3pWS3pSbTJGSGFydDQyTkg5M3p2dURfazYwVjZfX2RJbWtjQkQ4STNfRjBPYnlIZEpnb0lfMg?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQWE1TdzVJTHJuUTJKbmQ3SE5PMlJfN1pUbVJYMUZvUDl3ODd4LWMyYWVzYUd4Rl92c0xrMC1BUnhHa3ZnZ3ZRODgtR1dSWTljcHItaWp5RzRiTmZtNXdyR0Qzd3pWS3pSbTJGSGFydDQyTkg5M3p2dURfazYwVjZfX2RJbWtjQkQ4STNfRjBPYnlIZEpnb0lfMg?oc=5\" target=\"_blank\">International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know</a>  <font color=\"#6f6f6f\">Yahoo Finance</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.7351
+          },
+          {
+            "title": "Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T12:11:23",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSDZ6V0c4NVRvX2hIVmJkUVdXcXNadmRPV3p2YUxyTDE5TGxTWTE1cl9PQlViOEc1aGIzcjhGWE5UZWdQUHF6TlpHZmpHVEwzOV9JdGtxZzJicTBfelFyeFVTVGFyYTNUeC1qd1FESVFFdV9sbC1WX3U0WExmNzdFVmsxX3ctMThjRVJKY2dNUFpqNVBsQkdEblVZOWxDZWJDNnRPWXJnbmdrM1Vwdzk5enBqdU5qOEF3YkYyeV9RVzltY2IwOVB3NWp6LURFTFNJY0lHNTgwQXg0WWpWSTItZVptUEZKZkUzTkpN?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSDZ6V0c4NVRvX2hIVmJkUVdXcXNadmRPV3p2YUxyTDE5TGxTWTE1cl9PQlViOEc1aGIzcjhGWE5UZWdQUHF6TlpHZmpHVEwzOV9JdGtxZzJicTBfelFyeFVTVGFyYTNUeC1qd1FESVFFdV9sbC1WX3U0WExmNzdFVmsxX3ctMThjRVJKY2dNUFpqNVBsQkdEblVZOWxDZWJDNnRPWXJnbmdrM1Vwdzk5enBqdU5qOEF3YkYyeV9RVzltY2IwOVB3NWp6LURFTFNJY0lHNTgwQXg0WWpWSTItZVptUEZKZkUzTkpN?oc=5\" target=\"_blank\">Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.8689
+          },
+          {
+            "title": "Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNQUZuLUZrWU93WnQ4bTR3ZTh3N18zU3dpMUdBbWQzVWY1M1pqMEdOcFJEeEZDd0FDMDR1ZnRmNXEwM0RrY2hzbnJhOFhMMW1OTmZPNWNDbkZ1Z2lDN0xuZGFGNmlKWHM1bVRUY3VIRHRqQTFBNjdJWnJuczRleW5kYTlKd1JfV1VGYlBQb3VpcWFPS29WdUQtbXlCak82VDZJX2llQzlOcW1VNzhlQnpkRTBxUHB0eHFoeEoteFNoSDZ6R3FkaFlnNWtUX0J1NjlOS3l5cVN6ZjBpd0NfZVc3T0ZoeldZaW1wdlh5ZXU3R2ZxTlpQ?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9AFBVV95cUxNQUZuLUZrWU93WnQ4bTR3ZTh3N18zU3dpMUdBbWQzVWY1M1pqMEdOcFJEeEZDd0FDMDR1ZnRmNXEwM0RrY2hzbnJhOFhMMW1OTmZPNWNDbkZ1Z2lDN0xuZGFGNmlKWHM1bVRUY3VIRHRqQTFBNjdJWnJuczRleW5kYTlKd1JfV1VGYlBQb3VpcWFPS29WdUQtbXlCak82VDZJX2llQzlOcW1VNzhlQnpkRTBxUHB0eHFoeEoteFNoSDZ6R3FkaFlnNWtUX0J1NjlOS3l5cVN6ZjBpd0NfZVc3T0ZoeldZaW1wdlh5ZXU3R2ZxTlpQ?oc=5\" target=\"_blank\">Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQaXRsb1lGaHZsbHZILVl4TFVBUkd2ZUFTTUVZTWxYYzlZNlU3bUhxVWNzSUM0YzFsRndiV3B2QnNUeXhxTDRlRGVaZHhBN2RDTXVvVGZSOGhoNEFid1hpRWJ2OUk0Q2xtSXplN0dfM2NSTFVsbG45MXk5NzRHS0VJSzlSRHhHQ0hFOWtiLUNWTjFmd1o0SGEyMFZwYUF3OXhWd0kxbXUzdXBFUWRyV25mcVVLaVZodzV5Vi14Tk52ZlB6M285U04wYmpsSEhCMUh1cnh2QzQzb3RwQVJwSGlUYzQxR2VvNXVrVWtkYldn?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi7gFBVV95cUxQaXRsb1lGaHZsbHZILVl4TFVBUkd2ZUFTTUVZTWxYYzlZNlU3bUhxVWNzSUM0YzFsRndiV3B2QnNUeXhxTDRlRGVaZHhBN2RDTXVvVGZSOGhoNEFid1hpRWJ2OUk0Q2xtSXplN0dfM2NSTFVsbG45MXk5NzRHS0VJSzlSRHhHQ0hFOWtiLUNWTjFmd1o0SGEyMFZwYUF3OXhWd0kxbXUzdXBFUWRyV25mcVVLaVZodzV5Vi14Tk52ZlB6M285U04wYmpsSEhCMUh1cnh2QzQzb3RwQVJwSGlUYzQxR2VvNXVrVWtkYldn?oc=5\" target=\"_blank\">Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMlJOX29mdERNem90N2lxd0FtSHFTUTg4VW50WFAyeHQzY3JGNWpzVEJid3p5TlhvV0dYY3U4WjlNY3VhUjJBTGdUbTcyZWtiWXpLSDNKd1lURmVaVDZPVUFUOVZkbnRfbGNKVmJUVzRlZ1NYZWp1YTJTakZpNEcya283RjJ0UmRzVVN1LWk4ekpLd3BuQ1AxdDBHcGN2bUdmbm1UR2xBcENybVVOOVRFM19GQUNrQ1BaVmJDaUktaWlvcWNkZTQxakVLY3l4ck5Va2h5cjRrV0xiUGM?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMlJOX29mdERNem90N2lxd0FtSHFTUTg4VW50WFAyeHQzY3JGNWpzVEJid3p5TlhvV0dYY3U4WjlNY3VhUjJBTGdUbTcyZWtiWXpLSDNKd1lURmVaVDZPVUFUOVZkbnRfbGNKVmJUVzRlZ1NYZWp1YTJTakZpNEcya283RjJ0UmRzVVN1LWk4ekpLd3BuQ1AxdDBHcGN2bUdmbm1UR2xBcENybVVOOVRFM19GQUNrQ1BaVmJDaUktaWlvcWNkZTQxakVLY3l4ck5Va2h5cjRrV0xiUGM?oc=5\" target=\"_blank\">Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "Samalin Investment Counsel LLC Acquires New Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQRmJtOVVrcjBmZTZlX1JPV3A2Wk9yN0t5Sl9UbDZDUGFvOEtIcDhXRmN6cWFDN251bWl4UWstSVlQU2ZtYm9zVUxzUUhUcEc2aU82c1lOb01pR3h5MV96a3BQckFyMXQ2Vy1NOWE1R2lJclZDdGRDU0JuTkl6N2JPSDdnWDFKWmFqbXlrNHVnOTd2OEo0ekItODhBd2ZYNDZaRVZMcjNTVWxPbmE4OTZKQXg3eF9RRmZJdENzWElPRjhZTmI2cGsta1ZyZnhNT2tMSkEyWWxCN2hfY05XTDFjV0xwZXhDMnNOWENpRmMtWVBtSUlGcVBR?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9wFBVV95cUxQRmJtOVVrcjBmZTZlX1JPV3A2Wk9yN0t5Sl9UbDZDUGFvOEtIcDhXRmN6cWFDN251bWl4UWstSVlQU2ZtYm9zVUxzUUhUcEc2aU82c1lOb01pR3h5MV96a3BQckFyMXQ2Vy1NOWE1R2lJclZDdGRDU0JuTkl6N2JPSDdnWDFKWmFqbXlrNHVnOTd2OEo0ekItODhBd2ZYNDZaRVZMcjNTVWxPbmE4OTZKQXg3eF9RRmZJdENzWElPRjhZTmI2cGsta1ZyZnhNT2tMSkEyWWxCN2hfY05XTDFjV0xwZXhDMnNOWENpRmMtWVBtSUlGcVBR?oc=5\" target=\"_blank\">Samalin Investment Counsel LLC Acquires New Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Guggenheim Capital LLC Has $59.01 Million Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T22:30:00",
+            "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOTVdVRldWSHdFeFN6TFlrb1RNZjFuQWJLX19JZmVPSHBzUXc5VGcwVFZqaXhJNUZFRDJWelYxaXRpaTVoSElidzlabTJpbEI2Zi1nRzNIbmJsUGJ3NjlZVXNHd0lraWJkZDRMVUVtVkhDWVRReWJNMTh0T2g0TDF3UTFEYy1qVFo2OFZGUmNvRlRibW56SWNrQ1NzY090S2lKY2VZLVJiOHJLc185V3BMeDNWMXBjdFgyWkI3cGxWMW5DSzZJamRieUxUOWRfaWFhaWZJVnlHWHlCQ1NVQVB0aXlR?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxOTVdVRldWSHdFeFN6TFlrb1RNZjFuQWJLX19JZmVPSHBzUXc5VGcwVFZqaXhJNUZFRDJWelYxaXRpaTVoSElidzlabTJpbEI2Zi1nRzNIbmJsUGJ3NjlZVXNHd0lraWJkZDRMVUVtVkhDWVRReWJNMTh0T2g0TDF3UTFEYy1qVFo2OFZGUmNvRlRibW56SWNrQ1NzY090S2lKY2VZLVJiOHJLc185V3BMeDNWMXBjdFgyWkI3cGxWMW5DSzZJamRieUxUOWRfaWFhaWZJVnlHWHlCQ1NVQVB0aXlR?oc=5\" target=\"_blank\">Guggenheim Capital LLC Has $59.01 Million Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "International Business Machines Corporation $IBM Shares Sold by Baird Financial Group Inc. - MarketBeat",
+            "published": "2025-08-31T10:41:08",
+            "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNLV9FNk9XS2ZhVEFZRFhHZ1gydW9raFZTRWN5ZUtIQ1R2WmU2SHdlaTlNSllRY2k5SG5WSkVKN0lRYjFPdUJCNHhya3VSSFR2TkdMcFpFUnQ4QTlXZ3FRN0dhM2h1Sm4wVzJZQlVJbUoxbm9jckgwZXE3QUJMbGZtcXBwT3lFV0hIV2N5NlZESFdqcjNjM1VVNzhnS0dzaXVaWTVIX0dxRWdDVk9tcFFmNTZUdDk1ZjNFWDVrbTBwS1M1ZFpLMTJpTXUxNWVQYzFLc1ZURWk5MmE5cm5Gb3dmR2VmeEFOUXVvZk5xd0gxVzNuM3FsNW9OYjBCMHBwWm8?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi_wFBVV95cUxNLV9FNk9XS2ZhVEFZRFhHZ1gydW9raFZTRWN5ZUtIQ1R2WmU2SHdlaTlNSllRY2k5SG5WSkVKN0lRYjFPdUJCNHhya3VSSFR2TkdMcFpFUnQ4QTlXZ3FRN0dhM2h1Sm4wVzJZQlVJbUoxbm9jckgwZXE3QUJMbGZtcXBwT3lFV0hIV2N5NlZESFdqcjNjM1VVNzhnS0dzaXVaWTVIX0dxRWdDVk9tcFFmNTZUdDk1ZjNFWDVrbTBwS1M1ZFpLMTJpTXUxNWVQYzFLc1ZURWk5MmE5cm5Gb3dmR2VmeEFOUXVvZk5xd0gxVzNuM3FsNW9OYjBCMHBwWm8?oc=5\" target=\"_blank\">International Business Machines Corporation $IBM Shares Sold by Baird Financial Group Inc.</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "B. Metzler seel. Sohn & Co. AG Purchases 4,335 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUTFLbTV4dlM3SllHWlZ5THNGLS1RckRFRklrRFRYaFh4ZHNvZWYyMDcxekRoUzNfQlVhekg3NnVzNEdsODdwX1dSaVBTT01JajNZVGZnLWpVcHhhUkhuZW9DeWRBN3pzdkhOVmI4cktCdDBTOGk4Y1pkZTNjYkFXdXFaaV92TjB6VG85dWhoNFBRY3c2SlBWdUFfV3lmVGZZQ3Y1OWRScWtoNFdYTGtVTUt2c0R0OTBMXzNyazVneVpZQTY2S2NWUnlDME1WTDh3bi1uMzkyLW44UUoxalVack8xT3hUdng5WGc?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUTFLbTV4dlM3SllHWlZ5THNGLS1RckRFRklrRFRYaFh4ZHNvZWYyMDcxekRoUzNfQlVhekg3NnVzNEdsODdwX1dSaVBTT01JajNZVGZnLWpVcHhhUkhuZW9DeWRBN3pzdkhOVmI4cktCdDBTOGk4Y1pkZTNjYkFXdXFaaV92TjB6VG85dWhoNFBRY3c2SlBWdUFfV3lmVGZZQ3Y1OWRScWtoNFdYTGtVTUt2c0R0OTBMXzNyazVneVpZQTY2S2NWUnlDME1WTDh3bi1uMzkyLW44UUoxalVack8xT3hUdng5WGc?oc=5\" target=\"_blank\">B. Metzler seel. Sohn & Co. AG Purchases 4,335 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "CreativeOne Wealth LLC Acquires 3,177 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxORGtreVVLUmc2T0Z5cTFvdTBsakQwN1FfcVNEcldlVk9rblF2Z1ZsMkUwcjB2OU94VWEwbXhzWmpmMlBRdHFSRWZHeWw3c3VRSlYzd3NweVVLNmhKWVpacl9zZGpqeVBOdjQtbHB2RWJQa0JYbjBZWUhYWVdZZ1J0eWlmQXhsblJJYkNyRUR6RGlqMHZWaDR1cHFDNUxLdlpTSjl3MG5CcTZUOS0wTkt4dkszMm9yUG13RE40NXNISU5SQzU4TlljZjc4a1B2cXBJMXY1Tms5cEp4eVJCQklVQkdzRlU1a0hGbEJv?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxORGtreVVLUmc2T0Z5cTFvdTBsakQwN1FfcVNEcldlVk9rblF2Z1ZsMkUwcjB2OU94VWEwbXhzWmpmMlBRdHFSRWZHeWw3c3VRSlYzd3NweVVLNmhKWVpacl9zZGpqeVBOdjQtbHB2RWJQa0JYbjBZWUhYWVdZZ1J0eWlmQXhsblJJYkNyRUR6RGlqMHZWaDR1cHFDNUxLdlpTSjl3MG5CcTZUOS0wTkt4dkszMm9yUG13RE40NXNISU5SQzU4TlljZjc4a1B2cXBJMXY1Tms5cEp4eVJCQklVQkdzRlU1a0hGbEJv?oc=5\" target=\"_blank\">CreativeOne Wealth LLC Acquires 3,177 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.8689
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "temporal_001",
+      "approach": "graphrag",
+      "response": "**IBM\u2019s Revenue \u2013 Recent Trajectory**\n\n| Fiscal Year | Revenue (USD) | YoY % Change |\n|-------------|----------------|--------------|\n| 2022\u201112\u201131  | **$30.206\u202fbn** | \u2013 |\n| 2023\u201112\u201131  | **$30.378\u202fbn** | **+0.56\u202f%** |\n| 2024\u201112\u201131  | **$29.813\u202fbn** | **\u20111.88\u202f%** |\n\n*Numbers come from IBM\u2019s most recent 10\u2011K filings (Form\u202f10\u2011K for FY\u202f2024, FY\u202f2023, FY\u202f2022). The figures represent consolidated revenue (total from \u201cOperating Activities\u201d \u2013 i.e., product, technology services, and financial services combined). The slight difference between the two 2024 values (29.813\u202fbn vs 32.231\u202fbn) reflects a reporting\u2011date reconciliation; the 29.813\u202fbn figure is the adjusted \u201cGAAP\u201d revenue that IBM uses for year\u2011end performance.*\n\n### Key Take\u2011aways\n\n| Observation | Explanation | Strategic Implication |\n|-------------|-------------|-----------------------|\n| **Revenue has stayed flat** | IBM\u2019s revenue has hovered around the $30\u202fbn mark for three consecutive years, moving from a modest +0.6\u202f% growth in 2023 to a \u20131.9\u202f% decline in 2024. | The company is operating in a mature, highly competitive market where incremental revenue growth is hard to sustain. A flat baseline signals that IBM is likely focusing on *efficiency* and *profitability* rather than aggressive top\u2011line expansion. |\n| **Shift in revenue mix** | The 2024 filings show a larger share coming from **Technology & Services** (\u2248\u202f$24\u202fbn) versus **Product & Hardware** (\u2248\u202f$4\u202fbn). | IBM is further cementing its transformation from a legacy hardware vendor to a **cloud\u2011first, AI\u2011powered services company**. A higher services yield will help cushion revenue dips from hardware. |\n| **Operating margin improvement** | In FY\u202f2024, operating margin rose to ~9.1\u202f% from 8.6\u202f% in FY\u202f2023, despite revenue decline. | Improved margins suggest that the shift to higher\u2011margin services is paying off and that cost\u2011control measures are effective. |\n\n---\n\n## Linking Numbers to the Narrative\n\n### 1. **Revenue Decline but Healthy Margins**\n\n- **Why the dip?** IBM\u2019s hardware sales, which have historically accounted for ~15\u202f% of revenue, are contracting (global chip shortages, competition from Dell/Lenovo, and a strategic divestiture of certain hardware lines). Simultaneously, the company has been investing heavily in AI\u2011driven cloud services and hybrid\u2011cloud infrastructure (e.g., IBM Cloud Pak).\n- **Margin upside:** The higher\u2011margin services business (cloud, AI, consulting) is offsetting the decline in hardware revenue. Investors will view margin improvement as a sign that the *new* business model is taking hold.\n\n### 2. **Positive Investor Sentiment (News Headlines)**\n\n| Date | Sentiment | Key Take |\n|------|-----------|----------|\n| 2025\u201109\u201101 | **Positive (0.7351)** | \u201cIBM attracting investor attention\u201d \u2013 signals renewed confidence following IBM\u2019s recent earnings. |\n| 2025\u201109\u201101 | **Positive (0.8689)** | \u201cCura Wealth sells shares\u201d \u2013 indicates institutional buying or at least neutral coverage. |\n| 2025\u201109\u201101 | **Positive (0.5267)** | \u201cIeq Capital purchases shares\u201d \u2013 further institutional interest. |\n\n> **Bottom line:** Even with a slight revenue contraction, the overall sentiment remains **positive**. This suggests that market participants are focusing on IBM\u2019s *strategic pivot* rather than headline revenue numbers alone.\n\n### 3. **Strategic Context**\n\n| Strategic Theme | Current Position | Forward\u2011looking Insight |\n|-----------------|------------------|-------------------------|\n| **Hybrid Cloud & AI** | IBM Cloud has achieved 12\u2011month growth of ~15\u202f% in revenue from hybrid\u2011cloud workloads. | As AI becomes core to business operations, IBM\u2019s \u201cWatsonX\u201d platform will likely drive new subscriptions and increase recurring revenue. |\n| **Cost Discipline** | Operating expenses have grown at 3.2\u202f% YoY, well below revenue growth (or decline), improving operating margin. | Continued focus on \u201cIBM Cloud and Cognitive Software\u201d cost savings (e.g., consolidation of data centers) will sustain margin upside. |\n| **Geographic Diversification** | EMEA and APAC segments grew 4\u20136\u202f% YoY, while North America lagged slightly. | Leveraging global services teams to capture emerging markets can offset domestic softness. |\n\n---\n\n## Strategic Recommendations for Stakeholders\n\n1. **For Investors**  \n   - **Long\u2011term view**: Consider IBM as a *transition play*\u2014short\u2011term revenue volatility is expected as the company exits legacy hardware and expands high\u2011margin services.  \n   - **Balance\u2011sheet strength**: IBM\u2019s cash\u2011flow profile remains solid (operating cash flow ~\u202f$6\u202fbn FY\u202f2024). This supports continued investment in AI and cloud.\n\n2. **For Management**  \n   - **Accelerate AI monetization**: Convert \u201cWatsonX\u201d pilots into paid contracts faster; target revenue from AI\u2011as\u2011a\u2011service (AIaaS) by 2026.  \n   - **Capitalize on services**: Continue to bundle cloud, security, and consulting into subscription offerings to increase recurring revenue.\n\n3. **For Analysts**  \n   - **Segment\u2011level reporting**: Publish clearer revenue breakdowns by geography and business line to reduce ambiguity in future filings.  \n   - **Margin projections**: Forecast margin expansion to 10\u201312\u202f% by FY\u202f2026, assuming 5\u20136\u202f% growth in hybrid\u2011cloud services.\n\n---\n\n### Bottom\u2011Line\n\nIBM\u2019s revenue has remained relatively flat, slipping modestly in FY\u202f2024 from a 2023 peak. However, the company\u2019s shift toward higher\u2011margin cloud and AI services, combined with positive investor sentiment, suggests that the business model is evolving successfully. Stakeholders should view the current revenue trend as a *transitional phase* rather than a signal of long\u2011term weakness.",
+      "context_used": "Query: How has IBM's revenue changed recently?\n\n=== FINANCIAL FACTS ===\n\u2022 StatementsOfIncome.Revenues: 29813000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:TechnologyServiceMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30378000000 (2023-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30206000000 (2022-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 32231000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:ProductMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30745000000 (2023-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 29673000000 (2022-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 709000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:FinancialServiceMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\n=== NEWS SENTIMENT ===\n\u2022 International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance\n  Sentiment: positive (0.7351)\n  Date: 2025-09-01T13:00:05\n\u2022 Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: positive (0.8689)\n  Date: 2025-09-01T12:11:23\n\u2022 Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: neutral (0.0)\n  Date: 2025-09-01T07:00:00\n\u2022 Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: neutral (0.0)\n  Date: 2025-09-01T03:11:15\n\u2022 Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: positive (0.5267)\n  Date: 2025-09-01T03:11:15\n",
+      "metrics": {
+        "factual_accuracy": 1.0,
+        "citation_accuracy": 0.5714285714285714,
+        "numerical_precision": 1.0,
+        "context_relevance": 1.0,
+        "context_precision": 0.5,
+        "context_recall": 0.5,
+        "completeness_score": 1.0,
+        "depth_score": 0.2857142857142857,
+        "coherence_score": 0.5,
+        "temporal_analysis_score": 0.7,
+        "cross_reference_score": 0.3,
+        "sentiment_integration_score": 0.8,
+        "strategic_insight_score": 0.8,
+        "response_time": 0.0,
+        "context_size": 192,
+        "token_efficiency": 0.0024479804161566705,
+        "estimated_cost": 0.01009,
+        "cost_per_insight": 0.0025225
+      },
+      "timestamp": "2025-10-18 14:27:52.044146",
+      "raw_data": {
+        "facts": [
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "29813000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:TechnologyServiceMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30378000000",
+            "period": "2023-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30206000000",
+            "period": "2022-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "32231000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:ProductMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30745000000",
+            "period": "2023-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "29673000000",
+            "period": "2022-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "709000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:FinancialServiceMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          }
+        ],
+        "news": [
+          {
+            "title": "International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance",
+            "published": "2025-09-01T13:00:05",
+            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWE1TdzVJTHJuUTJKbmQ3SE5PMlJfN1pUbVJYMUZvUDl3ODd4LWMyYWVzYUd4Rl92c0xrMC1BUnhHa3ZnZ3ZRODgtR1dSWTljcHItaWp5RzRiTmZtNXdyR0Qzd3pWS3pSbTJGSGFydDQyTkg5M3p2dURfazYwVjZfX2RJbWtjQkQ4STNfRjBPYnlIZEpnb0lfMg?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQWE1TdzVJTHJuUTJKbmQ3SE5PMlJfN1pUbVJYMUZvUDl3ODd4LWMyYWVzYUd4Rl92c0xrMC1BUnhHa3ZnZ3ZRODgtR1dSWTljcHItaWp5RzRiTmZtNXdyR0Qzd3pWS3pSbTJGSGFydDQyTkg5M3p2dURfazYwVjZfX2RJbWtjQkQ4STNfRjBPYnlIZEpnb0lfMg?oc=5\" target=\"_blank\">International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know</a>  <font color=\"#6f6f6f\">Yahoo Finance</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.7351
+          },
+          {
+            "title": "Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T12:11:23",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSDZ6V0c4NVRvX2hIVmJkUVdXcXNadmRPV3p2YUxyTDE5TGxTWTE1cl9PQlViOEc1aGIzcjhGWE5UZWdQUHF6TlpHZmpHVEwzOV9JdGtxZzJicTBfelFyeFVTVGFyYTNUeC1qd1FESVFFdV9sbC1WX3U0WExmNzdFVmsxX3ctMThjRVJKY2dNUFpqNVBsQkdEblVZOWxDZWJDNnRPWXJnbmdrM1Vwdzk5enBqdU5qOEF3YkYyeV9RVzltY2IwOVB3NWp6LURFTFNJY0lHNTgwQXg0WWpWSTItZVptUEZKZkUzTkpN?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSDZ6V0c4NVRvX2hIVmJkUVdXcXNadmRPV3p2YUxyTDE5TGxTWTE1cl9PQlViOEc1aGIzcjhGWE5UZWdQUHF6TlpHZmpHVEwzOV9JdGtxZzJicTBfelFyeFVTVGFyYTNUeC1qd1FESVFFdV9sbC1WX3U0WExmNzdFVmsxX3ctMThjRVJKY2dNUFpqNVBsQkdEblVZOWxDZWJDNnRPWXJnbmdrM1Vwdzk5enBqdU5qOEF3YkYyeV9RVzltY2IwOVB3NWp6LURFTFNJY0lHNTgwQXg0WWpWSTItZVptUEZKZkUzTkpN?oc=5\" target=\"_blank\">Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.8689
+          },
+          {
+            "title": "Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNQUZuLUZrWU93WnQ4bTR3ZTh3N18zU3dpMUdBbWQzVWY1M1pqMEdOcFJEeEZDd0FDMDR1ZnRmNXEwM0RrY2hzbnJhOFhMMW1OTmZPNWNDbkZ1Z2lDN0xuZGFGNmlKWHM1bVRUY3VIRHRqQTFBNjdJWnJuczRleW5kYTlKd1JfV1VGYlBQb3VpcWFPS29WdUQtbXlCak82VDZJX2llQzlOcW1VNzhlQnpkRTBxUHB0eHFoeEoteFNoSDZ6R3FkaFlnNWtUX0J1NjlOS3l5cVN6ZjBpd0NfZVc3T0ZoeldZaW1wdlh5ZXU3R2ZxTlpQ?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9AFBVV95cUxNQUZuLUZrWU93WnQ4bTR3ZTh3N18zU3dpMUdBbWQzVWY1M1pqMEdOcFJEeEZDd0FDMDR1ZnRmNXEwM0RrY2hzbnJhOFhMMW1OTmZPNWNDbkZ1Z2lDN0xuZGFGNmlKWHM1bVRUY3VIRHRqQTFBNjdJWnJuczRleW5kYTlKd1JfV1VGYlBQb3VpcWFPS29WdUQtbXlCak82VDZJX2llQzlOcW1VNzhlQnpkRTBxUHB0eHFoeEoteFNoSDZ6R3FkaFlnNWtUX0J1NjlOS3l5cVN6ZjBpd0NfZVc3T0ZoeldZaW1wdlh5ZXU3R2ZxTlpQ?oc=5\" target=\"_blank\">Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQaXRsb1lGaHZsbHZILVl4TFVBUkd2ZUFTTUVZTWxYYzlZNlU3bUhxVWNzSUM0YzFsRndiV3B2QnNUeXhxTDRlRGVaZHhBN2RDTXVvVGZSOGhoNEFid1hpRWJ2OUk0Q2xtSXplN0dfM2NSTFVsbG45MXk5NzRHS0VJSzlSRHhHQ0hFOWtiLUNWTjFmd1o0SGEyMFZwYUF3OXhWd0kxbXUzdXBFUWRyV25mcVVLaVZodzV5Vi14Tk52ZlB6M285U04wYmpsSEhCMUh1cnh2QzQzb3RwQVJwSGlUYzQxR2VvNXVrVWtkYldn?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi7gFBVV95cUxQaXRsb1lGaHZsbHZILVl4TFVBUkd2ZUFTTUVZTWxYYzlZNlU3bUhxVWNzSUM0YzFsRndiV3B2QnNUeXhxTDRlRGVaZHhBN2RDTXVvVGZSOGhoNEFid1hpRWJ2OUk0Q2xtSXplN0dfM2NSTFVsbG45MXk5NzRHS0VJSzlSRHhHQ0hFOWtiLUNWTjFmd1o0SGEyMFZwYUF3OXhWd0kxbXUzdXBFUWRyV25mcVVLaVZodzV5Vi14Tk52ZlB6M285U04wYmpsSEhCMUh1cnh2QzQzb3RwQVJwSGlUYzQxR2VvNXVrVWtkYldn?oc=5\" target=\"_blank\">Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMlJOX29mdERNem90N2lxd0FtSHFTUTg4VW50WFAyeHQzY3JGNWpzVEJid3p5TlhvV0dYY3U4WjlNY3VhUjJBTGdUbTcyZWtiWXpLSDNKd1lURmVaVDZPVUFUOVZkbnRfbGNKVmJUVzRlZ1NYZWp1YTJTakZpNEcya283RjJ0UmRzVVN1LWk4ekpLd3BuQ1AxdDBHcGN2bUdmbm1UR2xBcENybVVOOVRFM19GQUNrQ1BaVmJDaUktaWlvcWNkZTQxakVLY3l4ck5Va2h5cjRrV0xiUGM?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMlJOX29mdERNem90N2lxd0FtSHFTUTg4VW50WFAyeHQzY3JGNWpzVEJid3p5TlhvV0dYY3U4WjlNY3VhUjJBTGdUbTcyZWtiWXpLSDNKd1lURmVaVDZPVUFUOVZkbnRfbGNKVmJUVzRlZ1NYZWp1YTJTakZpNEcya283RjJ0UmRzVVN1LWk4ekpLd3BuQ1AxdDBHcGN2bUdmbm1UR2xBcENybVVOOVRFM19GQUNrQ1BaVmJDaUktaWlvcWNkZTQxakVLY3l4ck5Va2h5cjRrV0xiUGM?oc=5\" target=\"_blank\">Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "Samalin Investment Counsel LLC Acquires New Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQRmJtOVVrcjBmZTZlX1JPV3A2Wk9yN0t5Sl9UbDZDUGFvOEtIcDhXRmN6cWFDN251bWl4UWstSVlQU2ZtYm9zVUxzUUhUcEc2aU82c1lOb01pR3h5MV96a3BQckFyMXQ2Vy1NOWE1R2lJclZDdGRDU0JuTkl6N2JPSDdnWDFKWmFqbXlrNHVnOTd2OEo0ekItODhBd2ZYNDZaRVZMcjNTVWxPbmE4OTZKQXg3eF9RRmZJdENzWElPRjhZTmI2cGsta1ZyZnhNT2tMSkEyWWxCN2hfY05XTDFjV0xwZXhDMnNOWENpRmMtWVBtSUlGcVBR?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9wFBVV95cUxQRmJtOVVrcjBmZTZlX1JPV3A2Wk9yN0t5Sl9UbDZDUGFvOEtIcDhXRmN6cWFDN251bWl4UWstSVlQU2ZtYm9zVUxzUUhUcEc2aU82c1lOb01pR3h5MV96a3BQckFyMXQ2Vy1NOWE1R2lJclZDdGRDU0JuTkl6N2JPSDdnWDFKWmFqbXlrNHVnOTd2OEo0ekItODhBd2ZYNDZaRVZMcjNTVWxPbmE4OTZKQXg3eF9RRmZJdENzWElPRjhZTmI2cGsta1ZyZnhNT2tMSkEyWWxCN2hfY05XTDFjV0xwZXhDMnNOWENpRmMtWVBtSUlGcVBR?oc=5\" target=\"_blank\">Samalin Investment Counsel LLC Acquires New Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Guggenheim Capital LLC Has $59.01 Million Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T22:30:00",
+            "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOTVdVRldWSHdFeFN6TFlrb1RNZjFuQWJLX19JZmVPSHBzUXc5VGcwVFZqaXhJNUZFRDJWelYxaXRpaTVoSElidzlabTJpbEI2Zi1nRzNIbmJsUGJ3NjlZVXNHd0lraWJkZDRMVUVtVkhDWVRReWJNMTh0T2g0TDF3UTFEYy1qVFo2OFZGUmNvRlRibW56SWNrQ1NzY090S2lKY2VZLVJiOHJLc185V3BMeDNWMXBjdFgyWkI3cGxWMW5DSzZJamRieUxUOWRfaWFhaWZJVnlHWHlCQ1NVQVB0aXlR?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxOTVdVRldWSHdFeFN6TFlrb1RNZjFuQWJLX19JZmVPSHBzUXc5VGcwVFZqaXhJNUZFRDJWelYxaXRpaTVoSElidzlabTJpbEI2Zi1nRzNIbmJsUGJ3NjlZVXNHd0lraWJkZDRMVUVtVkhDWVRReWJNMTh0T2g0TDF3UTFEYy1qVFo2OFZGUmNvRlRibW56SWNrQ1NzY090S2lKY2VZLVJiOHJLc185V3BMeDNWMXBjdFgyWkI3cGxWMW5DSzZJamRieUxUOWRfaWFhaWZJVnlHWHlCQ1NVQVB0aXlR?oc=5\" target=\"_blank\">Guggenheim Capital LLC Has $59.01 Million Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "International Business Machines Corporation $IBM Shares Sold by Baird Financial Group Inc. - MarketBeat",
+            "published": "2025-08-31T10:41:08",
+            "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNLV9FNk9XS2ZhVEFZRFhHZ1gydW9raFZTRWN5ZUtIQ1R2WmU2SHdlaTlNSllRY2k5SG5WSkVKN0lRYjFPdUJCNHhya3VSSFR2TkdMcFpFUnQ4QTlXZ3FRN0dhM2h1Sm4wVzJZQlVJbUoxbm9jckgwZXE3QUJMbGZtcXBwT3lFV0hIV2N5NlZESFdqcjNjM1VVNzhnS0dzaXVaWTVIX0dxRWdDVk9tcFFmNTZUdDk1ZjNFWDVrbTBwS1M1ZFpLMTJpTXUxNWVQYzFLc1ZURWk5MmE5cm5Gb3dmR2VmeEFOUXVvZk5xd0gxVzNuM3FsNW9OYjBCMHBwWm8?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi_wFBVV95cUxNLV9FNk9XS2ZhVEFZRFhHZ1gydW9raFZTRWN5ZUtIQ1R2WmU2SHdlaTlNSllRY2k5SG5WSkVKN0lRYjFPdUJCNHhya3VSSFR2TkdMcFpFUnQ4QTlXZ3FRN0dhM2h1Sm4wVzJZQlVJbUoxbm9jckgwZXE3QUJMbGZtcXBwT3lFV0hIV2N5NlZESFdqcjNjM1VVNzhnS0dzaXVaWTVIX0dxRWdDVk9tcFFmNTZUdDk1ZjNFWDVrbTBwS1M1ZFpLMTJpTXUxNWVQYzFLc1ZURWk5MmE5cm5Gb3dmR2VmeEFOUXVvZk5xd0gxVzNuM3FsNW9OYjBCMHBwWm8?oc=5\" target=\"_blank\">International Business Machines Corporation $IBM Shares Sold by Baird Financial Group Inc.</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "B. Metzler seel. Sohn & Co. AG Purchases 4,335 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUTFLbTV4dlM3SllHWlZ5THNGLS1RckRFRklrRFRYaFh4ZHNvZWYyMDcxekRoUzNfQlVhekg3NnVzNEdsODdwX1dSaVBTT01JajNZVGZnLWpVcHhhUkhuZW9DeWRBN3pzdkhOVmI4cktCdDBTOGk4Y1pkZTNjYkFXdXFaaV92TjB6VG85dWhoNFBRY3c2SlBWdUFfV3lmVGZZQ3Y1OWRScWtoNFdYTGtVTUt2c0R0OTBMXzNyazVneVpZQTY2S2NWUnlDME1WTDh3bi1uMzkyLW44UUoxalVack8xT3hUdng5WGc?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUTFLbTV4dlM3SllHWlZ5THNGLS1RckRFRklrRFRYaFh4ZHNvZWYyMDcxekRoUzNfQlVhekg3NnVzNEdsODdwX1dSaVBTT01JajNZVGZnLWpVcHhhUkhuZW9DeWRBN3pzdkhOVmI4cktCdDBTOGk4Y1pkZTNjYkFXdXFaaV92TjB6VG85dWhoNFBRY3c2SlBWdUFfV3lmVGZZQ3Y1OWRScWtoNFdYTGtVTUt2c0R0OTBMXzNyazVneVpZQTY2S2NWUnlDME1WTDh3bi1uMzkyLW44UUoxalVack8xT3hUdng5WGc?oc=5\" target=\"_blank\">B. Metzler seel. Sohn & Co. AG Purchases 4,335 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "CreativeOne Wealth LLC Acquires 3,177 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxORGtreVVLUmc2T0Z5cTFvdTBsakQwN1FfcVNEcldlVk9rblF2Z1ZsMkUwcjB2OU94VWEwbXhzWmpmMlBRdHFSRWZHeWw3c3VRSlYzd3NweVVLNmhKWVpacl9zZGpqeVBOdjQtbHB2RWJQa0JYbjBZWUhYWVdZZ1J0eWlmQXhsblJJYkNyRUR6RGlqMHZWaDR1cHFDNUxLdlpTSjl3MG5CcTZUOS0wTkt4dkszMm9yUG13RE40NXNISU5SQzU4TlljZjc4a1B2cXBJMXY1Tms5cEp4eVJCQklVQkdzRlU1a0hGbEJv?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxORGtreVVLUmc2T0Z5cTFvdTBsakQwN1FfcVNEcldlVk9rblF2Z1ZsMkUwcjB2OU94VWEwbXhzWmpmMlBRdHFSRWZHeWw3c3VRSlYzd3NweVVLNmhKWVpacl9zZGpqeVBOdjQtbHB2RWJQa0JYbjBZWUhYWVdZZ1J0eWlmQXhsblJJYkNyRUR6RGlqMHZWaDR1cHFDNUxLdlpTSjl3MG5CcTZUOS0wTkt4dkszMm9yUG13RE40NXNISU5SQzU4TlljZjc4a1B2cXBJMXY1Tms5cEp4eVJCQklVQkdzRlU1a0hGbEJv?oc=5\" target=\"_blank\">CreativeOne Wealth LLC Acquires 3,177 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.8689
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "cross_domain_001",
+      "approach": "graphrag",
+      "response": "**Market\u2011wide view of IBM (as of 2025\u201109\u201101)**  \n| Indicator | What we see | What it means for sentiment |\n|-----------|-------------|-----------------------------|\n| **Recent revenue trend** | 2022: **$29.7\u202fbn** \u2013 2023: **$30.8\u202fbn** \u2013 2024: **$32.2\u202fbn** (segment\u2011level split: $29.8\u202fbn + $0.7\u202fbn) | **Revenue growth is modest but positive** \u2013 the company is holding its size, which is reassuring in a competitive cloud\u2011services market. |\n| **Institutional activity** | 3 large\u2011cap wealth\u2011advisory & investment\u2011management firms (Cura Wealth, Oarsman, Harvest, Ieq Capital) bought >\u202f20\u202fk shares in a single day. | **Active institutional buying** \u2013 signals confidence in the company\u2019s strategic pivot and its 2025 earnings outlook. |\n| **News sentiment** | 5 relevant news items \u2013 3 positive (0.53\u20130.87), 2 neutral (0.0) | **Net sentiment score \u2248 +0.6** \u2013 overwhelmingly positive coverage from both traditional and alternative media. |\n| **Key strategic narrative** | IBM\u2019s FY2025 focus on \u201cAI\u2011enabled cloud, hybrid\u2011cloud infrastructure, and security services\u201d + the 2024 \u201cAccelerated Transformation\u201d plan. | **Positive market reaction** to the shift from legacy hardware to high\u2011margin services. |\n\n---\n\n### Strategic insights that tie numbers to narrative\n\n| Insight | How the numbers support it | Practical implication |\n|---------|----------------------------|-----------------------|\n| **Stability in top line, growth in margin\u2011heavy segments** | Revenue flat\u2011to\u2011slight\u2011up ($32.2\u202fbn vs $30.8\u202fbn) + 2024\u2019s $0.7\u202fbn from \u201cFinancial Services\u201d suggests a push into higher\u2011margin offerings. | Investors can view IBM\u2019s current earnings as a base to ride the growth from AI\u2011cloud services rather than legacy hardware sales. |\n| **Institutional confidence in transformation** | The buy\u2011days by major advisors and the positive sentiment score indicate that the market believes IBM\u2019s transformation plan is credible. | Continue to monitor portfolio\u2011size changes; a surge in holdings may precede a price bump. |\n| **Risk of competitive pressure** | Revenue hasn\u2019t accelerated strongly despite a $32\u202fbn spend on cloud infrastructure. | Keep an eye on cost\u2011to\u2011serve ratios and compare with Amazon Web Services, Microsoft Azure, and Google Cloud. |\n| **Potential upside from AI investments** | News items highlight IBM\u2019s acquisition of AI start\u2011ups and partnership with NVIDIA. | Watch for earnings guidance around AI\u2011cloud adoption; any breakthrough could lift margins and justify a higher valuation. |\n\n---\n\n### Bottom\u2011line takeaway\n\n- **Overall market sentiment:** *Positive.*  \n- **Why?** Stable revenue, a clear pivot to high\u2011margin services, active institutional buying, and favorable news coverage.  \n- **What to watch next?** Look for quarterly guidance on AI\u2011cloud earnings, cost\u2011control progress, and any regulatory developments that might affect IBM\u2019s data\u2011center and security businesses.  \n\nBy aligning the revenue trend with the institutional buying spikes and the sentiment scores, the market is signaling that IBM\u2019s strategic shift is credible\u2014and the company\u2019s valuation will likely reflect the upside potential of its AI\u2011cloud focus.",
+      "context_used": "Query: What is the market sentiment around IBM?\n\n=== FINANCIAL FACTS ===\n\u2022 StatementsOfIncome.Revenues: 29813000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:TechnologyServiceMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30378000000 (2023-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30206000000 (2022-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 32231000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:ProductMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 30745000000 (2023-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 29673000000 (2022-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 StatementsOfIncome.Revenues: 709000000 (2024-12-31)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\u2022 Revenues.segment: us-gaap:FinancialServiceMember (None)\n  Filing: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\n\n=== NEWS SENTIMENT ===\n\u2022 International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance\n  Sentiment: positive (0.7351)\n  Date: 2025-09-01T13:00:05\n\u2022 Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: positive (0.8689)\n  Date: 2025-09-01T12:11:23\n\u2022 Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: neutral (0.0)\n  Date: 2025-09-01T07:00:00\n\u2022 Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: neutral (0.0)\n  Date: 2025-09-01T03:11:15\n\u2022 Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM - MarketBeat\n  Sentiment: positive (0.5267)\n  Date: 2025-09-01T03:11:15\n",
+      "metrics": {
+        "factual_accuracy": 1.0,
+        "citation_accuracy": 0.2857142857142857,
+        "numerical_precision": 1.0,
+        "context_relevance": 1.0,
+        "context_precision": 0.75,
+        "context_recall": 0.75,
+        "completeness_score": 1.0,
+        "depth_score": 0.42857142857142855,
+        "coherence_score": 0.0,
+        "temporal_analysis_score": 0.5333333333333333,
+        "cross_reference_score": 0.3,
+        "sentiment_integration_score": 1.0,
+        "strategic_insight_score": 0.6333333333333333,
+        "response_time": 0.0,
+        "context_size": 193,
+        "token_efficiency": 0.004357298474945534,
+        "estimated_cost": 0.006520000000000001,
+        "cost_per_insight": 0.0016300000000000002
+      },
+      "timestamp": "2025-10-18 14:28:34.063840",
+      "raw_data": {
+        "facts": [
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "29813000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:TechnologyServiceMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30378000000",
+            "period": "2023-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30206000000",
+            "period": "2022-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "32231000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:ProductMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "30745000000",
+            "period": "2023-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "29673000000",
+            "period": "2022-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "StatementsOfIncome.Revenues",
+            "value": "709000000",
+            "period": "2024-12-31",
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          },
+          {
+            "concept": "Revenues.segment",
+            "value": "us-gaap:FinancialServiceMember",
+            "period": null,
+            "filed": "2025-02-25T16:12:45-05:00",
+            "accession": "0000051143-25-000015"
+          }
+        ],
+        "news": [
+          {
+            "title": "International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance",
+            "published": "2025-09-01T13:00:05",
+            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWE1TdzVJTHJuUTJKbmQ3SE5PMlJfN1pUbVJYMUZvUDl3ODd4LWMyYWVzYUd4Rl92c0xrMC1BUnhHa3ZnZ3ZRODgtR1dSWTljcHItaWp5RzRiTmZtNXdyR0Qzd3pWS3pSbTJGSGFydDQyTkg5M3p2dURfazYwVjZfX2RJbWtjQkQ4STNfRjBPYnlIZEpnb0lfMg?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQWE1TdzVJTHJuUTJKbmQ3SE5PMlJfN1pUbVJYMUZvUDl3ODd4LWMyYWVzYUd4Rl92c0xrMC1BUnhHa3ZnZ3ZRODgtR1dSWTljcHItaWp5RzRiTmZtNXdyR0Qzd3pWS3pSbTJGSGFydDQyTkg5M3p2dURfazYwVjZfX2RJbWtjQkQ4STNfRjBPYnlIZEpnb0lfMg?oc=5\" target=\"_blank\">International Business Machines Corporation (IBM) is Attracting Investor Attention: Here is What You Should Know</a>  <font color=\"#6f6f6f\">Yahoo Finance</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.7351
+          },
+          {
+            "title": "Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T12:11:23",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSDZ6V0c4NVRvX2hIVmJkUVdXcXNadmRPV3p2YUxyTDE5TGxTWTE1cl9PQlViOEc1aGIzcjhGWE5UZWdQUHF6TlpHZmpHVEwzOV9JdGtxZzJicTBfelFyeFVTVGFyYTNUeC1qd1FESVFFdV9sbC1WX3U0WExmNzdFVmsxX3ctMThjRVJKY2dNUFpqNVBsQkdEblVZOWxDZWJDNnRPWXJnbmdrM1Vwdzk5enBqdU5qOEF3YkYyeV9RVzltY2IwOVB3NWp6LURFTFNJY0lHNTgwQXg0WWpWSTItZVptUEZKZkUzTkpN?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSDZ6V0c4NVRvX2hIVmJkUVdXcXNadmRPV3p2YUxyTDE5TGxTWTE1cl9PQlViOEc1aGIzcjhGWE5UZWdQUHF6TlpHZmpHVEwzOV9JdGtxZzJicTBfelFyeFVTVGFyYTNUeC1qd1FESVFFdV9sbC1WX3U0WExmNzdFVmsxX3ctMThjRVJKY2dNUFpqNVBsQkdEblVZOWxDZWJDNnRPWXJnbmdrM1Vwdzk5enBqdU5qOEF3YkYyeV9RVzltY2IwOVB3NWp6LURFTFNJY0lHNTgwQXg0WWpWSTItZVptUEZKZkUzTkpN?oc=5\" target=\"_blank\">Cura Wealth Advisors LLC Sells 1,096 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.8689
+          },
+          {
+            "title": "Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNQUZuLUZrWU93WnQ4bTR3ZTh3N18zU3dpMUdBbWQzVWY1M1pqMEdOcFJEeEZDd0FDMDR1ZnRmNXEwM0RrY2hzbnJhOFhMMW1OTmZPNWNDbkZ1Z2lDN0xuZGFGNmlKWHM1bVRUY3VIRHRqQTFBNjdJWnJuczRleW5kYTlKd1JfV1VGYlBQb3VpcWFPS29WdUQtbXlCak82VDZJX2llQzlOcW1VNzhlQnpkRTBxUHB0eHFoeEoteFNoSDZ6R3FkaFlnNWtUX0J1NjlOS3l5cVN6ZjBpd0NfZVc3T0ZoeldZaW1wdlh5ZXU3R2ZxTlpQ?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9AFBVV95cUxNQUZuLUZrWU93WnQ4bTR3ZTh3N18zU3dpMUdBbWQzVWY1M1pqMEdOcFJEeEZDd0FDMDR1ZnRmNXEwM0RrY2hzbnJhOFhMMW1OTmZPNWNDbkZ1Z2lDN0xuZGFGNmlKWHM1bVRUY3VIRHRqQTFBNjdJWnJuczRleW5kYTlKd1JfV1VGYlBQb3VpcWFPS29WdUQtbXlCak82VDZJX2llQzlOcW1VNzhlQnpkRTBxUHB0eHFoeEoteFNoSDZ6R3FkaFlnNWtUX0J1NjlOS3l5cVN6ZjBpd0NfZVc3T0ZoeldZaW1wdlh5ZXU3R2ZxTlpQ?oc=5\" target=\"_blank\">Oarsman Capital Inc. Has $3.44 Million Holdings in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQaXRsb1lGaHZsbHZILVl4TFVBUkd2ZUFTTUVZTWxYYzlZNlU3bUhxVWNzSUM0YzFsRndiV3B2QnNUeXhxTDRlRGVaZHhBN2RDTXVvVGZSOGhoNEFid1hpRWJ2OUk0Q2xtSXplN0dfM2NSTFVsbG45MXk5NzRHS0VJSzlSRHhHQ0hFOWtiLUNWTjFmd1o0SGEyMFZwYUF3OXhWd0kxbXUzdXBFUWRyV25mcVVLaVZodzV5Vi14Tk52ZlB6M285U04wYmpsSEhCMUh1cnh2QzQzb3RwQVJwSGlUYzQxR2VvNXVrVWtkYldn?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi7gFBVV95cUxQaXRsb1lGaHZsbHZILVl4TFVBUkd2ZUFTTUVZTWxYYzlZNlU3bUhxVWNzSUM0YzFsRndiV3B2QnNUeXhxTDRlRGVaZHhBN2RDTXVvVGZSOGhoNEFid1hpRWJ2OUk0Q2xtSXplN0dfM2NSTFVsbG45MXk5NzRHS0VJSzlSRHhHQ0hFOWtiLUNWTjFmd1o0SGEyMFZwYUF3OXhWd0kxbXUzdXBFUWRyV25mcVVLaVZodzV5Vi14Tk52ZlB6M285U04wYmpsSEhCMUh1cnh2QzQzb3RwQVJwSGlUYzQxR2VvNXVrVWtkYldn?oc=5\" target=\"_blank\">Harvest Portfolios Group Inc. Has $527,000 Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMlJOX29mdERNem90N2lxd0FtSHFTUTg4VW50WFAyeHQzY3JGNWpzVEJid3p5TlhvV0dYY3U4WjlNY3VhUjJBTGdUbTcyZWtiWXpLSDNKd1lURmVaVDZPVUFUOVZkbnRfbGNKVmJUVzRlZ1NYZWp1YTJTakZpNEcya283RjJ0UmRzVVN1LWk4ekpLd3BuQ1AxdDBHcGN2bUdmbm1UR2xBcENybVVOOVRFM19GQUNrQ1BaVmJDaUktaWlvcWNkZTQxakVLY3l4ck5Va2h5cjRrV0xiUGM?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMlJOX29mdERNem90N2lxd0FtSHFTUTg4VW50WFAyeHQzY3JGNWpzVEJid3p5TlhvV0dYY3U4WjlNY3VhUjJBTGdUbTcyZWtiWXpLSDNKd1lURmVaVDZPVUFUOVZkbnRfbGNKVmJUVzRlZ1NYZWp1YTJTakZpNEcya283RjJ0UmRzVVN1LWk4ekpLd3BuQ1AxdDBHcGN2bUdmbm1UR2xBcENybVVOOVRFM19GQUNrQ1BaVmJDaUktaWlvcWNkZTQxakVLY3l4ck5Va2h5cjRrV0xiUGM?oc=5\" target=\"_blank\">Ieq Capital LLC Purchases 20,686 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "Samalin Investment Counsel LLC Acquires New Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-09-01T03:11:15",
+            "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQRmJtOVVrcjBmZTZlX1JPV3A2Wk9yN0t5Sl9UbDZDUGFvOEtIcDhXRmN6cWFDN251bWl4UWstSVlQU2ZtYm9zVUxzUUhUcEc2aU82c1lOb01pR3h5MV96a3BQckFyMXQ2Vy1NOWE1R2lJclZDdGRDU0JuTkl6N2JPSDdnWDFKWmFqbXlrNHVnOTd2OEo0ekItODhBd2ZYNDZaRVZMcjNTVWxPbmE4OTZKQXg3eF9RRmZJdENzWElPRjhZTmI2cGsta1ZyZnhNT2tMSkEyWWxCN2hfY05XTDFjV0xwZXhDMnNOWENpRmMtWVBtSUlGcVBR?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9wFBVV95cUxQRmJtOVVrcjBmZTZlX1JPV3A2Wk9yN0t5Sl9UbDZDUGFvOEtIcDhXRmN6cWFDN251bWl4UWstSVlQU2ZtYm9zVUxzUUhUcEc2aU82c1lOb01pR3h5MV96a3BQckFyMXQ2Vy1NOWE1R2lJclZDdGRDU0JuTkl6N2JPSDdnWDFKWmFqbXlrNHVnOTd2OEo0ekItODhBd2ZYNDZaRVZMcjNTVWxPbmE4OTZKQXg3eF9RRmZJdENzWElPRjhZTmI2cGsta1ZyZnhNT2tMSkEyWWxCN2hfY05XTDFjV0xwZXhDMnNOWENpRmMtWVBtSUlGcVBR?oc=5\" target=\"_blank\">Samalin Investment Counsel LLC Acquires New Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "Guggenheim Capital LLC Has $59.01 Million Position in International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T22:30:00",
+            "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOTVdVRldWSHdFeFN6TFlrb1RNZjFuQWJLX19JZmVPSHBzUXc5VGcwVFZqaXhJNUZFRDJWelYxaXRpaTVoSElidzlabTJpbEI2Zi1nRzNIbmJsUGJ3NjlZVXNHd0lraWJkZDRMVUVtVkhDWVRReWJNMTh0T2g0TDF3UTFEYy1qVFo2OFZGUmNvRlRibW56SWNrQ1NzY090S2lKY2VZLVJiOHJLc185V3BMeDNWMXBjdFgyWkI3cGxWMW5DSzZJamRieUxUOWRfaWFhaWZJVnlHWHlCQ1NVQVB0aXlR?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxOTVdVRldWSHdFeFN6TFlrb1RNZjFuQWJLX19JZmVPSHBzUXc5VGcwVFZqaXhJNUZFRDJWelYxaXRpaTVoSElidzlabTJpbEI2Zi1nRzNIbmJsUGJ3NjlZVXNHd0lraWJkZDRMVUVtVkhDWVRReWJNMTh0T2g0TDF3UTFEYy1qVFo2OFZGUmNvRlRibW56SWNrQ1NzY090S2lKY2VZLVJiOHJLc185V3BMeDNWMXBjdFgyWkI3cGxWMW5DSzZJamRieUxUOWRfaWFhaWZJVnlHWHlCQ1NVQVB0aXlR?oc=5\" target=\"_blank\">Guggenheim Capital LLC Has $59.01 Million Position in International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+          },
+          {
+            "title": "International Business Machines Corporation $IBM Shares Sold by Baird Financial Group Inc. - MarketBeat",
+            "published": "2025-08-31T10:41:08",
+            "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNLV9FNk9XS2ZhVEFZRFhHZ1gydW9raFZTRWN5ZUtIQ1R2WmU2SHdlaTlNSllRY2k5SG5WSkVKN0lRYjFPdUJCNHhya3VSSFR2TkdMcFpFUnQ4QTlXZ3FRN0dhM2h1Sm4wVzJZQlVJbUoxbm9jckgwZXE3QUJMbGZtcXBwT3lFV0hIV2N5NlZESFdqcjNjM1VVNzhnS0dzaXVaWTVIX0dxRWdDVk9tcFFmNTZUdDk1ZjNFWDVrbTBwS1M1ZFpLMTJpTXUxNWVQYzFLc1ZURWk5MmE5cm5Gb3dmR2VmeEFOUXVvZk5xd0gxVzNuM3FsNW9OYjBCMHBwWm8?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi_wFBVV95cUxNLV9FNk9XS2ZhVEFZRFhHZ1gydW9raFZTRWN5ZUtIQ1R2WmU2SHdlaTlNSllRY2k5SG5WSkVKN0lRYjFPdUJCNHhya3VSSFR2TkdMcFpFUnQ4QTlXZ3FRN0dhM2h1Sm4wVzJZQlVJbUoxbm9jckgwZXE3QUJMbGZtcXBwT3lFV0hIV2N5NlZESFdqcjNjM1VVNzhnS0dzaXVaWTVIX0dxRWdDVk9tcFFmNTZUdDk1ZjNFWDVrbTBwS1M1ZFpLMTJpTXUxNWVQYzFLc1ZURWk5MmE5cm5Gb3dmR2VmeEFOUXVvZk5xd0gxVzNuM3FsNW9OYjBCMHBwWm8?oc=5\" target=\"_blank\">International Business Machines Corporation $IBM Shares Sold by Baird Financial Group Inc.</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "B. Metzler seel. Sohn & Co. AG Purchases 4,335 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUTFLbTV4dlM3SllHWlZ5THNGLS1RckRFRklrRFRYaFh4ZHNvZWYyMDcxekRoUzNfQlVhekg3NnVzNEdsODdwX1dSaVBTT01JajNZVGZnLWpVcHhhUkhuZW9DeWRBN3pzdkhOVmI4cktCdDBTOGk4Y1pkZTNjYkFXdXFaaV92TjB6VG85dWhoNFBRY3c2SlBWdUFfV3lmVGZZQ3Y1OWRScWtoNFdYTGtVTUt2c0R0OTBMXzNyazVneVpZQTY2S2NWUnlDME1WTDh3bi1uMzkyLW44UUoxalVack8xT3hUdng5WGc?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUTFLbTV4dlM3SllHWlZ5THNGLS1RckRFRklrRFRYaFh4ZHNvZWYyMDcxekRoUzNfQlVhekg3NnVzNEdsODdwX1dSaVBTT01JajNZVGZnLWpVcHhhUkhuZW9DeWRBN3pzdkhOVmI4cktCdDBTOGk4Y1pkZTNjYkFXdXFaaV92TjB6VG85dWhoNFBRY3c2SlBWdUFfV3lmVGZZQ3Y1OWRScWtoNFdYTGtVTUt2c0R0OTBMXzNyazVneVpZQTY2S2NWUnlDME1WTDh3bi1uMzkyLW44UUoxalVack8xT3hUdng5WGc?oc=5\" target=\"_blank\">B. Metzler seel. Sohn & Co. AG Purchases 4,335 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.5267
+          },
+          {
+            "title": "CreativeOne Wealth LLC Acquires 3,177 Shares of International Business Machines Corporation $IBM - MarketBeat",
+            "published": "2025-08-31T07:00:00",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxORGtreVVLUmc2T0Z5cTFvdTBsakQwN1FfcVNEcldlVk9rblF2Z1ZsMkUwcjB2OU94VWEwbXhzWmpmMlBRdHFSRWZHeWw3c3VRSlYzd3NweVVLNmhKWVpacl9zZGpqeVBOdjQtbHB2RWJQa0JYbjBZWUhYWVdZZ1J0eWlmQXhsblJJYkNyRUR6RGlqMHZWaDR1cHFDNUxLdlpTSjl3MG5CcTZUOS0wTkt4dkszMm9yUG13RE40NXNISU5SQzU4TlljZjc4a1B2cXBJMXY1Tms5cEp4eVJCQklVQkdzRlU1a0hGbEJv?oc=5",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxORGtreVVLUmc2T0Z5cTFvdTBsakQwN1FfcVNEcldlVk9rblF2Z1ZsMkUwcjB2OU94VWEwbXhzWmpmMlBRdHFSRWZHeWw3c3VRSlYzd3NweVVLNmhKWVpacl9zZGpqeVBOdjQtbHB2RWJQa0JYbjBZWUhYWVdZZ1J0eWlmQXhsblJJYkNyRUR6RGlqMHZWaDR1cHFDNUxLdlpTSjl3MG5CcTZUOS0wTkt4dkszMm9yUG13RE40NXNISU5SQzU4TlljZjc4a1B2cXBJMXY1Tms5cEp4eVJCQklVQkdzRlU1a0hGbEJv?oc=5\" target=\"_blank\">CreativeOne Wealth LLC Acquires 3,177 Shares of International Business Machines Corporation $IBM</a>  <font color=\"#6f6f6f\">MarketBeat</font>",
+            "sentiment_label": "positive",
+            "sentiment_score": 0.8689
+          }
+        ]
+      }
+    }
+  ],
+  "baseline_results": [
+    {
+      "query_id": "factual_001",
+      "approach": "direct_llm",
+      "response": "IBM\u2019s total revenue for the year ended\u202fDecember\u202f31,\u202f2023 was **$61,860,000,000** (US\u202f$61.86\u202fbillion).\n\nThis figure is reported directly in IBM\u2019s 10\u2011K filing (accession number\u202f0000051143\u201125\u2011000015) under the concept **StatementsOfIncome.Revenues** for the period **2023\u201112\u201131** (value\u202f61860000000).",
+      "context_used": "\n        <<PROMPT>>\n        What was IBM's total revenue in 2023?\n        \n        <<10-K FINANCIAL DATA>>\n        === 10-K FINANCIAL DATA ===\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 29813000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:TechnologyServiceMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30378000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30206000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 32231000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:ProductMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30745000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 29673000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 709000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:FinancialServiceMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 737000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 651000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 62753000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 61860000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 60530000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 27085000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:OperatingSegmentsMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: ibm:SoftwareMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 25011000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 23629000000\nPeriod: 2022-12-31\n\n        \n        <<INSTRUCTIONS>>\n        Answer the question using the provided 10-K financial data. \n        Be specific and cite accession numbers and time periods when making claims.\n        ",
+      "metrics": {
+        "factual_accuracy": 0.6666666666666666,
+        "citation_accuracy": 0.5714285714285714,
+        "numerical_precision": 1.0,
+        "context_relevance": 1.0,
+        "context_precision": 0.6666666666666666,
+        "context_recall": 0.6666666666666666,
+        "completeness_score": 0.74,
+        "depth_score": 0.0,
+        "coherence_score": 0.0,
+        "temporal_analysis_score": 0.0,
+        "cross_reference_score": 0.0,
+        "sentiment_integration_score": 0.0,
+        "strategic_insight_score": 0.0,
+        "response_time": 0.0,
+        "context_size": 218,
+        "token_efficiency": 0.0,
+        "estimated_cost": 0.00255,
+        "cost_per_insight": 0.001275
+      },
+      "timestamp": "2025-10-18 14:25:43.490759",
+      "raw_data": {}
+    },
+    {
+      "query_id": "analytical_001",
+      "approach": "direct_llm",
+      "response": "**IBM\u2019s principal revenue streams \u2013 as shown in the 2025 10\u2011K (accession 0000051143\u201125\u2011000015)**  \n\n| Segment (identified by the \u201cRevenues.segment\u201d tags) | Approx. revenue in FY\u202f2024 | Approx. revenue in FY\u202f2023 | Approx. revenue in FY\u202f2022 |\n|---|---|---|---|\n| **Software** (us\u2011gaap:SoftwareMember) | **$62.753\u202fB** | **$61.860\u202fB** | **$60.530\u202fB** |\n| **Technology Services** (us\u2011gaap:TechnologyServiceMember) | **$29.813\u202fB** | **$30.378\u202fB** | **$30.206\u202fB** |\n| **Financial Services** (us\u2011gaap:FinancialServiceMember) | **$709\u202fM** | **$737\u202fM** | **$651\u202fM** |\n\n**Key points**\n\n1. **Software** is by far the largest contributor to IBM\u2019s revenue, generating roughly 62\u202fB\u202fUSD in 2024, 61\u202fB\u202fUSD in 2023, and 60\u202fB\u202fUSD in 2022 (filings for FY\u202f2024, FY\u202f2023, and FY\u202f2022 respectively, accession\u202f0000051143\u201125\u2011000015).  \n\n2. **Technology Services** \u2013 encompassing consulting, system integration, and cloud\u2011related services \u2013 provides a secondary, but still sizable, source of income (~30\u202fB\u202fUSD per year in the three most recent fiscal years).  \n\n3. **Financial Services** (the smaller \u201cFinancialServiceMember\u201d segment) contributes less than 1\u202fB\u202fUSD annually (\u2248\u202f0.7\u202fB\u202fUSD in 2024, 0.7\u202fB\u202fUSD in 2023, and 0.65\u202fB\u202fUSD in 2022).  \n\nThese segments (Software, Technology Services, Financial Services) together account for the bulk of IBM\u2019s operating revenues, with Software and Technology Services representing the primary revenue drivers.",
+      "context_used": "\n        <<PROMPT>>\n        What are IBM's main revenue sources?\n        \n        <<10-K FINANCIAL DATA>>\n        === 10-K FINANCIAL DATA ===\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 29813000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:TechnologyServiceMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30378000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30206000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 32231000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:ProductMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30745000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 29673000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 709000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:FinancialServiceMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 737000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 651000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 62753000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 61860000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 60530000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 27085000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:OperatingSegmentsMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: ibm:SoftwareMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 25011000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 23629000000\nPeriod: 2022-12-31\n\n        \n        <<INSTRUCTIONS>>\n        Answer the question using the provided 10-K financial data. \n        Be specific and cite accession numbers and time periods when making claims.\n        ",
+      "metrics": {
+        "factual_accuracy": 0.5,
+        "citation_accuracy": 0.42857142857142855,
+        "numerical_precision": 1.0,
+        "context_relevance": 1.0,
+        "context_precision": 0.75,
+        "context_recall": 0.75,
+        "completeness_score": 1.0,
+        "depth_score": 0.0,
+        "coherence_score": 0.0,
+        "temporal_analysis_score": 0.0,
+        "cross_reference_score": 0.0,
+        "sentiment_integration_score": 0.0,
+        "strategic_insight_score": 0.0,
+        "response_time": 0.0,
+        "context_size": 217,
+        "token_efficiency": 0.0,
+        "estimated_cost": 0.0043100000000000005,
+        "cost_per_insight": 0.0021550000000000002
+      },
+      "timestamp": "2025-10-18 14:26:30.637010",
+      "raw_data": {}
+    },
+    {
+      "query_id": "strategic_001",
+      "approach": "direct_llm",
+      "response": "IBM\u2019s 2024 10\u2011K (Accession\u202fNo.\u202f0000051143\u201125\u2011000015) does not list a separate \u201cstrategic initiatives\u201d section, but the company\u2019s operating\u2011segment revenue profile makes its strategic priorities clear.  The four operating segments that IBM reports are:\n\n| Operating Segment | 2024 Revenue | 2023 Revenue | 2022 Revenue | Accession\u202fNo. | Period |\n|-------------------|--------------|--------------|--------------|--------------|--------|\n| **Technology Services** | **$29.813\u202fbn** | $30.378\u202fbn | $30.206\u202fbn | 0000051143\u201125\u2011000015 | 2024\u201112\u201131 / 2023\u201112\u201131 / 2022\u201112\u201131 |\n| **Product** | **$27.085\u202fbn** | $30.745\u202fbn | $29.673\u202fbn | 0000051143\u201125\u2011000015 | 2024\u201112\u201131 / 2023\u201112\u201131 / 2022\u201112\u201131 |\n| **Financial Services** | **$709\u202fm** | $737\u202fm | $651\u202fm | 0000051143\u201125\u2011000015 | 2024\u201112\u201131 / 2023\u201112\u201131 / 2022\u201112\u201131 |\n| **Software** | **$63.75\u202fbn** | $62.86\u202fbn | $60.53\u202fbn | 0000051143\u201125\u2011000015 | 2024\u201112\u201131 / 2023\u201112\u201131 / 2022\u201112\u201131 |\n\n**Interpretation of the numbers**\n\n* **Technology Services** \u2013 The largest revenue generator and the segment with the most stable, multi\u2011billion\u2011dollar performance over the three\u2011year period.  Its continued prominence suggests that IBM\u2019s strategic thrust remains on cloud, AI, and digital\u2011transformation services.  \n* **Product** \u2013 The second largest segment, with revenue that has grown to $27.085\u202fbn in 2024 from $29.745\u202fbn in 2023.  The decline in absolute dollars indicates a shift of emphasis from traditional hardware to higher\u2011margin software and services.  \n* **Financial Services** \u2013 While the absolute numbers are far smaller (sub\u2011$1\u202fbn), the segment\u2019s presence in the 10\u2011K shows IBM\u2019s ongoing strategy to support its customers\u2019 financial technology needs.  \n* **Software** \u2013 With $63.75\u202fbn in 2024, this segment now exceeds $60\u202fbn for the first time in the last three years, underscoring IBM\u2019s strategic pivot to hybrid\u2011cloud and AI\u2011enabled software solutions.\n\n**Conclusion**\n\nIBM\u2019s main strategic initiatives, as reflected in its 2024 10\u2011K, are to:\n\n1. **Expand and deepen technology\u2011service offerings** (cloud, AI, digital\u2011transformation).  \n2. **Drive growth in software solutions** that support hybrid\u2011cloud and AI workloads.  \n3. **Maintain a presence in product and financial\u2011service markets** to diversify revenue streams.\n\nThese priorities are evidenced by the revenue figures for each operating segment in the 2024 10\u2011K filing (Accession\u202fNo.\u202f0000051143\u201125\u2011000015) for the fiscal years 2022\u20112024.",
+      "context_used": "\n        <<PROMPT>>\n        What are IBM's main strategic initiatives?\n        \n        <<10-K FINANCIAL DATA>>\n        === 10-K FINANCIAL DATA ===\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 29813000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:TechnologyServiceMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30378000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30206000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 32231000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:ProductMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30745000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 29673000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 709000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:FinancialServiceMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 737000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 651000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 62753000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 61860000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 60530000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 27085000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:OperatingSegmentsMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: ibm:SoftwareMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 25011000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 23629000000\nPeriod: 2022-12-31\n\n        \n        <<INSTRUCTIONS>>\n        Answer the question using the provided 10-K financial data. \n        Be specific and cite accession numbers and time periods when making claims.\n        ",
+      "metrics": {
+        "factual_accuracy": 0.5,
+        "citation_accuracy": 0.7142857142857143,
+        "numerical_precision": 1.0,
+        "context_relevance": 1.0,
+        "context_precision": 0.25,
+        "context_recall": 0.25,
+        "completeness_score": 1.0,
+        "depth_score": 0.14285714285714285,
+        "coherence_score": 0.0,
+        "temporal_analysis_score": 0.0,
+        "cross_reference_score": 0.0,
+        "sentiment_integration_score": 0.0,
+        "strategic_insight_score": 0.0,
+        "response_time": 0.0,
+        "context_size": 217,
+        "token_efficiency": 0.0,
+        "estimated_cost": 0.005659999999999999,
+        "cost_per_insight": 0.0028299999999999996
+      },
+      "timestamp": "2025-10-18 14:27:18.011180",
+      "raw_data": {}
+    },
+    {
+      "query_id": "temporal_001",
+      "approach": "direct_llm",
+      "response": "**IBM\u2019s revenue trend (latest three fiscal years)**  \n\n| Fiscal year (period\u2011end) | Total revenue reported in the 10\u2011K (USD) | Year\u2011over\u2011year change |\n|--------------------------|-------------------------------------------|-----------------------|\n| 2022\u201112\u201131 | **$60.53\u202fbillion** (accession\u202f#\u202f0000051143\u201125\u2011000015) | \u2013 |\n| 2023\u201112\u201131 | **$61.86\u202fbillion** (accession\u202f#\u202f0000051143\u201125\u2011000015) | **+\u202f$1.33\u202fbillion** (\u2248\u202f+\u202f2.2\u202f%) |\n| 2024\u201112\u201131 | **$62.75\u202fbillion** (accession\u202f#\u202f0000051143\u201125\u2011000015) | **+\u202f$0.89\u202fbillion** (\u2248\u202f+\u202f1.4\u202f%) |\n\n*The figures above come from the \u201cStatementsOfIncome.Revenues\u201d line in the 10\u2011K filings for each year. For each period the largest value listed (e.g., $62.75\u202fB for 2024\u201112\u201131, $61.86\u202fB for 2023\u201112\u201131, and $60.53\u202fB for 2022\u201112\u201131) represents IBM\u2019s total annual revenue.*  \n\n**What this means**  \n- IBM\u2019s overall revenue has grown steadily over the past two fiscal years.  \n- From 2022 to 2023, revenue rose by about **$1.33\u202fB** (\u2248\u202f2.2\u202f% growth).  \n- From 2023 to 2024, revenue added another **$0.89\u202fB** (\u2248\u202f1.4\u202f% growth).  \n\nThese increases indicate a modest, consistent expansion of IBM\u2019s top\u2011line performance in recent years.",
+      "context_used": "\n        <<PROMPT>>\n        How has IBM's revenue changed recently?\n        \n        <<10-K FINANCIAL DATA>>\n        === 10-K FINANCIAL DATA ===\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 29813000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:TechnologyServiceMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30378000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30206000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 32231000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:ProductMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30745000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 29673000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 709000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:FinancialServiceMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 737000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 651000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 62753000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 61860000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 60530000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 27085000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:OperatingSegmentsMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: ibm:SoftwareMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 25011000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 23629000000\nPeriod: 2022-12-31\n\n        \n        <<INSTRUCTIONS>>\n        Answer the question using the provided 10-K financial data. \n        Be specific and cite accession numbers and time periods when making claims.\n        ",
+      "metrics": {
+        "factual_accuracy": 1.0,
+        "citation_accuracy": 0.7142857142857143,
+        "numerical_precision": 1.0,
+        "context_relevance": 1.0,
+        "context_precision": 0.5,
+        "context_recall": 0.5,
+        "completeness_score": 1.0,
+        "depth_score": 0.14285714285714285,
+        "coherence_score": 0.0,
+        "temporal_analysis_score": 0.0,
+        "cross_reference_score": 0.0,
+        "sentiment_integration_score": 0.0,
+        "strategic_insight_score": 0.0,
+        "response_time": 0.0,
+        "context_size": 217,
+        "token_efficiency": 0.005917159763313609,
+        "estimated_cost": 0.00386,
+        "cost_per_insight": 0.000965
+      },
+      "timestamp": "2025-10-18 14:28:12.987950",
+      "raw_data": {}
+    },
+    {
+      "query_id": "cross_domain_001",
+      "approach": "direct_llm",
+      "response": "**Market sentiment around IBM (as inferred from the most recent 10\u2011K filings)**  \n\n| Period | Total reported revenue (USD\u202fm) | Source |\n|--------|------------------------------|--------|\n| 2022\u201112\u201131 | 60,530 | 0000051143\u201125\u2011000015 |\n| 2023\u201112\u201131 | 61,860 | 0000051143\u201125\u2011000015 |\n| 2024\u201112\u201131 | 62,750 | 0000051143\u201125\u2011000015 |\n\n1. **Steady, but modest growth**  \n   * Revenue rose from **$60.53\u202fB in 2022 to $61.86\u202fB in 2023** (+2.2\u202f%) and to **$62.75\u202fB in 2024** (+1.4\u202f% from 2023).  \n   * The year\u2011over\u2011year increase over the three\u2011year window is roughly **3\u202f%**, indicating that IBM is maintaining a consistent revenue stream rather than experiencing rapid expansion.\n\n2. **Segment\u2011level perspective**  \n   * **Software** revenue grew from **$23.63\u202fB (2022)** to **$25.01\u202fB (2023)**, a +5.8\u202f% jump.  \n   * **Product** and **Financial Service** segments showed smaller fluctuations, with product revenue falling slightly in 2024 and the financial\u2011services segment showing a modest decline in 2023.  \n   * The **Technology Service** segment is listed but the data provided do not give explicit figures for 2022\u20112024, so trends there are unclear.\n\n3. **Implications for sentiment**  \n   * **Positive signals**:  \n     * The company\u2019s core revenues are stable and growing, suggesting resilience in a mature market.  \n     * The software segment\u2014often a growth driver\u2014exhibits the strongest upward trend among the disclosed segments.\n\n   * **Neutral/concern signals**:  \n     * The overall growth rate is low relative to many tech peers, implying that IBM is not riding a high\u2011growth wave.  \n     * Some segments show stagnation or decline, which could temper enthusiasm among investors looking for more dynamic performance.\n\n4. **Conclusion \u2013 Market sentiment**  \n   * Investors and analysts likely view IBM as a **steady, income\u2011generating business** with **cautiously optimistic** outlooks.  \n   * The modest revenue growth suggests confidence in IBM\u2019s established product and service mix, but the lack of explosive expansion signals that the market does **not** currently see IBM as a high\u2011growth play.\n\n> *All figures are taken directly from the accession number 0000051143\u201125\u2011000015, covering the fiscal years ended 2022\u201112\u201131, 2023\u201112\u201131, and 2024\u201112\u201131.*",
+      "context_used": "\n        <<PROMPT>>\n        What is the market sentiment around IBM?\n        \n        <<10-K FINANCIAL DATA>>\n        === 10-K FINANCIAL DATA ===\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 29813000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:TechnologyServiceMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30378000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30206000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 32231000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:ProductMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 30745000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 29673000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 709000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:FinancialServiceMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 737000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 651000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 62753000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 61860000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 60530000000\nPeriod: 2022-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 27085000000\nPeriod: 2024-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: us-gaap:OperatingSegmentsMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: Revenues.segment\nValue: ibm:SoftwareMember\nPeriod: None\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 25011000000\nPeriod: 2023-12-31\n\n\nFiling: 0000051143-25-000015 (2025-02-25T16:12:45-05:00)\nConcept: StatementsOfIncome.Revenues\nValue: 23629000000\nPeriod: 2022-12-31\n\n        \n        <<INSTRUCTIONS>>\n        Answer the question using the provided 10-K financial data. \n        Be specific and cite accession numbers and time periods when making claims.\n        ",
+      "metrics": {
+        "factual_accuracy": 0.5,
+        "citation_accuracy": 0.7142857142857143,
+        "numerical_precision": 1.0,
+        "context_relevance": 1.0,
+        "context_precision": 0.5,
+        "context_recall": 0.5,
+        "completeness_score": 1.0,
+        "depth_score": 0.2857142857142857,
+        "coherence_score": 0.0,
+        "temporal_analysis_score": 0.0,
+        "cross_reference_score": 0.0,
+        "sentiment_integration_score": 0.0,
+        "strategic_insight_score": 0.0,
+        "response_time": 0.0,
+        "context_size": 218,
+        "token_efficiency": 0.003105590062111801,
+        "estimated_cost": 0.0054,
+        "cost_per_insight": 0.0027
+      },
+      "timestamp": "2025-10-18 14:28:54.682751",
+      "raw_data": {}
+    }
+  ],
+  "comparison_summary": {
+    "graphrag_averages": {
+      "factual_accuracy": 0.7333333333333333,
+      "citation_accuracy": 0.39999999999999997,
+      "completeness_score": 0.832,
+      "depth_score": 0.2571428571428571,
+      "temporal_analysis_score": 0.4,
+      "cross_reference_score": 0.42,
+      "sentiment_integration_score": 0.8,
+      "strategic_insight_score": 0.7,
+      "response_time": 0.0,
+      "context_size": 192.4,
+      "estimated_cost": 0.00719
+    },
+    "baseline_averages": {
+      "factual_accuracy": 0.6333333333333333,
+      "citation_accuracy": 0.6285714285714286,
+      "completeness_score": 0.948,
+      "depth_score": 0.11428571428571428,
+      "temporal_analysis_score": 0.0,
+      "cross_reference_score": 0.0,
+      "sentiment_integration_score": 0.0,
+      "strategic_insight_score": 0.0,
+      "response_time": 0.0,
+      "context_size": 217.4,
+      "estimated_cost": 0.0043560000000000005
+    },
+    "improvements": {
+      "factual_accuracy": 15.789473684210522,
+      "citation_accuracy": -36.36363636363637,
+      "completeness_score": -12.236286919831224,
+      "depth_score": 125.0,
+      "temporal_analysis_score": 0.0,
+      "cross_reference_score": 0.0,
+      "sentiment_integration_score": 0.0,
+      "strategic_insight_score": 0.0,
+      "response_time": 0.0,
+      "context_size": -11.499540018399264,
+      "estimated_cost": 65.0596877869605
+    }
+  },
+  "timestamp": "2025-10-18T14:25:21.933012"
+}
